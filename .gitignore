@@ -1,0 +1,8 @@
+# 비밀 정보는 절대 커밋하지 않음
+.env
+.env.*
+*.key
+
+# 운영체제가 만드는 파일
+.DS_Store
+Thumbs.db
