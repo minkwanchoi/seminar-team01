@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CWE 겹침 분석</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+      --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,.10);
+      --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300;
+      --seq-0: #f4f8fd; --seq-hi: #0d366b; --accent-wash: #eef4fc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:where(:not([data-theme="light"])) {
+        color-scheme: dark;
+        --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+        --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,.10);
+        --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+        --seq-0: #1f2a38; --seq-hi: #86b6ef; --accent-wash: #16263a;
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+      --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,.10);
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+      --seq-0: #1f2a38; --seq-hi: #86b6ef; --accent-wash: #16263a;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--page); color: var(--ink);
+           font-family: system-ui, -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+           line-height: 1.6; }
+    main { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+    header p { color: var(--ink-2); margin: 4px 0 0; }
+    h1 { font-size: 1.6rem; margin: 0; }
+    h2 { font-size: 1.15rem; margin: 0 0 4px; }
+    .lead { color: var(--ink-2); margin: 0 0 16px; font-size: .95rem; }
+    section { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px;
+              padding: 20px; margin-top: 20px; }
+    .note { margin-top: 16px; padding: 12px 14px; border-radius: 8px; background: var(--accent-wash);
+            color: var(--ink-2); font-size: .9rem; }
+    .note strong { color: var(--ink); }
+    .note a, .limits a, .lead a { color: var(--ink); }
+    .limits { margin: 0; padding-left: 1.3em; color: var(--ink-2); font-size: .93rem; }
+    .limits li { margin-bottom: 8px; }
+    .limits strong { color: var(--ink); }
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+    .tile { border: 1px solid var(--ring); border-radius: 10px; padding: 12px 14px; }
+    .tile .k { font-size: .85rem; color: var(--ink-2); display: flex; align-items: center; gap: 8px; }
+    .tile .v { font-size: 1.8rem; font-weight: 700; }
+    .tile .s { font-size: .85rem; color: var(--muted); }
+    .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+    /* 히트맵 */
+    .hm { display: grid; gap: 2px; align-items: stretch; overflow-x: auto; }
+    .hm .lab { font-size: .82rem; color: var(--ink-2); display: flex; align-items: center; padding: 4px 8px; }
+    .hm .col { justify-content: center; text-align: center; align-items: flex-end; }
+    .hm button.cell { border: 0; border-radius: 4px; min-height: 56px; font: inherit; font-size: .95rem;
+                      cursor: pointer; font-variant-numeric: tabular-nums; }
+    .hm button.cell:hover, .hm button.cell:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+    .hm button.cell[aria-pressed="true"] { outline: 3px solid var(--ink); outline-offset: 1px; }
+    .hm .diag { background: var(--grid); color: var(--muted); cursor: default; }
+    .legend-ramp { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--muted); margin-top: 10px; }
+    .legend-ramp .bar { width: 160px; height: 10px; border-radius: 4px;
+                        background: linear-gradient(90deg, var(--seq-0), var(--seq-hi)); }
+    #pairDetail, #groupDetail { margin-top: 14px; font-size: .92rem; color: var(--ink-2); min-height: 3em; }
+    #pairDetail b, #groupDetail b { color: var(--ink); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .chip { border: 1px solid var(--ring); border-radius: 999px; padding: 2px 10px; font-size: .82rem;
+            color: var(--ink); background: var(--surface); text-decoration: none; }
+    .chip:hover { border-color: var(--axis); }
+    /* 그림 */
+    .figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    figure { margin: 0; }
+    figure img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--ring); background: #fcfcfb; }
+    figcaption { font-size: .85rem; color: var(--ink-2); margin-top: 6px; }
+    /* 표 */
+    .filters { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-bottom: 12px; }
+    .filters input[type=search] { flex: 1 1 220px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--axis);
+                                  background: var(--surface); color: var(--ink); font: inherit; }
+    .filters label { display: flex; align-items: center; gap: 6px; min-width: 0; max-width: 100%; }
+    .filters select { min-width: 0; max-width: 100%; padding: 7px 8px; border-radius: 8px; border: 1px solid var(--axis); background: var(--surface);
+                      color: var(--ink); font: inherit; }
+    .count { font-size: .85rem; color: var(--muted); }
+    .table-wrap { overflow-x: auto; max-height: 520px; overflow-y: auto; border: 1px solid var(--ring); border-radius: 8px; }
+    table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+    th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: left; vertical-align: top; }
+    th { position: sticky; top: 0; background: var(--surface); color: var(--ink-2); font-weight: 600; z-index: 1; }
+    td.c { text-align: center; }
+    td.n { font-variant-numeric: tabular-nums; text-align: right; }
+    .mark { display: inline-block; width: 12px; height: 12px; border-radius: 50%; }
+    .mark.off { background: transparent; border: 1px solid var(--grid); }
+    td a { color: var(--ink); }
+    #error { display: none; color: #d03b3b; margin-top: 16px; }
+    footer { margin-top: 24px; font-size: .85rem; color: var(--muted); }
+    footer a { color: var(--ink-2); }
+    footer .credits { margin-top: 8px; font-size: .8rem; }
+    @media (max-width: 600px) { .tile .v { font-size: 1.5rem; } .hm button.cell { min-height: 44px; font-size: .85rem; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>국방 SW 보안약점 기준, 얼마나 겹치나</h1>
+    <p>방사청 매뉴얼 신뢰성시험의 취약점 점검(CWE-658·659·660), 행안부 개발보안 49개 항목, CWE Top 25(2025)를 CWE 번호로 맞춰 겹침을 셉니다.</p>
+    <div class="note">
+      <strong>읽기 전에:</strong> 이 결과는 <strong>공개적으로 확인할 수 있는 요구 목록끼리</strong> 비교한 것입니다. 비공개 기준과, 발췌 시 방위사업청장 승인이 필요한 매뉴얼 보안약점 44개는 들어 있지 않습니다.
+      <a href="#limits">분석 범위와 한계</a>를 먼저 확인해 주세요.
+    </div>
+  </header>
+
+  <section aria-labelledby="t-size">
+    <h2 id="t-size">제도별 CWE 수</h2>
+    <p class="lead">각 제도가 요구하는 CWE 번호 개수와, 그 가운데 다른 어느 제도에도 없는 고유 항목 수</p>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section aria-labelledby="t-hm">
+    <h2 id="t-hm">제도 쌍별 겹침 (Jaccard 유사도)</h2>
+    <p class="lead">교집합 ÷ 합집합. 1이면 두 목록이 같고 0이면 전혀 겹치지 않습니다. 칸을 누르면 공통 CWE가 아래에 나옵니다.</p>
+    <div class="hm" id="heatmap" role="grid" aria-label="제도 쌍별 Jaccard 유사도"></div>
+    <div class="legend-ramp"><span>0</span><span class="bar" aria-hidden="true"></span><span>1</span></div>
+    <div id="pairDetail" aria-live="polite">칸을 눌러 두 제도의 공통 CWE를 확인하세요.</div>
+  </section>
+
+  <section aria-labelledby="t-grp">
+    <h2 id="t-grp">성격별로 묶어 보기</h2>
+    <p class="lead">MITRE CWE-1400 뷰는 모든 CWE를 메모리 안전, 주입, 접근 제어 같은 22개 범주 중 정확히 하나에 넣습니다.
+      칸의 숫자는 그 제도가 요구하는 CWE 수이고, 색이 진할수록 그 제도 안에서 비중이 큽니다. 칸을 누르면 해당 CWE가 아래에 나옵니다.</p>
+    <div class="hm" id="groups" role="grid" aria-label="성격별 범주와 제도별 CWE 수"></div>
+    <div class="legend-ramp"><span>비중 낮음</span><span class="bar" aria-hidden="true"></span><span>높음</span></div>
+    <div id="groupDetail" aria-live="polite">칸을 눌러 범주에 속한 CWE를 확인하세요.</div>
+  </section>
+
+  <section aria-labelledby="t-fig">
+    <h2 id="t-fig">그림</h2>
+    <p class="lead">보고서용 그림입니다. <code>analysis/plot_overlap.py</code>가 다시 만듭니다.</p>
+    <div class="figs">
+      <figure>
+        <img src="figures/venn_manual_mois_top25.svg" alt="매뉴얼 신뢰성시험 합집합, 행안부 49, CWE Top 25 세 집합의 벤 다이어그램">
+        <figcaption>그림 1. 매뉴얼 신뢰성시험(언어별 취약점 뷰와 보안약점 목록의 합집합) · 행안부 49 · Top 25의 겹침</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/pillar_share.svg" alt="제도별 CWE의 상위 범주 Pillar 구성비 히트맵">
+        <figcaption>그림 2. 제도별 CWE의 상위 범주(Pillar) 구성비</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/category_by_set.svg" alt="성격별 범주 CWE-1400마다 제도가 요구하는 CWE 수 히트맵">
+        <figcaption>그림 3. 성격별 범주(CWE-1400)마다 제도가 요구하는 CWE 수</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-tbl">
+    <h2 id="t-tbl">CWE별로 찾아보기</h2>
+    <p class="lead">어느 CWE가 어느 제도에 들어 있는지 표로 봅니다. ● 표시가 그 제도에 포함된다는 뜻입니다.</p>
+    <div class="filters">
+      <input type="search" id="q" placeholder="CWE 번호나 이름 검색 (예: 79, overflow)" aria-label="CWE 검색">
+      <label>겹친 제도 수
+        <select id="minSets">
+          <option value="1">1개 이상 (전체)</option>
+          <option value="2">2개 이상</option>
+          <option value="3">3개 이상</option>
+          <option value="all">모든 제도</option>
+        </select>
+      </label>
+      <label>성격
+        <select id="category"><option value="">전체</option></select>
+      </label>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="limits" aria-labelledby="t-lim">
+    <h2 id="t-lim">분석 범위와 한계</h2>
+    <p class="lead">아래 다섯 가지 이유로 이 페이지의 숫자는 국방 SW 시험 부담 전체가 아니라 공개 목록 사이의 관계로 읽어야 합니다.</p>
+    <ol class="limits">
+      <li><strong>공개 자료만 비교함.</strong> 공개 자료로 항목을 확인할 수 있는 목록만 넣었습니다. 매뉴얼 CWE 뷰, 행안부 49개, CWE Top 25가 여기에 해당합니다.
+        국방사이버안보훈령 보안측정 기준, 국방기술품질원 체크리스트, 국방부·각 군·업체의 자체 기준, K-RMF 세부 통제는 비공개이거나 원문을 구할 수 없어 뺐습니다.
+        비공개 기준까지 넣으면 공통 항목은 늘고, 고유 항목은 줄 수 있습니다.
+        또한 매뉴얼은 도구가 지원하는 CWE를 적용하고 나머지는 사업별 협의로 정하도록 합니다. 그래서 실제 시험의 점검 범위는 사업마다 다르고 공개되지 않으며, 이 페이지는 문서상 최대 범위를 비교한 것입니다.</li>
+      <li><strong>매뉴얼 보안약점 44개는 뺐음.</strong> 2022년 개정 때 추가된 이 목록은 매뉴얼 별책(2020) 주의사항에 따라 발췌하려면 방위사업청장의 승인이 필요해, 승인 전까지 이 페이지에 싣지 않습니다. 행안부 49개는 KISA 「소프트웨어 개발보안 가이드」(2021.12.29) 원문의 항목별 참고 CWE로 확인했습니다.</li>
+      <li><strong>CWE 버전을 4.20으로 고정함.</strong> 매뉴얼은 더 오래된 CWE를 기준으로 했습니다. 그래서 매뉴얼이 기존 뷰와 겹친다고 본 항목 일부가 현재 뷰에는 없습니다.</li>
+      <li><strong>CWE 번호가 같을 때만 겹친다고 셈.</strong> 상위·하위 CWE 관계(예: 119와 787)는 세지 않았습니다. 상위 번호를 주로 쓰는 행안부 목록의 겹침은 작게 나올 수 있습니다.</li>
+      <li><strong>목록이 같아도 시험이 같은 것은 아님.</strong> 제도마다 다른 탐지·허용 기준, 오탐 소명 절차, 도구, 적용 대상은 비교하지 않았습니다.</li>
+    </ol>
+    <p class="lead" style="margin-top:12px">자세한 설명과 보고서용 문안: <a href="https://github.com/suyoungi/seminar-team01/blob/main/docs/B_분석범위와_한계.md">docs/B_분석범위와_한계.md</a></p>
+  </section>
+
+  <p id="error">데이터를 읽지 못했습니다. GitHub Pages 주소로 열거나, 저장소 폴더에서 <code>python -m http.server</code>를 실행한 뒤 열어 주세요.</p>
+
+  <footer>
+    데이터: <a href="data/overlap_matrix.csv">overlap_matrix.csv</a> · <a href="data/overlap_pairs.csv">overlap_pairs.csv</a> ·
+    <a href="data/overlap_summary.csv">overlap_summary.csv</a> · 기준: CWE List Version 4.20 ·
+    만드는 방법: <a href="https://github.com/suyoungi/seminar-team01/blob/main/data/README.md">data/README.md</a> · <a href="index.html">처음으로</a>
+    <p class="credits">CWE 데이터: Copyright © 2006–2026, The MITRE Corporation. CWE™는 MITRE의 상표이며,
+      <a href="https://cwe.mitre.org/about/termsofuse.html">CWE Terms of Use</a>에 따라 이용합니다.
+      행안부 49개 항목: 한국인터넷진흥원, 「소프트웨어 개발보안 가이드」(2021.12.29), 공공누리 출처표시 조건.</p>
+  </footer>
+</main>
+
+<script>
+  const SERIES_VARS = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6"];
+  const FIXED = new Set(["cwe_id", "cwe", "name", "abstraction", "pillar", "pillar_name", "category", "category_ko", "n_sets"]);
+
+  // 따옴표 안의 쉼표를 지키는 작은 CSV 파서
+  function parseCSV(text) {
+    const rows = []; let row = [], cell = "", q = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (q) {
+        if (ch === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+        else if (ch === '"') q = false;
+        else cell += ch;
+      } else if (ch === '"') q = true;
+      else if (ch === ",") { row.push(cell); cell = ""; }
+      else if (ch === "\n" || ch === "\r") {
+        if (ch === "\r" && text[i + 1] === "\n") i++;
+        row.push(cell); rows.push(row); row = []; cell = "";
+      } else cell += ch;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    const [head, ...body] = rows.filter(r => r.length > 1 || r[0]);
+    return body.map(r => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ""])));
+  }
+
+  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const cweLink = id => `https://cwe.mitre.org/data/definitions/${id}.html`;
+
+  // 0~1 값을 연한 파랑 → 진한 파랑으로
+  function seqColor(t) {
+    const a = css("--seq-0"), b = css("--seq-hi");
+    const p = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    const [x, y] = [p(a), p(b)];
+    return `rgb(${x.map((v, i) => Math.round(v + (y[i] - v) * t)).join(",")})`;
+  }
+  function inkOn(t) { return t > 0.5 ? css("--surface") : css("--ink"); }
+
+  async function load(name) {
+    const res = await fetch(`data/${name}`);
+    if (!res.ok) throw new Error(name);
+    return parseCSV(await res.text());
+  }
+
+  let matrix, sets, pairs, names;
+
+  function renderTiles(summary) {
+    document.getElementById("tiles").innerHTML = summary.map((s, i) => `
+      <div class="tile">
+        <div class="k"><span class="dot" style="background:var(${SERIES_VARS[i]})"></span>${esc(s.set)}</div>
+        <div class="v">${s.size}</div>
+        <div class="s">고유 항목 ${s.unique}개</div>
+      </div>`).join("");
+  }
+
+  function renderHeatmap() {
+    const hm = document.getElementById("heatmap");
+    hm.style.gridTemplateColumns = `minmax(130px, 1.3fr) repeat(${names.length}, minmax(70px, 1fr))`;
+    const byPair = {};
+    pairs.forEach(p => { byPair[p.set_a + "|" + p.set_b] = p; byPair[p.set_b + "|" + p.set_a] = p; });
+    let html = `<div></div>` + names.map(n => `<div class="lab col">${esc(n)}</div>`).join("");
+    names.forEach(r => {
+      html += `<div class="lab">${esc(r)}</div>`;
+      names.forEach(c => {
+        if (r === c) { html += `<button class="cell diag" disabled aria-label="${esc(r)} 자기 자신">—</button>`; return; }
+        const p = byPair[r + "|" + c], j = +p.jaccard;
+        html += `<button class="cell" data-a="${esc(r)}" data-b="${esc(c)}" aria-pressed="false"
+          style="background:${seqColor(j)};color:${inkOn(j)}"
+          title="${esc(r)} ∩ ${esc(c)}: 공통 ${p.intersection}개 / 합집합 ${p.union}개"
+          aria-label="${esc(r)}와 ${esc(c)}, Jaccard ${j.toFixed(2)}, 공통 ${p.intersection}개">${j.toFixed(2)}</button>`;
+      });
+    });
+    hm.innerHTML = html;
+    hm.querySelectorAll("button.cell:not(.diag)").forEach(btn => btn.addEventListener("click", () => {
+      hm.querySelectorAll("button.cell").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      showPair(byPair[btn.dataset.a + "|" + btn.dataset.b], btn.dataset.a, btn.dataset.b);
+    }));
+  }
+
+  function showPair(p, a, b) {
+    const ids = p.shared_cwes ? p.shared_cwes.split(";") : [];
+    const nameOf = Object.fromEntries(matrix.map(m => [m.cwe_id, m.name]));
+    const onlyA = a === p.set_a ? p.only_a : p.only_b, onlyB = a === p.set_a ? p.only_b : p.only_a;
+    document.getElementById("pairDetail").innerHTML = `
+      <b>${esc(a)}</b> ∩ <b>${esc(b)}</b>: 공통 <b>${ids.length}</b>개 · ${esc(a)}에만 ${onlyA}개 · ${esc(b)}에만 ${onlyB}개
+      <div class="chips">${ids.map(id => `<a class="chip" href="${cweLink(id)}" target="_blank" rel="noopener"
+        title="${esc(nameOf[id] || "")}">CWE-${id}</a>`).join("") || "공통 항목 없음"}</div>`;
+  }
+
+  // 성격별 범주 × 제도. 색은 그 제도 안에서의 비중(열마다 따로 계산)
+  function renderGroups() {
+    const el = document.getElementById("groups");
+    const count = {}, total = Object.fromEntries(names.map(n => [n, 0]));
+    matrix.forEach(m => names.forEach(n => {
+      if (m[n] !== "1") return;
+      count[m.category_ko] ??= Object.fromEntries(names.map(k => [k, 0]));
+      count[m.category_ko][n]++; total[n]++;
+    }));
+    const cats = Object.keys(count).sort((a, b) =>
+      names.reduce((s, n) => s + count[b][n], 0) - names.reduce((s, n) => s + count[a][n], 0));
+    const maxShare = Math.max(...cats.flatMap(c => names.map(n => count[c][n] / total[n])));
+    el.style.gridTemplateColumns = `minmax(120px, 1.3fr) repeat(${names.length}, minmax(64px, 1fr))`;
+    let html = `<div></div>` + names.map(n => `<div class="lab col">${esc(n)}</div>`).join("");
+    cats.forEach(c => {
+      html += `<div class="lab">${esc(c)}</div>`;
+      names.forEach(n => {
+        const k = count[c][n], t = k / total[n] / maxShare;
+        html += k
+          ? `<button class="cell" data-c="${esc(c)}" data-n="${esc(n)}" aria-pressed="false"
+              style="background:${seqColor(t)};color:${inkOn(t)}"
+              title="${esc(n)} · ${esc(c)}: ${k}개 (${Math.round(k / total[n] * 100)}%)"
+              aria-label="${esc(n)}, ${esc(c)}, ${k}개">${k}</button>`
+          : `<button class="cell diag" disabled aria-label="${esc(n)}, ${esc(c)}, 없음">·</button>`;
+      });
+    });
+    el.innerHTML = html;
+    el.querySelectorAll("button.cell:not(.diag)").forEach(btn => btn.addEventListener("click", () => {
+      el.querySelectorAll("button.cell").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      const { c, n } = btn.dataset;
+      const rows = matrix.filter(m => m.category_ko === c && m[n] === "1");
+      document.getElementById("groupDetail").innerHTML = `<b>${esc(n)}</b> · <b>${esc(c)}</b>: ${rows.length}개
+        <div class="chips">${rows.map(m => `<a class="chip" href="${cweLink(m.cwe_id)}" target="_blank" rel="noopener"
+          title="${esc(m.name)}">${m.cwe}</a>`).join("")}</div>`;
+    }));
+  }
+
+  function renderTableHead() {
+    document.getElementById("thead").innerHTML = `<tr><th>CWE</th><th>이름</th><th>성격(CWE-1400)</th>${
+      names.map((n, i) => `<th class="c"><span class="dot" style="display:inline-block;background:var(${SERIES_VARS[i]})"></span><br>${esc(n)}</th>`).join("")
+    }<th class="n">제도 수</th></tr>`;
+  }
+
+  function renderTable() {
+    const q = document.getElementById("q").value.trim().toLowerCase().replace(/^cwe-/, "");
+    const minSel = document.getElementById("minSets").value;
+    const min = minSel === "all" ? names.length : +minSel;
+    const cat = document.getElementById("category").value;
+    const rows = matrix.filter(m =>
+      +m.n_sets >= min && (!cat || m.category_ko === cat) &&
+      (!q || m.cwe_id === q || m.name.toLowerCase().includes(q)))
+      .sort((x, y) => y.n_sets - x.n_sets || x.cwe_id - y.cwe_id);
+    document.getElementById("count").textContent = `${rows.length}개 / 전체 ${matrix.length}개`;
+    document.getElementById("tbody").innerHTML = rows.map(m => `<tr>
+      <td><a href="${cweLink(m.cwe_id)}" target="_blank" rel="noopener">${m.cwe}</a></td>
+      <td>${esc(m.name)}</td>
+      <td title="${esc(m.category)}">${esc(m.category_ko)}</td>
+      ${names.map((n, i) => `<td class="c">${m[n] === "1"
+        ? `<span class="mark" style="background:var(${SERIES_VARS[i]})" role="img" aria-label="포함"></span>`
+        : `<span class="mark off" role="img" aria-label="미포함"></span>`}</td>`).join("")}
+      <td class="n">${m.n_sets}</td></tr>`).join("");
+  }
+
+  (async () => {
+    try {
+      const [m, p, s] = await Promise.all([load("overlap_matrix.csv"), load("overlap_pairs.csv"), load("overlap_summary.csv")]);
+      matrix = m; pairs = p; sets = s;
+      names = Object.keys(matrix[0]).filter(k => !FIXED.has(k));
+      renderTiles(sets);
+      renderHeatmap();
+      renderGroups();
+      const cats = [...new Set(matrix.map(r => r.category_ko))].sort((a, b) => a.localeCompare(b, "ko"));
+      document.getElementById("category").insertAdjacentHTML("beforeend",
+        cats.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join(""));
+      renderTableHead();
+      renderTable();
+      ["q", "minSets", "category"].forEach(id => document.getElementById(id).addEventListener("input", renderTable));
+      // 테마가 바뀌면 히트맵 색을 다시 칠함
+      matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { renderHeatmap(); renderGroups(); });
+    } catch (e) {
+      document.getElementById("error").style.display = "block";
+      console.error(e);
+    }
+  })();
+</script>
+</body>
+</html>

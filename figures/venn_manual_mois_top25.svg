@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="458.579493pt" height="338.836605pt" viewBox="0 0 458.579493 338.836605" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 338.836605 
+L 458.579493 338.836605 
+L 458.579493 0 
+L 0 0 
+z
+" style="fill: #fcfcfb"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 281.736795 121.895349 
+C 275.3791 111.133254 267.411841 101.407119 258.112018 93.055097 
+C 248.812195 84.703075 238.288849 77.823095 226.907852 72.654355 
+C 215.526854 67.485615 203.421647 64.08872 191.013099 62.581771 
+C 178.60455 61.074822 166.038151 61.475488 153.750802 63.769839 
+C 141.463454 66.06419 129.599227 70.225324 118.57061 76.10857 
+C 107.541993 81.991816 97.478297 89.528192 88.729413 98.455677 
+C 79.980528 107.383162 72.649035 117.597081 66.989832 128.742322 
+C 61.330629 139.887563 57.410069 151.833447 55.364462 164.164645 
+C 53.318854 176.495844 53.172184 189.067774 54.929549 201.44334 
+C 56.686915 213.818907 60.327711 225.853005 65.725358 237.127241 
+C 71.123004 248.401477 78.214212 258.783658 86.752438 267.912824 
+C 95.290665 277.041989 105.175799 284.811099 116.064159 290.950039 
+C 126.952518 297.08898 138.716438 301.525772 150.946915 304.106161 
+C 163.177392 306.686549 175.731024 307.380279 188.171352 306.163229 
+C 200.61168 304.94618 212.792841 301.832622 224.291327 296.930806 
+C 235.789813 292.02899 246.470803 285.396391 255.962946 277.263606 
+C 249.49423 268.954805 245.993262 258.712939 246.022349 248.183 
+C 246.051436 237.653061 249.608933 227.430692 256.123454 219.157756 
+C 247.26229 202.726053 244.975356 183.523442 249.72954 165.470219 
+C 254.483723 147.416997 265.931871 131.831419 281.736795 121.895349 
+" clip-path="url(#p631a3a856f)" style="fill: #2a78d6; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 281.736795 121.895349 
+C 288.756596 133.778234 293.718499 146.762215 296.412655 160.29817 
+C 299.106812 173.834126 299.494698 187.728506 297.559909 201.393686 
+C 303.945759 201.994078 310.142325 203.891891 315.769144 206.970601 
+C 321.395963 210.049312 326.33547 214.244593 330.284385 219.298861 
+C 334.233299 224.353129 337.109114 230.160779 338.735257 236.36523 
+C 340.3614 242.569681 340.703895 249.041297 339.741713 255.382729 
+C 349.993965 252.670724 359.540139 247.775047 367.724972 241.031743 
+C 375.909804 234.28844 382.541635 225.855414 387.165246 216.311523 
+C 391.788856 206.767632 394.295976 196.336359 394.514515 185.733724 
+C 394.733053 175.131089 392.657892 164.605367 388.431473 154.879062 
+C 384.205054 145.152757 377.926346 136.453623 370.026329 129.378783 
+C 362.126312 122.303944 352.789976 117.019065 342.658183 113.886911 
+C 332.526389 110.754757 321.836388 109.848671 311.32196 111.230848 
+C 300.807531 112.613025 290.714884 116.2511 281.736795 121.895349 
+" clip-path="url(#p631a3a856f)" style="fill: #eb6834; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 281.736795 121.895349 
+C 265.931871 131.831419 254.483723 147.416997 249.72954 165.470219 
+C 244.975356 183.523442 247.26229 202.726053 256.123454 219.157756 
+C 260.995514 212.970618 267.34161 208.102278 274.579642 204.999288 
+C 281.817674 201.896298 289.719358 200.656524 297.559909 201.393686 
+C 299.494698 187.728506 299.106812 173.834126 296.412655 160.29817 
+C 293.718499 146.762215 288.756596 133.778234 281.736795 121.895349 
+" clip-path="url(#p631a3a856f)" style="fill: #c29dba; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 255.962946 277.263606 
+C 261.622338 284.532862 269.29097 289.985518 278.015614 292.943795 
+C 286.740257 295.902072 296.143791 296.2381 305.057335 293.91011 
+C 313.97088 291.582119 322.009147 286.690738 328.172965 279.843974 
+C 334.336782 272.997211 338.359718 264.491016 339.741713 255.382729 
+C 329.983704 257.963992 319.798266 258.510913 309.819953 256.989419 
+C 299.841641 255.467925 290.282067 251.910282 281.736795 246.538132 
+C 278.319833 252.322251 274.432954 257.815568 270.115475 262.962512 
+C 265.797997 268.109457 261.064526 272.892617 255.962946 277.263606 
+" clip-path="url(#p631a3a856f)" style="fill: #1baf7a; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 255.962946 277.263606 
+C 261.064526 272.892617 265.797997 268.109457 270.115475 262.962512 
+C 274.432954 257.815568 278.319833 252.322251 281.736795 246.538132 
+C 276.380237 243.170628 271.480119 239.126534 267.157733 234.505952 
+C 262.835347 229.885369 259.126654 224.726741 256.123454 219.157756 
+C 249.608933 227.430692 246.051436 237.653061 246.022349 248.183 
+C 245.993262 258.712939 249.49423 268.954805 255.962946 277.263606 
+" clip-path="url(#p631a3a856f)" style="fill: #30ceeb; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 297.559909 201.393686 
+C 296.43409 209.34521 294.52925 217.166825 291.872889 224.745608 
+C 289.216528 232.324391 285.821491 239.623693 281.736795 246.538132 
+C 290.282067 251.910282 299.841641 255.467925 309.819953 256.989419 
+C 319.798266 258.510913 329.983704 257.963992 339.741713 255.382729 
+C 340.703895 249.041297 340.3614 242.569681 338.735257 236.36523 
+C 337.109114 230.160779 334.233299 224.353129 330.284385 219.298861 
+C 326.33547 214.244593 321.395963 210.049312 315.769144 206.970601 
+C 310.142325 203.891891 303.945759 201.994078 297.559909 201.393686 
+" clip-path="url(#p631a3a856f)" style="fill: #b7c37a; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 256.123454 219.157756 
+C 259.126654 224.726741 262.835347 229.885369 267.157733 234.505952 
+C 271.480119 239.126534 276.380237 243.170628 281.736795 246.538132 
+C 285.821491 239.623693 289.216528 232.324391 291.872889 224.745608 
+C 294.52925 217.166825 296.43409 209.34521 297.559909 201.393686 
+C 289.719358 200.656524 281.817674 201.896298 274.579642 204.999288 
+C 267.34161 208.102278 260.995514 212.970618 256.123454 219.157756 
+" clip-path="url(#p631a3a856f)" style="fill: #7aa09b; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="126.04542" y="182.475809" transform="rotate(-0 126.04542 182.475809)">148</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="361.163406" y="177.360083" transform="rotate(-0 361.163406 177.360083)">36</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="267.445485" y="180.385397" transform="rotate(-0 267.445485 180.385397)">13</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="302.876923" y="285.879622" transform="rotate(-0 302.876923 285.879622)">8</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="254.679394" y="250.775136" transform="rotate(-0 254.679394 250.775136)">5</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="319.063862" y="234.528775" transform="rotate(-0 319.063862 234.528775)">9</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="276.139898" y="220.643998" transform="rotate(-0 276.139898 220.643998)">3</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(14.758125 49.688072)">매뉴얼 신뢰성시험</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(7.2 61.688072)">C · C++ · Java (169)</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(357.723243 98.602933)">행안부 49개 항목</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(357.723243 110.602933)">(61 CWE)</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(259.954518 309.749887)">CWE Top 25</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(267.55483 322.184418)">2025 (25)</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(88.927281 17.55375)">매뉴얼 신뢰성시험 · 행안부 49 · CWE Top 25 겹침</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(14.144781 30.796875)">(CWE 번호 단위, CWE 4.20 기준. 매뉴얼은 비교에 넣은 매뉴얼 목록의 합집합)</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p631a3a856f">
+   <rect x="28.821344" y="36.796875" width="390.6" height="294.83973"/>
+  </clipPath>
+ </defs>
+</svg>
