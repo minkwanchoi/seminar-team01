@@ -698,7 +698,7 @@
               style="flex:${k};${p.color ? `background:var(${p.color});color:${textOn(css(p.color))}` : ""}"
               title="${esc(d.r)} · ${esc(p.label)}: ${k}개" aria-label="${esc(d.r)}, ${esc(p.label)} ${k}개">${k / max >= 0.08 ? k : ""}</button>` : "";
           }).join("")}</div></div>
-          <span class="cov-val">${d.total - d.part.none.length}/${d.total} (${Math.round(d.pct)}%)</span>
+          <span class="cov-val">${d.total ? `${d.total - d.part.none.length}/${d.total} (${Math.round(d.pct)}%)` : "이 버전에 없음"}</span>
         </div>
       </div>`).join("");
     document.getElementById("covLegend").innerHTML = COV_PARTS.map(p =>
