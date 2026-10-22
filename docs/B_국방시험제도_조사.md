@@ -184,12 +184,12 @@
 | 6 | 김경원 외, 「무기체계 소프트웨어의 보안성 강화를 위한 보안약점 분석 및 평가체계 연구」, 한국군사학논집 77(1), 2021 | CWSS 기반 평가체계 제안. Top 25·OWASP·행안부 관련 CWE 296개로 검증 | 목록 선정 방법론 선행연구 | [확인] |
 | 7 | 최준성 외, 「사이버전 대응을 위한 국방 SW 개발보안 적용 방안」, 한국방위산업학회지 19(2), 2012 | 행안부 가이드(당시 43개)는 Java·웹 중심이라 내장형 SW 적용이 제한됨 | 행안부 대 무기체계 비교의 초기 문헌 | [확인] |
 | 8 | 윤재형 외, 「C# 언어로 개발된 무기체계 SW의 신뢰성시험(취약점 점검) 수행방안 연구」, 한국품질경영학회 학술대회, 2021 | C#은 전용 CWE 뷰가 없어 점검하지 못함. 659/660을 연계해 항목 도출 | 언어 커버리지 공백. 전문 비공개 | [초록] |
-| 9 | 윤재형·류지선, 「무기체계 SW의 Java 코딩 규칙 검증 기준 개선 연구」, 한국산학기술학회논문지 23(10), 2022 | 코딩규칙과 시큐어코딩이 섞여 있음 | 코딩규칙 축 참고 | [확인] |
+| 9 | 윤재형·류지선, 「무기체계 소프트웨어의 Java 코딩 규칙 검증 기준 개선 연구」, 한국산학기술학회논문지 23(10), 2022 | 코딩규칙과 시큐어코딩이 섞여 있음 | 코딩규칙 축 참고 | [확인] |
 | 10 | 조현석·차성용·김승주, 「국내 무기체계에 대한 RMF 적용 실 사례 연구」, 정보보호학회논문지 29(6), 2019 | 국방·국가안보용 가이드가 비공개라 일반 가이드로 대신함 | 공개 자료 한계의 선례 | [확인] |
-| 11 | 이진구·손태식, 「K-RMF 조기정착을 위한 방위사업제도 발전방향」, 한국국방기술학회지 8(1), 2025 | K-RMF 공개 자료가 거의 없고 통제항목은 항목 수 말고 비공개 | 공개 자료 한계의 선례 | [확인] |
+| 11 | 이진구·손태식, 「K-RMF 조기정착을 위한 방위사업제도 발전방향」, Journal of the KNST 8(1), 2025 | K-RMF 공개 자료가 거의 없고 통제항목은 항목 수 말고 비공개 | 공개 자료 한계의 선례 | [확인] |
 | 11-1 | 최민관, 「CWE 분석 및 무기체계 소프트웨어 분야 적용 현황」, 국방과학기술 플러스 244호, 국방과학연구소, 2019 | 무기체계 SW 분야의 CWE 준용 시험 네 가지(신뢰성 시험, 보안성 시험, 상호운용성 정보보호 시험, 보안성 검증)를 정리함. 취약점 점검과 시큐어코딩 가이드의 공통 CWE를 9개로 계산하고 중복 시험을 지적함. CWE-699 범주로 묶어 분석함 | **가장 가까운 선행연구.** 같은 비교를 2026년 데이터로 다시 함(2.10) | [확인] |
 | 12 | Goseva-Popstojanova & Perhinschi, "On the capability of static code analysis to detect security vulnerabilities", IST, 2015 | Juliet 기준 상용 도구 3종의 CWE별 재현율이 대체로 50% 이하 | "도구 지원 항목만 적용" 규정의 위험, RQ3 | [초록] |
-| 13 | Lipp, Banescu, Pretschner, "An Empirical Study on the Effectiveness of Static C/C++ Analyzers for Vulnerability Detection", ISSTA 2022 | 실제 CVE에서 도구 미탐지율 47~80% | RQ3 해석 참고 | [초록] |
+| 13 | Lipp, Banescu, Pretschner, "An Empirical Study on the Effectiveness of Static C Code Analyzers for Vulnerability Detection", ISSTA 2022 | 실제 CVE에서 도구 미탐지율 47~80% | RQ3 해석 참고 | [초록] |
 
 **연구 공백:** 취약점 점검(658·659·660)과 행안부 목록을 CWE 번호로 대조한 선행 자료는 최민관(2019)이 있습니다. 그러나 2022년에 추가된 매뉴얼 44개와 CWE Top 25까지 넣어 대조한 자료는 조사 범위에서 찾지 못했습니다. 이 연구의 차별점으로 쓸 수 있지만, 학위논문 DB(RISS 등)는 충분히 확인하지 못했으므로 "조사 범위 내에서"라는 단서를 붙여야 합니다.
 
@@ -204,18 +204,67 @@
 3. CERT C를 다섯 번째 기준 목록으로 넣을지 팀원 A와 정합니다. 넣는다면 MITRE CWE 데이터의 Taxonomy Mappings에서 CERT C 대응을 추출하는 스크립트를 `analysis/fetch_cwe.py`에 추가합니다.
 4. 2.2와 2.4의 "행안부 49가 국방에 적용되는 경로"를 팀원 A의 제도 카드(②)에 넘깁니다.
 
-## 출처
+## 참고문헌 (APA 7판)
 
-- MDS인텔리전스 기술노트(44개 목록 재인용 출처): https://www.mdsit.co.kr/mdsit/ko/support/tech-notes/0phmk817fr5rr
-- 모아소프트 교육 안내(제2022-6호 표기): https://moasoftware.co.kr/educenter/2025_sw-최신-국방-무기체계-매뉴얼-대응을-위한-신뢰성-시-4/
-- 김종복·조인준, 한국콘텐츠학회논문지 18(8), 2018: https://www.koreascience.or.kr/article/JAKO201828138444439.pdf
-- 류지선·윤재형, 한국산학기술학회논문지 22(12), 2021: https://www.kais99.org/jkais/journal/Vol22No12/vol22no12p010.pdf
-- 노시찬 외, 한국산학기술학회논문지 23(7), 2022: https://www.kais99.org/jkais/journal/Vol23No07/vol23no07p46.pdf
-- 윤재형·류지선, 한국산학기술학회논문지 23(10), 2022: https://www.kais99.org/jkais/journal/Vol23No10/vol23no10p80.pdf
-- 윤경환 외, 한국산학기술학회논문지 24(4), 2023: https://kais99.org/jkais/journal/Vol24No04/vol24no04p42.pdf
-- 류지선 외, 한국산학기술학회논문지 25(8), 2024: https://kais99.org/jkais/journal/Vol25no08/Vol25no08p68.pdf
-- 국가 정보보안 기본지침 제27조(2차 출처): https://itwiki.kr/w/국가_정보보안_기본지침_제27조
-- 국방 정보화업무 훈령(법제처): https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000244472&chrClsCd=010201
-- 보안적합성 검증 관련 보도: https://byline.network/2018/03/1-1047/
-- DISA ASD STIG V6R4: https://stigviewer.com/stigs/application_security_and_development
-- NIST SP 800-53 SA-11: https://csf.tools/reference/nist-sp-800-53/r5/sa/sa-11/
+> 서지 정보는 원문 PDF 첫 쪽이나 DOI 등록 정보(Crossref)로 확인했습니다. 확인하지 못한 칸은 추측하지 않고 [확인 필요]로 남겼습니다.
+> 방위사업청 매뉴얼 제2022-6호 원문은 직접 보지 못해 목록에 넣지 않고, 본문에서는 "(방위사업청, 2022, MDS인텔리전스, 2026에서 재인용)"으로 표기합니다(APA 7판 8.6).
+
+국방부. (2024). *국방 정보화업무 훈령* (국방부훈령 제2946호) [훈령 번호·일자 확인 필요]. 국가법령정보센터. https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000244472&chrClsCd=010201
+
+김경원, 장석민, 손윤식, 임선영. (2021). 무기체계 소프트웨어의 보안성 강화를 위한 보안약점 분석 및 평가체계 연구. *한국군사학논집, 77*(1), [쪽 확인 필요]. https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002689728
+
+김종복, & 조인준. (2018). 안전한 무기체계 소프트웨어를 위한 취약점 분석 기법에 관한 연구. *한국콘텐츠학회논문지, 18*(8), 459–[끝 쪽 확인 필요]. https://doi.org/10.5392/JKCA.2018.18.08.459
+
+노시찬, 김영길, 손민정, 김민혁. (2022). 무기체계 성능개량사업 SW 신뢰성 시험 효율적 검증 방안 연구. *한국산학기술학회논문지, 23*(7), 389–398. https://doi.org/10.5762/KAIS.2022.23.7.389
+
+류지선, & 윤재형. (2021). ISO/IEC 25023을 활용한 무기체계 SW 보안성 확보 방안. *한국산학기술학회논문지, 22*(12), 89–94. https://doi.org/10.5762/KAIS.2021.22.12.89
+
+류지선, 최지웅, 김상빈, 황도빈. (2024). 방산 공급망 보안 강화를 위한 제도 개선 방안 연구. *한국산학기술학회논문지, 25*(8), 616–622. https://doi.org/10.5762/KAIS.2024.25.8.616
+
+모아소프트. (2025). *[2025_SW] 최신 국방 무기체계 매뉴얼 대응을 위한 신뢰성 시험 방안 (250423)* [교육 안내]. https://moasoftware.co.kr/educenter/2025_sw-최신-국방-무기체계-매뉴얼-대응을-위한-신뢰성-시-4/
+
+박지현, & 최병주. (2019). 무기체계 소프트웨어 신뢰성 시험 개선점 도출을 위한 소프트웨어 정적/동적 검증 분석 사례연구. *정보처리학회논문지: 소프트웨어 및 데이터 공학, 8*(7), 265–274. https://doi.org/10.3745/KTSDE.2019.8.7.265
+
+방위사업청. (2020a). *무기체계 소프트웨어 개발 및 관리 매뉴얼: 부록* [연도는 부록 양식 예시의 표기로 추정]. https://www.hansung.ac.kr/bbs/vvna/1669/2942/download.do
+
+방위사업청. (2020b). *무기체계 소프트웨어 개발 및 관리 매뉴얼 별책: 무기체계 소프트웨어 기술문서 작성가이드*. https://www.hansung.ac.kr/bbs/vvna/1669/2943/download.do
+
+아이티위키. (연도 없음). *국가 정보보안 기본지침 제27조* [2차 출처]. 2026년 10월 22일 검색, https://itwiki.kr/w/국가_정보보안_기본지침_제27조
+
+윤재형, & 류지선. (2022). 무기체계 소프트웨어의 Java 코딩 규칙 검증 기준 개선 연구. *한국산학기술학회논문지, 23*(10), 690–696. https://doi.org/10.5762/KAIS.2022.23.10.690
+
+윤재형, 류지선, 윤경환, 김종규. (2021). C# 언어로 개발된 무기체계 SW의 신뢰성시험(취약점 점검) 수행방안 연구 [학술대회 발표]. 한국품질경영학회 춘계학술대회 [학술대회명·쪽 확인 필요]. https://kiss.kstudy.com/Detail/Ar?key=3887592
+
+이진구, & 손태식. (2025). K-RMF 조기정착을 위한 방위사업제도 발전방향. *Journal of the KNST, 8*(1), 70–80. https://doi.org/10.31818/JKNST.2025.3.8.1.70
+
+이태호, 백옥현, 김태현. (2018). 무기체계 소프트웨어 신뢰성 시험 현황 및 발전방향. *정보보호학회지, 28*(6), 76–82. https://koreascience.or.kr/article/JAKO201807753431091.pdf
+
+조현석, 차성용, 김승주. (2019). 국내 무기체계에 대한 RMF 적용 실 사례 연구. *정보보호학회논문지, 29*(6), [쪽 확인 필요]. https://koreascience.or.kr/article/JAKO201904533954660.page
+
+최민관. (2019). CWE 분석 및 무기체계 소프트웨어 분야 적용 현황. *국방과학기술 플러스, 244*, 32–39.
+
+최은진. (2023). 국내 무기체계 소프트웨어 산출물의 RMF 적용 방안 연구. *한국산학기술학회논문지, 24*(10), 268–274. https://doi.org/10.5762/KAIS.2023.24.10.268
+
+최은진, & 노승일. (2024). K-RMF 보안 점검을 위한 美 RMF 보안 자동화 도구 분석. *한국산학기술학회논문지, 25*(8), 341–349. https://doi.org/10.5762/KAIS.2024.25.8.341
+
+최준성, 김우제, 박원형, 국광호. (2012). 사이버전 대응을 위한 국방 SW 개발보안 적용 방안: 무기체계 내장형 SW 적용 수준을 중심으로. *한국방위산업학회지, 19*(2), [쪽 확인 필요].
+
+행정안전부, & 한국인터넷진흥원. (2021a). *소프트웨어 개발보안 가이드*. https://www.kisa.or.kr/2060204/form?postSeq=5
+
+행정안전부, & 한국인터넷진흥원. (2021b). *소프트웨어 보안약점 진단가이드*. https://www.kisa.or.kr/2060204/form?postSeq=9
+
+[저자 확인 필요]. (2018, 3월). [국정원 보안적합성 검증 관련 기사, 제목 확인 필요]. *바이라인네트워크*. https://byline.network/2018/03/1-1047/
+
+MDS인텔리전스. (2026, 2월 20일). *[CodeSonar] 무기체계 소프트웨어 개발 매뉴얼 內 보안 약점 대응 방안* [기술노트]. https://www.mdsit.co.kr/mdsit/ko/support/tech-notes/0phmk817fr5rr
+
+Defense Information Systems Agency. (2025). *Application security and development security technical implementation guide* (Version 6, Release 4) [발행일 확인 필요]. STIG Viewer. https://stigviewer.com/stigs/application_security_and_development
+
+Goseva-Popstojanova, K., & Perhinschi, A. (2015). On the capability of static code analysis to detect security vulnerabilities. *Information and Software Technology, 68*, 18–33. https://doi.org/10.1016/j.infsof.2015.08.002
+
+Lipp, S., Banescu, S., & Pretschner, A. (2022). An empirical study on the effectiveness of static C code analyzers for vulnerability detection. In *Proceedings of the 31st ACM SIGSOFT International Symposium on Software Testing and Analysis* (pp. 544–555). https://doi.org/10.1145/3533767.3534380
+
+National Institute of Standards and Technology. (2020). *Security and privacy controls for information systems and organizations* (NIST Special Publication 800-53, Rev. 5). https://doi.org/10.6028/NIST.SP.800-53r5
+
+The MITRE Corporation. (2025). *2025 CWE Top 25 most dangerous software weaknesses*. https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html
+
+The MITRE Corporation. (2026). *Common Weakness Enumeration (CWE) list* (Version 4.20) [Data set]. https://cwe.mitre.org/data/

@@ -96,6 +96,7 @@
     footer { margin-top: 24px; font-size: .85rem; color: var(--muted); }
     footer a { color: var(--ink-2); }
     footer .credits { margin-top: 8px; font-size: .8rem; }
+    footer .refs p { margin: 4px 0 0; padding-left: 2em; text-indent: -2em; overflow-wrap: anywhere; }
     @media (max-width: 600px) { .tile .v { font-size: 1.5rem; } .hm button.cell { min-height: 44px; font-size: .85rem; } }
   </style>
 </head>
@@ -201,9 +202,15 @@
     <a href="data/overlap_summary.csv">overlap_summary.csv</a> · 기준: CWE List Version 4.20 ·
     만드는 방법: <a href="https://github.com/suyoungi/seminar-team01/blob/main/data/README.md">data/README.md</a> · <a href="index.html">처음으로</a>
     <p class="credits">CWE 데이터: Copyright © 2006–2026, The MITRE Corporation. CWE™는 MITRE의 상표이며,
-      <a href="https://cwe.mitre.org/about/termsofuse.html">CWE Terms of Use</a>에 따라 이용합니다.
-      행안부 49개 항목: 한국인터넷진흥원, 「소프트웨어 개발보안 가이드」(2021.12.29), 공공누리 출처표시 조건.
-      매뉴얼 보안약점 44개: 방위사업청, 「무기체계 소프트웨어 개발 및 관리 매뉴얼」 제2022-6호 부록(현행본 제2024-6호), 재인용: MDS인텔리전스 기술노트(2026.2.20.). 연구 목적의 인용.</p>
+      <a href="https://cwe.mitre.org/about/termsofuse.html">CWE Terms of Use</a>에 따라 이용합니다.</p>
+    <div class="credits refs">
+      <strong>참고문헌 (APA 7판)</strong>
+      <p>행정안전부, &amp; 한국인터넷진흥원. (2021a). <em>소프트웨어 개발보안 가이드</em>. <a href="https://www.kisa.or.kr/2060204/form?postSeq=5">https://www.kisa.or.kr/2060204/form?postSeq=5</a> (공공누리 제1유형 출처표시)</p>
+      <p>MDS인텔리전스. (2026, 2월 20일). <em>[CodeSonar] 무기체계 소프트웨어 개발 매뉴얼 內 보안 약점 대응 방안</em> [기술노트]. <a href="https://www.mdsit.co.kr/mdsit/ko/support/tech-notes/0phmk817fr5rr">https://www.mdsit.co.kr/mdsit/ko/support/tech-notes/0phmk817fr5rr</a></p>
+      <p>The MITRE Corporation. (2025). <em>2025 CWE Top 25 most dangerous software weaknesses</em>. <a href="https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html">https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html</a></p>
+      <p>The MITRE Corporation. (2026). <em>Common Weakness Enumeration (CWE) list</em> (Version 4.20) [Data set]. <a href="https://cwe.mitre.org/data/">https://cwe.mitre.org/data/</a></p>
+      <p>매뉴얼 보안약점 44개는 (방위사업청, 2022, MDS인텔리전스, 2026에서 재인용)으로, 연구 목적에 필요한 CWE 번호와 중복여부 표시만 인용했습니다.</p>
+    </div>
   </footer>
 </main>
 
