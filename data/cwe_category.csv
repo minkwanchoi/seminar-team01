@@ -1,0 +1,945 @@
+cwe_id,category_id,category,category_ko
+5,1402,Encryption,암호화
+6,1414,Randomness,난수
+7,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+8,1403,Exposed Resource,노출된 자원
+9,1396,Access Control,접근 제어
+11,1412,Poor Coding Practices,부적절한 코딩 관행
+12,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+13,1396,Access Control,접근 제어
+14,1398,Component Interaction,구성요소 상호작용
+15,1403,Exposed Resource,노출된 자원
+20,1406,Improper Input Validation,입력값 검증
+22,1404,File Handling,파일 처리
+23,1404,File Handling,파일 처리
+24,1404,File Handling,파일 처리
+25,1404,File Handling,파일 처리
+26,1404,File Handling,파일 처리
+27,1404,File Handling,파일 처리
+28,1404,File Handling,파일 처리
+29,1404,File Handling,파일 처리
+30,1404,File Handling,파일 처리
+31,1404,File Handling,파일 처리
+32,1404,File Handling,파일 처리
+33,1404,File Handling,파일 처리
+34,1404,File Handling,파일 처리
+35,1404,File Handling,파일 처리
+36,1404,File Handling,파일 처리
+37,1404,File Handling,파일 처리
+38,1404,File Handling,파일 처리
+39,1404,File Handling,파일 처리
+40,1404,File Handling,파일 처리
+41,1404,File Handling,파일 처리
+42,1404,File Handling,파일 처리
+43,1404,File Handling,파일 처리
+44,1404,File Handling,파일 처리
+45,1404,File Handling,파일 처리
+46,1404,File Handling,파일 처리
+47,1404,File Handling,파일 처리
+48,1404,File Handling,파일 처리
+49,1404,File Handling,파일 처리
+50,1404,File Handling,파일 처리
+51,1404,File Handling,파일 처리
+52,1404,File Handling,파일 처리
+53,1404,File Handling,파일 처리
+54,1404,File Handling,파일 처리
+55,1404,File Handling,파일 처리
+56,1404,File Handling,파일 처리
+57,1404,File Handling,파일 처리
+58,1404,File Handling,파일 처리
+59,1404,File Handling,파일 처리
+61,1404,File Handling,파일 처리
+62,1404,File Handling,파일 처리
+64,1404,File Handling,파일 처리
+65,1404,File Handling,파일 처리
+66,1404,File Handling,파일 처리
+67,1404,File Handling,파일 처리
+69,1404,File Handling,파일 처리
+72,1404,File Handling,파일 처리
+73,1403,Exposed Resource,노출된 자원
+74,1409,Injection,주입(Injection)
+75,1409,Injection,주입(Injection)
+76,1409,Injection,주입(Injection)
+77,1409,Injection,주입(Injection)
+78,1409,Injection,주입(Injection)
+79,1409,Injection,주입(Injection)
+80,1409,Injection,주입(Injection)
+81,1409,Injection,주입(Injection)
+82,1409,Injection,주입(Injection)
+83,1409,Injection,주입(Injection)
+84,1409,Injection,주입(Injection)
+85,1409,Injection,주입(Injection)
+86,1409,Injection,주입(Injection)
+87,1409,Injection,주입(Injection)
+88,1409,Injection,주입(Injection)
+89,1409,Injection,주입(Injection)
+90,1409,Injection,주입(Injection)
+91,1409,Injection,주입(Injection)
+93,1409,Injection,주입(Injection)
+94,1409,Injection,주입(Injection)
+95,1409,Injection,주입(Injection)
+96,1409,Injection,주입(Injection)
+97,1409,Injection,주입(Injection)
+98,1416,Resource Lifecycle Management,자원 생애주기 관리
+99,1409,Injection,주입(Injection)
+102,1409,Injection,주입(Injection)
+103,1412,Poor Coding Practices,부적절한 코딩 관행
+104,1412,Poor Coding Practices,부적절한 코딩 관행
+105,1406,Improper Input Validation,입력값 검증
+106,1406,Improper Input Validation,입력값 검증
+107,1412,Poor Coding Practices,부적절한 코딩 관행
+108,1406,Improper Input Validation,입력값 검증
+109,1406,Improper Input Validation,입력값 검증
+110,1412,Poor Coding Practices,부적절한 코딩 관행
+111,1412,Poor Coding Practices,부적절한 코딩 관행
+112,1406,Improper Input Validation,입력값 검증
+113,1409,Injection,주입(Injection)
+114,1403,Exposed Resource,노출된 자원
+115,1398,Component Interaction,구성요소 상호작용
+116,1407,Improper Neutralization,특수 요소 중화
+117,1407,Improper Neutralization,특수 요소 중화
+118,1416,Resource Lifecycle Management,자원 생애주기 관리
+119,1399,Memory Safety,메모리 안전
+120,1399,Memory Safety,메모리 안전
+121,1399,Memory Safety,메모리 안전
+122,1399,Memory Safety,메모리 안전
+123,1399,Memory Safety,메모리 안전
+124,1399,Memory Safety,메모리 안전
+125,1399,Memory Safety,메모리 안전
+126,1399,Memory Safety,메모리 안전
+127,1399,Memory Safety,메모리 안전
+128,1408,Incorrect Calculation,잘못된 계산
+129,1399,Memory Safety,메모리 안전
+130,1407,Improper Neutralization,특수 요소 중화
+131,1399,Memory Safety,메모리 안전
+134,1399,Memory Safety,메모리 안전
+135,1408,Incorrect Calculation,잘못된 계산
+138,1407,Improper Neutralization,특수 요소 중화
+140,1407,Improper Neutralization,특수 요소 중화
+141,1407,Improper Neutralization,특수 요소 중화
+142,1407,Improper Neutralization,특수 요소 중화
+143,1407,Improper Neutralization,특수 요소 중화
+144,1407,Improper Neutralization,특수 요소 중화
+145,1407,Improper Neutralization,특수 요소 중화
+146,1407,Improper Neutralization,특수 요소 중화
+147,1407,Improper Neutralization,특수 요소 중화
+148,1407,Improper Neutralization,특수 요소 중화
+149,1407,Improper Neutralization,특수 요소 중화
+150,1407,Improper Neutralization,특수 요소 중화
+151,1407,Improper Neutralization,특수 요소 중화
+152,1407,Improper Neutralization,특수 요소 중화
+153,1407,Improper Neutralization,특수 요소 중화
+154,1407,Improper Neutralization,특수 요소 중화
+155,1407,Improper Neutralization,특수 요소 중화
+156,1407,Improper Neutralization,특수 요소 중화
+157,1407,Improper Neutralization,특수 요소 중화
+158,1407,Improper Neutralization,특수 요소 중화
+159,1407,Improper Neutralization,특수 요소 중화
+160,1407,Improper Neutralization,특수 요소 중화
+161,1407,Improper Neutralization,특수 요소 중화
+162,1407,Improper Neutralization,특수 요소 중화
+163,1407,Improper Neutralization,특수 요소 중화
+164,1407,Improper Neutralization,특수 요소 중화
+165,1407,Improper Neutralization,특수 요소 중화
+166,1407,Improper Neutralization,특수 요소 중화
+167,1407,Improper Neutralization,특수 요소 중화
+168,1407,Improper Neutralization,특수 요소 중화
+170,1407,Improper Neutralization,특수 요소 중화
+172,1407,Improper Neutralization,특수 요소 중화
+173,1407,Improper Neutralization,특수 요소 중화
+174,1407,Improper Neutralization,특수 요소 중화
+175,1407,Improper Neutralization,특수 요소 중화
+176,1407,Improper Neutralization,특수 요소 중화
+177,1407,Improper Neutralization,특수 요소 중화
+178,1416,Resource Lifecycle Management,자원 생애주기 관리
+179,1410,Insufficient Control Flow Management,제어 흐름 관리
+180,1410,Insufficient Control Flow Management,제어 흐름 관리
+181,1410,Insufficient Control Flow Management,제어 흐름 관리
+182,1413,Protection Mechanism Failure,보호 메커니즘 실패
+183,1397,Comparison,비교
+184,1413,Protection Mechanism Failure,보호 메커니즘 실패
+185,1397,Comparison,비교
+186,1397,Comparison,비교
+187,1397,Comparison,비교
+188,1399,Memory Safety,메모리 안전
+190,1408,Incorrect Calculation,잘못된 계산
+191,1408,Incorrect Calculation,잘못된 계산
+192,1416,Resource Lifecycle Management,자원 생애주기 관리
+193,1408,Incorrect Calculation,잘못된 계산
+194,1416,Resource Lifecycle Management,자원 생애주기 관리
+195,1416,Resource Lifecycle Management,자원 생애주기 관리
+196,1416,Resource Lifecycle Management,자원 생애주기 관리
+197,1416,Resource Lifecycle Management,자원 생애주기 관리
+198,1399,Memory Safety,메모리 안전
+200,1417,Sensitive Information Exposure,민감정보 노출
+201,1417,Sensitive Information Exposure,민감정보 노출
+202,1396,Access Control,접근 제어
+203,1417,Sensitive Information Exposure,민감정보 노출
+204,1417,Sensitive Information Exposure,민감정보 노출
+205,1417,Sensitive Information Exposure,민감정보 노출
+206,1417,Sensitive Information Exposure,민감정보 노출
+207,1417,Sensitive Information Exposure,민감정보 노출
+208,1417,Sensitive Information Exposure,민감정보 노출
+209,1417,Sensitive Information Exposure,민감정보 노출
+210,1417,Sensitive Information Exposure,민감정보 노출
+211,1417,Sensitive Information Exposure,민감정보 노출
+212,1416,Resource Lifecycle Management,자원 생애주기 관리
+213,1417,Sensitive Information Exposure,민감정보 노출
+214,1417,Sensitive Information Exposure,민감정보 노출
+215,1417,Sensitive Information Exposure,민감정보 노출
+219,1403,Exposed Resource,노출된 자원
+220,1403,Exposed Resource,노출된 자원
+221,1416,Resource Lifecycle Management,자원 생애주기 관리
+222,1413,Protection Mechanism Failure,보호 메커니즘 실패
+223,1413,Protection Mechanism Failure,보호 메커니즘 실패
+224,1413,Protection Mechanism Failure,보호 메커니즘 실패
+226,1416,Resource Lifecycle Management,자원 생애주기 관리
+228,1407,Improper Neutralization,특수 요소 중화
+229,1407,Improper Neutralization,특수 요소 중화
+230,1407,Improper Neutralization,특수 요소 중화
+231,1407,Improper Neutralization,특수 요소 중화
+232,1407,Improper Neutralization,특수 요소 중화
+233,1407,Improper Neutralization,특수 요소 중화
+234,1407,Improper Neutralization,특수 요소 중화
+235,1407,Improper Neutralization,특수 요소 중화
+236,1407,Improper Neutralization,특수 요소 중화
+237,1407,Improper Neutralization,특수 요소 중화
+238,1407,Improper Neutralization,특수 요소 중화
+239,1407,Improper Neutralization,특수 요소 중화
+240,1407,Improper Neutralization,특수 요소 중화
+241,1407,Improper Neutralization,특수 요소 중화
+242,1412,Poor Coding Practices,부적절한 코딩 관행
+243,1416,Resource Lifecycle Management,자원 생애주기 관리
+244,1399,Memory Safety,메모리 안전
+245,1412,Poor Coding Practices,부적절한 코딩 관행
+246,1412,Poor Coding Practices,부적절한 코딩 관행
+248,1410,Insufficient Control Flow Management,제어 흐름 관리
+250,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+252,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+253,1412,Poor Coding Practices,부적절한 코딩 관행
+256,1396,Access Control,접근 제어
+257,1396,Access Control,접근 제어
+258,1396,Access Control,접근 제어
+259,1396,Access Control,접근 제어
+260,1396,Access Control,접근 제어
+261,1396,Access Control,접근 제어
+262,1396,Access Control,접근 제어
+263,1396,Access Control,접근 제어
+266,1396,Access Control,접근 제어
+267,1396,Access Control,접근 제어
+268,1396,Access Control,접근 제어
+269,1396,Access Control,접근 제어
+270,1396,Access Control,접근 제어
+271,1396,Access Control,접근 제어
+272,1396,Access Control,접근 제어
+273,1396,Access Control,접근 제어
+274,1396,Access Control,접근 제어
+276,1396,Access Control,접근 제어
+277,1396,Access Control,접근 제어
+278,1396,Access Control,접근 제어
+279,1396,Access Control,접근 제어
+280,1396,Access Control,접근 제어
+281,1396,Access Control,접근 제어
+282,1396,Access Control,접근 제어
+283,1396,Access Control,접근 제어
+284,1396,Access Control,접근 제어
+285,1396,Access Control,접근 제어
+286,1396,Access Control,접근 제어
+287,1396,Access Control,접근 제어
+288,1396,Access Control,접근 제어
+289,1396,Access Control,접근 제어
+290,1396,Access Control,접근 제어
+291,1396,Access Control,접근 제어
+293,1396,Access Control,접근 제어
+294,1396,Access Control,접근 제어
+295,1396,Access Control,접근 제어
+296,1396,Access Control,접근 제어
+297,1396,Access Control,접근 제어
+298,1396,Access Control,접근 제어
+299,1396,Access Control,접근 제어
+300,1396,Access Control,접근 제어
+301,1396,Access Control,접근 제어
+302,1396,Access Control,접근 제어
+303,1396,Access Control,접근 제어
+304,1396,Access Control,접근 제어
+305,1396,Access Control,접근 제어
+306,1396,Access Control,접근 제어
+307,1396,Access Control,접근 제어
+308,1396,Access Control,접근 제어
+309,1396,Access Control,접근 제어
+311,1402,Encryption,암호화
+312,1402,Encryption,암호화
+313,1402,Encryption,암호화
+314,1402,Encryption,암호화
+315,1402,Encryption,암호화
+316,1402,Encryption,암호화
+317,1402,Encryption,암호화
+318,1402,Encryption,암호화
+319,1402,Encryption,암호화
+321,1396,Access Control,접근 제어
+322,1396,Access Control,접근 제어
+323,1414,Randomness,난수
+324,1402,Encryption,암호화
+325,1402,Encryption,암호화
+326,1402,Encryption,암호화
+327,1402,Encryption,암호화
+328,1402,Encryption,암호화
+329,1414,Randomness,난수
+330,1414,Randomness,난수
+331,1414,Randomness,난수
+332,1414,Randomness,난수
+333,1414,Randomness,난수
+334,1414,Randomness,난수
+335,1414,Randomness,난수
+336,1414,Randomness,난수
+337,1414,Randomness,난수
+338,1414,Randomness,난수
+339,1414,Randomness,난수
+340,1414,Randomness,난수
+341,1414,Randomness,난수
+342,1414,Randomness,난수
+343,1414,Randomness,난수
+344,1414,Randomness,난수
+345,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+346,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+347,1402,Encryption,암호화
+348,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+349,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+350,1396,Access Control,접근 제어
+351,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+352,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+353,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+354,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+356,1413,Protection Mechanism Failure,보호 메커니즘 실패
+357,1413,Protection Mechanism Failure,보호 메커니즘 실패
+358,1412,Poor Coding Practices,부적절한 코딩 관행
+359,1417,Sensitive Information Exposure,민감정보 노출
+360,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+362,1401,Concurrency,동시성
+363,1401,Concurrency,동시성
+364,1401,Concurrency,동시성
+366,1401,Concurrency,동시성
+367,1401,Concurrency,동시성
+368,1401,Concurrency,동시성
+369,1408,Incorrect Calculation,잘못된 계산
+370,1396,Access Control,접근 제어
+372,1416,Resource Lifecycle Management,자원 생애주기 관리
+374,1403,Exposed Resource,노출된 자원
+375,1403,Exposed Resource,노출된 자원
+377,1403,Exposed Resource,노출된 자원
+378,1403,Exposed Resource,노출된 자원
+379,1403,Exposed Resource,노출된 자원
+382,1410,Insufficient Control Flow Management,제어 흐름 관리
+383,1412,Poor Coding Practices,부적절한 코딩 관행
+384,1396,Access Control,접근 제어
+385,1415,Resource Control,자원 제어
+386,1416,Resource Lifecycle Management,자원 생애주기 관리
+390,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+391,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+392,1412,Poor Coding Practices,부적절한 코딩 관행
+393,1412,Poor Coding Practices,부적절한 코딩 관행
+394,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+395,1410,Insufficient Control Flow Management,제어 흐름 관리
+396,1410,Insufficient Control Flow Management,제어 흐름 관리
+397,1410,Insufficient Control Flow Management,제어 흐름 관리
+400,1416,Resource Lifecycle Management,자원 생애주기 관리
+401,1399,Memory Safety,메모리 안전
+402,1403,Exposed Resource,노출된 자원
+403,1403,Exposed Resource,노출된 자원
+404,1416,Resource Lifecycle Management,자원 생애주기 관리
+405,1416,Resource Lifecycle Management,자원 생애주기 관리
+406,1416,Resource Lifecycle Management,자원 생애주기 관리
+407,1416,Resource Lifecycle Management,자원 생애주기 관리
+408,1410,Insufficient Control Flow Management,제어 흐름 관리
+409,1416,Resource Lifecycle Management,자원 생애주기 관리
+410,1416,Resource Lifecycle Management,자원 생애주기 관리
+412,1401,Concurrency,동시성
+413,1401,Concurrency,동시성
+414,1401,Concurrency,동시성
+415,1399,Memory Safety,메모리 안전
+416,1399,Memory Safety,메모리 안전
+419,1396,Access Control,접근 제어
+420,1396,Access Control,접근 제어
+421,1396,Access Control,접근 제어
+422,1396,Access Control,접근 제어
+424,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+425,1396,Access Control,접근 제어
+426,1403,Exposed Resource,노출된 자원
+427,1403,Exposed Resource,노출된 자원
+428,1403,Exposed Resource,노출된 자원
+430,1410,Insufficient Control Flow Management,제어 흐름 관리
+431,1410,Insufficient Control Flow Management,제어 흐름 관리
+432,1401,Concurrency,동시성
+433,1403,Exposed Resource,노출된 자원
+434,1416,Resource Lifecycle Management,자원 생애주기 관리
+435,1398,Component Interaction,구성요소 상호작용
+436,1398,Component Interaction,구성요소 상호작용
+437,1398,Component Interaction,구성요소 상호작용
+439,1398,Component Interaction,구성요소 상호작용
+440,1412,Poor Coding Practices,부적절한 코딩 관행
+441,1396,Access Control,접근 제어
+444,1398,Component Interaction,구성요소 상호작용
+446,1412,Poor Coding Practices,부적절한 코딩 관행
+447,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+448,1412,Poor Coding Practices,부적절한 코딩 관행
+449,1412,Poor Coding Practices,부적절한 코딩 관행
+450,1413,Protection Mechanism Failure,보호 메커니즘 실패
+451,1412,Poor Coding Practices,부적절한 코딩 관행
+453,1416,Resource Lifecycle Management,자원 생애주기 관리
+454,1416,Resource Lifecycle Management,자원 생애주기 관리
+455,1410,Insufficient Control Flow Management,제어 흐름 관리
+456,1416,Resource Lifecycle Management,자원 생애주기 관리
+457,1416,Resource Lifecycle Management,자원 생애주기 관리
+459,1416,Resource Lifecycle Management,자원 생애주기 관리
+460,1416,Resource Lifecycle Management,자원 생애주기 관리
+462,1412,Poor Coding Practices,부적절한 코딩 관행
+463,1407,Improper Neutralization,특수 요소 중화
+464,1407,Improper Neutralization,특수 요소 중화
+466,1399,Memory Safety,메모리 안전
+467,1408,Incorrect Calculation,잘못된 계산
+468,1408,Incorrect Calculation,잘못된 계산
+469,1408,Incorrect Calculation,잘못된 계산
+470,1415,Resource Control,자원 제어
+471,1416,Resource Lifecycle Management,자원 생애주기 관리
+472,1403,Exposed Resource,노출된 자원
+473,1415,Resource Control,자원 제어
+474,1412,Poor Coding Practices,부적절한 코딩 관행
+475,1412,Poor Coding Practices,부적절한 코딩 관행
+476,1412,Poor Coding Practices,부적절한 코딩 관행
+477,1412,Poor Coding Practices,부적절한 코딩 관행
+478,1397,Comparison,비교
+479,1401,Concurrency,동시성
+480,1410,Insufficient Control Flow Management,제어 흐름 관리
+481,1410,Insufficient Control Flow Management,제어 흐름 관리
+482,1410,Insufficient Control Flow Management,제어 흐름 관리
+483,1410,Insufficient Control Flow Management,제어 흐름 관리
+484,1412,Poor Coding Practices,부적절한 코딩 관행
+486,1397,Comparison,비교
+487,1416,Resource Lifecycle Management,자원 생애주기 관리
+488,1403,Exposed Resource,노출된 자원
+489,1412,Poor Coding Practices,부적절한 코딩 관행
+491,1403,Exposed Resource,노출된 자원
+492,1403,Exposed Resource,노출된 자원
+493,1403,Exposed Resource,노출된 자원
+494,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+495,1416,Resource Lifecycle Management,자원 생애주기 관리
+496,1416,Resource Lifecycle Management,자원 생애주기 관리
+497,1417,Sensitive Information Exposure,민감정보 노출
+498,1403,Exposed Resource,노출된 자원
+499,1403,Exposed Resource,노출된 자원
+500,1403,Exposed Resource,노출된 자원
+501,1416,Resource Lifecycle Management,자원 생애주기 관리
+502,1415,Resource Control,자원 제어
+506,1412,Poor Coding Practices,부적절한 코딩 관행
+507,1412,Poor Coding Practices,부적절한 코딩 관행
+508,1412,Poor Coding Practices,부적절한 코딩 관행
+509,1412,Poor Coding Practices,부적절한 코딩 관행
+510,1412,Poor Coding Practices,부적절한 코딩 관행
+511,1412,Poor Coding Practices,부적절한 코딩 관행
+512,1412,Poor Coding Practices,부적절한 코딩 관행
+514,1415,Resource Control,자원 제어
+515,1415,Resource Control,자원 제어
+520,1396,Access Control,접근 제어
+521,1396,Access Control,접근 제어
+522,1396,Access Control,접근 제어
+523,1396,Access Control,접근 제어
+524,1403,Exposed Resource,노출된 자원
+525,1403,Exposed Resource,노출된 자원
+526,1417,Sensitive Information Exposure,민감정보 노출
+527,1403,Exposed Resource,노출된 자원
+528,1403,Exposed Resource,노출된 자원
+529,1403,Exposed Resource,노출된 자원
+530,1403,Exposed Resource,노출된 자원
+531,1417,Sensitive Information Exposure,민감정보 노출
+532,1417,Sensitive Information Exposure,민감정보 노출
+535,1417,Sensitive Information Exposure,민감정보 노출
+536,1417,Sensitive Information Exposure,민감정보 노출
+537,1417,Sensitive Information Exposure,민감정보 노출
+538,1417,Sensitive Information Exposure,민감정보 노출
+539,1403,Exposed Resource,노출된 자원
+540,1417,Sensitive Information Exposure,민감정보 노출
+541,1417,Sensitive Information Exposure,민감정보 노출
+543,1401,Concurrency,동시성
+544,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+546,1412,Poor Coding Practices,부적절한 코딩 관행
+547,1412,Poor Coding Practices,부적절한 코딩 관행
+548,1417,Sensitive Information Exposure,민감정보 노출
+549,1396,Access Control,접근 제어
+550,1417,Sensitive Information Exposure,민감정보 노출
+551,1396,Access Control,접근 제어
+552,1403,Exposed Resource,노출된 자원
+553,1403,Exposed Resource,노출된 자원
+554,1406,Improper Input Validation,입력값 검증
+555,1396,Access Control,접근 제어
+556,1396,Access Control,접근 제어
+558,1401,Concurrency,동시성
+560,1412,Poor Coding Practices,부적절한 코딩 관행
+561,1412,Poor Coding Practices,부적절한 코딩 관행
+562,1399,Memory Safety,메모리 안전
+563,1412,Poor Coding Practices,부적절한 코딩 관행
+564,1409,Injection,주입(Injection)
+565,1403,Exposed Resource,노출된 자원
+566,1396,Access Control,접근 제어
+567,1401,Concurrency,동시성
+568,1416,Resource Lifecycle Management,자원 생애주기 관리
+570,1412,Poor Coding Practices,부적절한 코딩 관행
+571,1412,Poor Coding Practices,부적절한 코딩 관행
+572,1401,Concurrency,동시성
+573,1412,Poor Coding Practices,부적절한 코딩 관행
+574,1401,Concurrency,동시성
+575,1412,Poor Coding Practices,부적절한 코딩 관행
+576,1412,Poor Coding Practices,부적절한 코딩 관행
+577,1412,Poor Coding Practices,부적절한 코딩 관행
+578,1412,Poor Coding Practices,부적절한 코딩 관행
+579,1412,Poor Coding Practices,부적절한 코딩 관행
+580,1416,Resource Lifecycle Management,자원 생애주기 관리
+581,1412,Poor Coding Practices,부적절한 코딩 관행
+582,1403,Exposed Resource,노출된 자원
+583,1403,Exposed Resource,노출된 자원
+584,1410,Insufficient Control Flow Management,제어 흐름 관리
+585,1412,Poor Coding Practices,부적절한 코딩 관행
+586,1412,Poor Coding Practices,부적절한 코딩 관행
+587,1399,Memory Safety,메모리 안전
+588,1416,Resource Lifecycle Management,자원 생애주기 관리
+589,1412,Poor Coding Practices,부적절한 코딩 관행
+590,1399,Memory Safety,메모리 안전
+591,1401,Concurrency,동시성
+593,1396,Access Control,접근 제어
+594,1412,Poor Coding Practices,부적절한 코딩 관행
+595,1397,Comparison,비교
+597,1397,Comparison,비교
+598,1417,Sensitive Information Exposure,민감정보 노출
+599,1396,Access Control,접근 제어
+600,1410,Insufficient Control Flow Management,제어 흐름 관리
+601,1396,Access Control,접근 제어
+602,1413,Protection Mechanism Failure,보호 메커니즘 실패
+603,1396,Access Control,접근 제어
+605,1412,Poor Coding Practices,부적절한 코딩 관행
+606,1406,Improper Input Validation,입력값 검증
+607,1416,Resource Lifecycle Management,자원 생애주기 관리
+608,1403,Exposed Resource,노출된 자원
+609,1401,Concurrency,동시성
+610,1416,Resource Lifecycle Management,자원 생애주기 관리
+611,1396,Access Control,접근 제어
+612,1396,Access Control,접근 제어
+613,1396,Access Control,접근 제어
+614,1402,Encryption,암호화
+615,1417,Sensitive Information Exposure,민감정보 노출
+616,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+617,1410,Insufficient Control Flow Management,제어 흐름 관리
+618,1416,Resource Lifecycle Management,자원 생애주기 관리
+619,1403,Exposed Resource,노출된 자원
+620,1396,Access Control,접근 제어
+621,1409,Injection,주입(Injection)
+622,1406,Improper Input Validation,입력값 검증
+623,1396,Access Control,접근 제어
+624,1409,Injection,주입(Injection)
+625,1397,Comparison,비교
+626,1407,Improper Neutralization,특수 요소 중화
+627,1409,Injection,주입(Injection)
+628,1412,Poor Coding Practices,부적절한 코딩 관행
+636,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+637,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+638,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+639,1396,Access Control,접근 제어
+640,1396,Access Control,접근 제어
+641,1409,Injection,주입(Injection)
+642,1403,Exposed Resource,노출된 자원
+643,1409,Injection,주입(Injection)
+644,1407,Improper Neutralization,특수 요소 중화
+645,1396,Access Control,접근 제어
+646,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+647,1396,Access Control,접근 제어
+648,1396,Access Control,접근 제어
+649,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+650,1398,Component Interaction,구성요소 상호작용
+651,1417,Sensitive Information Exposure,민감정보 노출
+652,1409,Injection,주입(Injection)
+653,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+654,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+655,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+656,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+657,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+662,1416,Resource Lifecycle Management,자원 생애주기 관리
+663,1401,Concurrency,동시성
+664,1416,Resource Lifecycle Management,자원 생애주기 관리
+665,1416,Resource Lifecycle Management,자원 생애주기 관리
+666,1416,Resource Lifecycle Management,자원 생애주기 관리
+667,1401,Concurrency,동시성
+668,1403,Exposed Resource,노출된 자원
+669,1416,Resource Lifecycle Management,자원 생애주기 관리
+670,1410,Insufficient Control Flow Management,제어 흐름 관리
+671,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+672,1415,Resource Control,자원 제어
+673,1416,Resource Lifecycle Management,자원 생애주기 관리
+674,1410,Insufficient Control Flow Management,제어 흐름 관리
+675,1412,Poor Coding Practices,부적절한 코딩 관행
+676,1412,Poor Coding Practices,부적절한 코딩 관행
+680,1399,Memory Safety,메모리 안전
+681,1416,Resource Lifecycle Management,자원 생애주기 관리
+682,1408,Incorrect Calculation,잘못된 계산
+683,1412,Poor Coding Practices,부적절한 코딩 관행
+684,1412,Poor Coding Practices,부적절한 코딩 관행
+685,1412,Poor Coding Practices,부적절한 코딩 관행
+686,1412,Poor Coding Practices,부적절한 코딩 관행
+687,1412,Poor Coding Practices,부적절한 코딩 관행
+688,1412,Poor Coding Practices,부적절한 코딩 관행
+689,1401,Concurrency,동시성
+690,1399,Memory Safety,메모리 안전
+691,1410,Insufficient Control Flow Management,제어 흐름 관리
+692,1409,Injection,주입(Injection)
+693,1413,Protection Mechanism Failure,보호 메커니즘 실패
+694,1409,Injection,주입(Injection)
+695,1412,Poor Coding Practices,부적절한 코딩 관행
+696,1410,Insufficient Control Flow Management,제어 흐름 관리
+697,1397,Comparison,비교
+698,1410,Insufficient Control Flow Management,제어 흐름 관리
+703,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+704,1416,Resource Lifecycle Management,자원 생애주기 관리
+705,1410,Insufficient Control Flow Management,제어 흐름 관리
+706,1416,Resource Lifecycle Management,자원 생애주기 관리
+707,1407,Improper Neutralization,특수 요소 중화
+708,1396,Access Control,접근 제어
+710,1412,Poor Coding Practices,부적절한 코딩 관행
+732,1396,Access Control,접근 제어
+733,1398,Component Interaction,구성요소 상호작용
+749,1416,Resource Lifecycle Management,자원 생애주기 관리
+754,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+755,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+756,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+757,1413,Protection Mechanism Failure,보호 메커니즘 실패
+758,1412,Poor Coding Practices,부적절한 코딩 관행
+759,1402,Encryption,암호화
+760,1402,Encryption,암호화
+761,1399,Memory Safety,메모리 안전
+762,1399,Memory Safety,메모리 안전
+763,1399,Memory Safety,메모리 안전
+764,1401,Concurrency,동시성
+765,1401,Concurrency,동시성
+766,1412,Poor Coding Practices,부적절한 코딩 관행
+767,1403,Exposed Resource,노출된 자원
+768,1410,Insufficient Control Flow Management,제어 흐름 관리
+770,1416,Resource Lifecycle Management,자원 생애주기 관리
+771,1416,Resource Lifecycle Management,자원 생애주기 관리
+772,1416,Resource Lifecycle Management,자원 생애주기 관리
+773,1416,Resource Lifecycle Management,자원 생애주기 관리
+774,1416,Resource Lifecycle Management,자원 생애주기 관리
+775,1416,Resource Lifecycle Management,자원 생애주기 관리
+776,1416,Resource Lifecycle Management,자원 생애주기 관리
+777,1397,Comparison,비교
+778,1413,Protection Mechanism Failure,보호 메커니즘 실패
+779,1416,Resource Lifecycle Management,자원 생애주기 관리
+780,1402,Encryption,암호화
+781,1406,Improper Input Validation,입력값 검증
+782,1416,Resource Lifecycle Management,자원 생애주기 관리
+783,1410,Insufficient Control Flow Management,제어 흐름 관리
+784,1403,Exposed Resource,노출된 자원
+785,1412,Poor Coding Practices,부적절한 코딩 관행
+786,1399,Memory Safety,메모리 안전
+787,1399,Memory Safety,메모리 안전
+788,1399,Memory Safety,메모리 안전
+789,1399,Memory Safety,메모리 안전
+790,1407,Improper Neutralization,특수 요소 중화
+791,1407,Improper Neutralization,특수 요소 중화
+792,1407,Improper Neutralization,특수 요소 중화
+793,1407,Improper Neutralization,특수 요소 중화
+794,1407,Improper Neutralization,특수 요소 중화
+795,1407,Improper Neutralization,특수 요소 중화
+796,1407,Improper Neutralization,특수 요소 중화
+797,1407,Improper Neutralization,특수 요소 중화
+798,1396,Access Control,접근 제어
+799,1410,Insufficient Control Flow Management,제어 흐름 관리
+804,1396,Access Control,접근 제어
+805,1399,Memory Safety,메모리 안전
+806,1399,Memory Safety,메모리 안전
+807,1413,Protection Mechanism Failure,보호 메커니즘 실패
+820,1401,Concurrency,동시성
+821,1401,Concurrency,동시성
+822,1399,Memory Safety,메모리 안전
+823,1399,Memory Safety,메모리 안전
+824,1399,Memory Safety,메모리 안전
+825,1399,Memory Safety,메모리 안전
+826,1415,Resource Control,자원 제어
+827,1416,Resource Lifecycle Management,자원 생애주기 관리
+828,1401,Concurrency,동시성
+829,1416,Resource Lifecycle Management,자원 생애주기 관리
+830,1416,Resource Lifecycle Management,자원 생애주기 관리
+831,1401,Concurrency,동시성
+832,1401,Concurrency,동시성
+833,1401,Concurrency,동시성
+834,1410,Insufficient Control Flow Management,제어 흐름 관리
+835,1410,Insufficient Control Flow Management,제어 흐름 관리
+836,1396,Access Control,접근 제어
+837,1410,Insufficient Control Flow Management,제어 흐름 관리
+838,1407,Improper Neutralization,특수 요소 중화
+839,1397,Comparison,비교
+841,1410,Insufficient Control Flow Management,제어 흐름 관리
+842,1396,Access Control,접근 제어
+843,1416,Resource Lifecycle Management,자원 생애주기 관리
+862,1396,Access Control,접근 제어
+863,1396,Access Control,접근 제어
+908,1416,Resource Lifecycle Management,자원 생애주기 관리
+909,1416,Resource Lifecycle Management,자원 생애주기 관리
+910,1415,Resource Control,자원 제어
+911,1416,Resource Lifecycle Management,자원 생애주기 관리
+912,1412,Poor Coding Practices,부적절한 코딩 관행
+913,1416,Resource Lifecycle Management,자원 생애주기 관리
+914,1409,Injection,주입(Injection)
+915,1415,Resource Control,자원 제어
+916,1402,Encryption,암호화
+917,1409,Injection,주입(Injection)
+918,1396,Access Control,접근 제어
+920,1416,Resource Lifecycle Management,자원 생애주기 관리
+921,1396,Access Control,접근 제어
+922,1416,Resource Lifecycle Management,자원 생애주기 관리
+923,1396,Access Control,접근 제어
+924,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+925,1396,Access Control,접근 제어
+926,1396,Access Control,접근 제어
+927,1396,Access Control,접근 제어
+939,1396,Access Control,접근 제어
+940,1396,Access Control,접근 제어
+941,1396,Access Control,접근 제어
+942,1396,Access Control,접근 제어
+943,1409,Injection,주입(Injection)
+1004,1396,Access Control,접근 제어
+1007,1412,Poor Coding Practices,부적절한 코딩 관행
+1021,1396,Access Control,접근 제어
+1022,1396,Access Control,접근 제어
+1023,1397,Comparison,비교
+1024,1397,Comparison,비교
+1025,1397,Comparison,비교
+1037,1398,Component Interaction,구성요소 상호작용
+1038,1398,Component Interaction,구성요소 상호작용
+1039,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1041,1412,Poor Coding Practices,부적절한 코딩 관행
+1042,1416,Resource Lifecycle Management,자원 생애주기 관리
+1043,1412,Poor Coding Practices,부적절한 코딩 관행
+1044,1412,Poor Coding Practices,부적절한 코딩 관행
+1045,1412,Poor Coding Practices,부적절한 코딩 관행
+1046,1416,Resource Lifecycle Management,자원 생애주기 관리
+1047,1412,Poor Coding Practices,부적절한 코딩 관행
+1048,1412,Poor Coding Practices,부적절한 코딩 관행
+1049,1416,Resource Lifecycle Management,자원 생애주기 관리
+1050,1416,Resource Lifecycle Management,자원 생애주기 관리
+1051,1416,Resource Lifecycle Management,자원 생애주기 관리
+1052,1416,Resource Lifecycle Management,자원 생애주기 관리
+1053,1412,Poor Coding Practices,부적절한 코딩 관행
+1054,1412,Poor Coding Practices,부적절한 코딩 관행
+1055,1412,Poor Coding Practices,부적절한 코딩 관행
+1056,1412,Poor Coding Practices,부적절한 코딩 관행
+1057,1412,Poor Coding Practices,부적절한 코딩 관행
+1058,1401,Concurrency,동시성
+1059,1412,Poor Coding Practices,부적절한 코딩 관행
+1060,1412,Poor Coding Practices,부적절한 코딩 관행
+1061,1412,Poor Coding Practices,부적절한 코딩 관행
+1062,1412,Poor Coding Practices,부적절한 코딩 관행
+1063,1416,Resource Lifecycle Management,자원 생애주기 관리
+1064,1412,Poor Coding Practices,부적절한 코딩 관행
+1065,1412,Poor Coding Practices,부적절한 코딩 관행
+1066,1412,Poor Coding Practices,부적절한 코딩 관행
+1067,1416,Resource Lifecycle Management,자원 생애주기 관리
+1068,1412,Poor Coding Practices,부적절한 코딩 관행
+1069,1412,Poor Coding Practices,부적절한 코딩 관행
+1070,1412,Poor Coding Practices,부적절한 코딩 관행
+1071,1412,Poor Coding Practices,부적절한 코딩 관행
+1072,1416,Resource Lifecycle Management,자원 생애주기 관리
+1073,1416,Resource Lifecycle Management,자원 생애주기 관리
+1074,1412,Poor Coding Practices,부적절한 코딩 관행
+1075,1412,Poor Coding Practices,부적절한 코딩 관행
+1076,1412,Poor Coding Practices,부적절한 코딩 관행
+1077,1397,Comparison,비교
+1078,1412,Poor Coding Practices,부적절한 코딩 관행
+1079,1412,Poor Coding Practices,부적절한 코딩 관행
+1080,1412,Poor Coding Practices,부적절한 코딩 관행
+1082,1412,Poor Coding Practices,부적절한 코딩 관행
+1083,1412,Poor Coding Practices,부적절한 코딩 관행
+1084,1416,Resource Lifecycle Management,자원 생애주기 관리
+1085,1412,Poor Coding Practices,부적절한 코딩 관행
+1086,1412,Poor Coding Practices,부적절한 코딩 관행
+1087,1412,Poor Coding Practices,부적절한 코딩 관행
+1088,1401,Concurrency,동시성
+1089,1416,Resource Lifecycle Management,자원 생애주기 관리
+1090,1412,Poor Coding Practices,부적절한 코딩 관행
+1091,1416,Resource Lifecycle Management,자원 생애주기 관리
+1092,1412,Poor Coding Practices,부적절한 코딩 관행
+1093,1412,Poor Coding Practices,부적절한 코딩 관행
+1094,1416,Resource Lifecycle Management,자원 생애주기 관리
+1095,1412,Poor Coding Practices,부적절한 코딩 관행
+1096,1401,Concurrency,동시성
+1097,1412,Poor Coding Practices,부적절한 코딩 관행
+1098,1412,Poor Coding Practices,부적절한 코딩 관행
+1099,1412,Poor Coding Practices,부적절한 코딩 관행
+1100,1412,Poor Coding Practices,부적절한 코딩 관행
+1101,1412,Poor Coding Practices,부적절한 코딩 관행
+1102,1412,Poor Coding Practices,부적절한 코딩 관행
+1103,1412,Poor Coding Practices,부적절한 코딩 관행
+1104,1415,Resource Control,자원 제어
+1105,1412,Poor Coding Practices,부적절한 코딩 관행
+1106,1412,Poor Coding Practices,부적절한 코딩 관행
+1107,1412,Poor Coding Practices,부적절한 코딩 관행
+1108,1412,Poor Coding Practices,부적절한 코딩 관행
+1109,1412,Poor Coding Practices,부적절한 코딩 관행
+1110,1412,Poor Coding Practices,부적절한 코딩 관행
+1111,1412,Poor Coding Practices,부적절한 코딩 관행
+1112,1412,Poor Coding Practices,부적절한 코딩 관행
+1113,1412,Poor Coding Practices,부적절한 코딩 관행
+1114,1412,Poor Coding Practices,부적절한 코딩 관행
+1115,1412,Poor Coding Practices,부적절한 코딩 관행
+1116,1412,Poor Coding Practices,부적절한 코딩 관행
+1117,1412,Poor Coding Practices,부적절한 코딩 관행
+1118,1412,Poor Coding Practices,부적절한 코딩 관행
+1119,1412,Poor Coding Practices,부적절한 코딩 관행
+1120,1412,Poor Coding Practices,부적절한 코딩 관행
+1121,1412,Poor Coding Practices,부적절한 코딩 관행
+1122,1412,Poor Coding Practices,부적절한 코딩 관행
+1123,1412,Poor Coding Practices,부적절한 코딩 관행
+1124,1412,Poor Coding Practices,부적절한 코딩 관행
+1125,1412,Poor Coding Practices,부적절한 코딩 관행
+1126,1412,Poor Coding Practices,부적절한 코딩 관행
+1127,1412,Poor Coding Practices,부적절한 코딩 관행
+1164,1412,Poor Coding Practices,부적절한 코딩 관행
+1173,1406,Improper Input Validation,입력값 검증
+1174,1406,Improper Input Validation,입력값 검증
+1176,1416,Resource Lifecycle Management,자원 생애주기 관리
+1177,1412,Poor Coding Practices,부적절한 코딩 관행
+1188,1416,Resource Lifecycle Management,자원 생애주기 관리
+1189,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+1190,1410,Insufficient Control Flow Management,제어 흐름 관리
+1191,1396,Access Control,접근 제어
+1192,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+1193,1410,Insufficient Control Flow Management,제어 흐름 관리
+1204,1414,Randomness,난수
+1209,1412,Poor Coding Practices,부적절한 코딩 관행
+1220,1396,Access Control,접근 제어
+1221,1416,Resource Lifecycle Management,자원 생애주기 관리
+1222,1396,Access Control,접근 제어
+1223,1401,Concurrency,동시성
+1224,1396,Access Control,접근 제어
+1229,1416,Resource Lifecycle Management,자원 생애주기 관리
+1230,1396,Access Control,접근 제어
+1231,1396,Access Control,접근 제어
+1232,1401,Concurrency,동시성
+1233,1396,Access Control,접근 제어
+1234,1401,Concurrency,동시성
+1235,1416,Resource Lifecycle Management,자원 생애주기 관리
+1236,1409,Injection,주입(Injection)
+1239,1416,Resource Lifecycle Management,자원 생애주기 관리
+1240,1402,Encryption,암호화
+1241,1414,Randomness,난수
+1242,1396,Access Control,접근 제어
+1243,1396,Access Control,접근 제어
+1244,1396,Access Control,접근 제어
+1245,1412,Poor Coding Practices,부적절한 코딩 관행
+1246,1416,Resource Lifecycle Management,자원 생애주기 관리
+1247,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+1248,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1249,1415,Resource Control,자원 제어
+1250,1416,Resource Lifecycle Management,자원 생애주기 관리
+1251,1415,Resource Control,자원 제어
+1252,1396,Access Control,접근 제어
+1253,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1254,1417,Sensitive Information Exposure,민감정보 노출
+1255,1417,Sensitive Information Exposure,민감정보 노출
+1256,1396,Access Control,접근 제어
+1257,1396,Access Control,접근 제어
+1258,1416,Resource Lifecycle Management,자원 생애주기 관리
+1259,1396,Access Control,접근 제어
+1260,1396,Access Control,접근 제어
+1261,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+1262,1396,Access Control,접근 제어
+1263,1396,Access Control,접근 제어
+1264,1401,Concurrency,동시성
+1265,1410,Insufficient Control Flow Management,제어 흐름 관리
+1266,1416,Resource Lifecycle Management,자원 생애주기 관리
+1267,1396,Access Control,접근 제어
+1268,1396,Access Control,접근 제어
+1269,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1270,1396,Access Control,접근 제어
+1271,1416,Resource Lifecycle Management,자원 생애주기 관리
+1272,1416,Resource Lifecycle Management,자원 생애주기 관리
+1273,1417,Sensitive Information Exposure,민감정보 노출
+1274,1396,Access Control,접근 제어
+1275,1396,Access Control,접근 제어
+1276,1396,Access Control,접근 제어
+1277,1415,Resource Control,자원 제어
+1278,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1279,1416,Resource Lifecycle Management,자원 생애주기 관리
+1280,1410,Insufficient Control Flow Management,제어 흐름 관리
+1281,1410,Insufficient Control Flow Management,제어 흐름 관리
+1282,1403,Exposed Resource,노출된 자원
+1283,1396,Access Control,접근 제어
+1284,1406,Improper Input Validation,입력값 검증
+1285,1406,Improper Input Validation,입력값 검증
+1286,1406,Improper Input Validation,입력값 검증
+1287,1406,Improper Input Validation,입력값 검증
+1288,1406,Improper Input Validation,입력값 검증
+1289,1406,Improper Input Validation,입력값 검증
+1290,1396,Access Control,접근 제어
+1291,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1292,1396,Access Control,접근 제어
+1293,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+1294,1396,Access Control,접근 제어
+1295,1417,Sensitive Information Exposure,민감정보 노출
+1296,1396,Access Control,접근 제어
+1297,1396,Access Control,접근 제어
+1298,1401,Concurrency,동시성
+1299,1396,Access Control,접근 제어
+1300,1417,Sensitive Information Exposure,민감정보 노출
+1301,1416,Resource Lifecycle Management,자원 생애주기 관리
+1302,1396,Access Control,접근 제어
+1303,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+1304,1396,Access Control,접근 제어
+1310,1415,Resource Control,자원 제어
+1311,1396,Access Control,접근 제어
+1312,1396,Access Control,접근 제어
+1313,1396,Access Control,접근 제어
+1314,1396,Access Control,접근 제어
+1315,1396,Access Control,접근 제어
+1316,1396,Access Control,접근 제어
+1317,1396,Access Control,접근 제어
+1318,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1319,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1320,1396,Access Control,접근 제어
+1321,1415,Resource Control,자원 제어
+1322,1410,Insufficient Control Flow Management,제어 흐름 관리
+1323,1396,Access Control,접근 제어
+1325,1416,Resource Lifecycle Management,자원 생애주기 관리
+1326,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1327,1403,Exposed Resource,노출된 자원
+1328,1396,Access Control,접근 제어
+1329,1415,Resource Control,자원 제어
+1330,1416,Resource Lifecycle Management,자원 생애주기 관리
+1331,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+1332,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+1333,1416,Resource Lifecycle Management,자원 생애주기 관리
+1334,1396,Access Control,접근 제어
+1335,1408,Incorrect Calculation,잘못된 계산
+1336,1409,Injection,주입(Injection)
+1338,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1339,1408,Incorrect Calculation,잘못된 계산
+1341,1412,Poor Coding Practices,부적절한 코딩 관행
+1342,1416,Resource Lifecycle Management,자원 생애주기 관리
+1351,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+1357,1412,Poor Coding Practices,부적절한 코딩 관행
+1384,1405,Improper Check or Handling of Exceptional Conditions,예외 상황 처리
+1385,1411,Insufficient Verification of Data Authenticity,데이터 진위 검증
+1386,1416,Resource Lifecycle Management,자원 생애주기 관리
+1389,1416,Resource Lifecycle Management,자원 생애주기 관리
+1390,1396,Access Control,접근 제어
+1391,1396,Access Control,접근 제어
+1392,1396,Access Control,접근 제어
+1393,1396,Access Control,접근 제어
+1394,1396,Access Control,접근 제어
+1395,1418,Violation of Secure Design Principles,보안 설계 원칙 위반
+1419,1416,Resource Lifecycle Management,자원 생애주기 관리
+1420,1416,Resource Lifecycle Management,자원 생애주기 관리
+1421,1416,Resource Lifecycle Management,자원 생애주기 관리
+1422,1416,Resource Lifecycle Management,자원 생애주기 관리
+1423,1416,Resource Lifecycle Management,자원 생애주기 관리
+1426,1409,Injection,주입(Injection)
+1427,1409,Injection,주입(Injection)
+1428,1402,Encryption,암호화
+1429,1413,Protection Mechanism Failure,보호 메커니즘 실패
+1431,1417,Sensitive Information Exposure,민감정보 노출
+1434,1412,Poor Coding Practices,부적절한 코딩 관행

@@ -1,2 +1,4 @@
 pandas>=2.2
 requests>=2.32
+matplotlib>=3.9
+matplotlib-venn>=1.1

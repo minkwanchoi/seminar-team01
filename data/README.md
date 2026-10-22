@@ -1,6 +1,26 @@
-# data — CWE 기준 목록 (B1)
+# data — CWE 기준 목록과 제도별 매핑
 
-MITRE CWE에서 받은 기준 목록입니다. 기준 시점은 CWE List Version 4.20, 수집일은 2026-10-17입니다(출처와 개수는 [cwe_sources.csv](cwe_sources.csv)에 있습니다).
+> **분석 범위:** 공개적으로 확인할 수 있는 요구 목록만 비교합니다. 비공개 기준, 2차 자료, CWE 버전 고정, 번호 일치 방식에 따른 한계는 [docs/B_분석범위와_한계.md](../docs/B_분석범위와_한계.md)에 정리했습니다.
+
+## 출처와 이용 조건
+
+이 폴더의 데이터는 아래 조건에 따라 씁니다. 새 자료를 넣을 때는 이 표에 이용 조건을 먼저 확인해 적습니다.
+
+| 자료 | 해당 파일 | 이용 조건 |
+|---|---|---|
+| MITRE CWE | `cwe_*.csv`, `overlap_*.csv`의 CWE 번호·이름·범주 | CWE Terms of Use. 연구·개발·상업 목적의 무상 이용을 허락하되, 사본에 MITRE의 저작권 표시와 이용약관을 함께 실어야 함(아래 고지) |
+| KISA 「소프트웨어 개발보안 가이드」(2021.12.29) | `mapping_mois49.csv`의 항목 분류·항목명·참고 CWE | 공공누리 "출처표시" 조건. 출처: 한국인터넷진흥원, 「소프트웨어 개발보안 가이드」(2021.12.29), https://www.kisa.or.kr/2060204/form?postSeq=5 |
+| 방사청 매뉴얼 보안약점 44개 | 없음(`local/`에만 둠) | 매뉴얼 별책(2020) 주의사항: 발췌·복사·복제 시 방위사업청장 승인 필요. 2차 자료도 업체 저작물 → **승인 전까지 공개하지 않음** |
+
+**MITRE CWE 고지**
+
+> CWE™ is free to use by any organization or individual for any research, development, and/or commercial purposes, per the CWE Terms of Use. The MITRE Corporation hereby grants you a non-exclusive, royalty-free license to use CWE for research, development, and commercial purposes. Any copy you make for such purposes is authorized on the condition that you reproduce MITRE's copyright designation and this license in any such copy.
+>
+> Copyright © 2006–2026, The MITRE Corporation. CWE and the CWE logo are trademarks of The MITRE Corporation. https://cwe.mitre.org/about/termsofuse.html
+
+## 1. CWE 기준 목록 (B1)
+
+MITRE CWE에서 받은 기준 목록입니다. 기준 시점은 CWE List Version 4.20이고, 출처와 수집일, 항목 수는 [cwe_sources.csv](cwe_sources.csv)에 있습니다.
 
 | 파일 | 내용 | 항목 수 |
 |---|---|---|
@@ -8,19 +28,67 @@ MITRE CWE에서 받은 기준 목록입니다. 기준 시점은 CWE List Version
 | `cwe_659.csv` | CWE-659 Weaknesses in Software Written in C++ | 97 |
 | `cwe_660.csv` | CWE-660 Weaknesses in Software Written in Java | 84 |
 | `cwe_top25_2025.csv` | 2025 CWE Top 25 (뷰 CWE-1435) | 25 |
+| `cwe_pillar.csv` | CWE별 이름과 최상위 범주(Pillar). 연구 관점 뷰 CWE-1000에서 기본(Primary) 부모를 따라 올라간 결과 | 뷰 CWE-1000 전체 |
+| `cwe_category.csv` | CWE별 성격별 범주. MITRE CWE-1400 뷰(Comprehensive Categorization)는 모든 약점을 22개 범주 중 정확히 하나에 넣음. 한글 범주명(`category_ko`)은 팀이 붙인 번역 | 944 |
 | `cwe_sources.csv` | 파일별 출처 URL, CWE 버전, 수집일 | — |
 
-## 열
+### 열
 
 - 공통: `cwe_id`(숫자), `cwe`(`CWE-79` 형식), `name`, `abstraction`(Pillar·Class·Base·Variant·Compound), `status`
 - Top 25 추가: `rank`, `score`, `kev_cves`(CISA KEV에 오른 CVE 수), `rank_change`(2024년 대비 순위 변동, 2024 목록에 없던 항목은 `new`)
+- `cwe_pillar.csv`: `cwe_id`, `name`, `abstraction`, `pillar_id`, `pillar`, `pillar_name`
 
-## 다시 받기
+## 2. 제도별 CWE 매핑 (B2)
+
+| 파일 | 내용 | 상태 |
+|---|---|---|
+| `mapping_mois49.csv` | 행안부·KISA 「소프트웨어 개발보안 가이드」(2021.12.29) 구현단계 보안약점 49개 | 원문 확인(49개 항목, CWE 61개) |
+| (비공개) `local/mapping_manual44.csv` | 방사청 매뉴얼 보안약점 점검 목록 44개(2022.12 개정 때 추가) | **저장소에 올리지 않음.** 각자 `local/`에 두고 로컬 분석에만 씀 |
+
+### 열
+
+`no`(원문 순번), `category`(원문 분류), `item`(원문 항목명), `cwe_ids`(세미콜론으로 구분한 CWE 번호), `mapping_note`(매핑이 애매한 이유), `source_page`(근거 문서와 쪽), `status`(`확인` 또는 `2차 자료(원문 대조 필요)`).
+
+### 매핑 기준
+
+1. **원문이 적은 CWE를 그대로 씁니다.** 가이드나 매뉴얼이 항목마다 참조한 CWE 번호를 옮기고, 우리가 판단해 번호를 더하거나 빼지 않습니다.
+2. **1:N을 허용합니다.** 한 항목이 CWE 여러 개를 참조하면 모두 적습니다(예: 암호화되지 않은 중요정보 → 311;312;319). 겹침을 셀 때는 항목이 아니라 CWE 번호 단위로 셉니다.
+3. **상위·하위 CWE로 넓히지 않습니다.** 원문이 Class 수준(예: CWE-119)을 적었으면 그 번호만 쓰고, 하위 Base·Variant(120·121·122·125·787 등)로 펼치지 않습니다. 이 때문에 Top 25처럼 하위 번호를 쓰는 목록과의 겹침은 실제보다 작게 나올 수 있으며, 보고서에 이 한계를 적습니다.
+4. **원문에 번호가 없거나 애매하면** `mapping_note`에 이유를 적고, 팀원 A와 합의한 결과를 그 열에 남깁니다.
+5. **확인 상태를 행마다 남깁니다.** 원문 PDF와 대조한 행만 `status`를 `확인`으로 바꿉니다.
+
+### 아직 남은 일
+
+- `mapping_mois49.csv`는 KISA 자료실의 「소프트웨어 개발보안 가이드」(2021.12.29) PDF에서 항목마다 "참고자료"에 적힌 CWE 번호를 옮겼습니다. 같은 자료실의 「소프트웨어 보안약점 진단가이드」(2021)와 교차 확인한 결과, 49개 중 46개가 같았습니다. 다른 3개는 다음과 같이 처리했습니다.
+  - 36번(오류 메시지 정보노출): 진단가이드는 209만 적음. 개발보안 가이드의 209;497을 씀.
+  - 43번(역직렬화): 진단가이드는 CWE-918(SSRF)을 적었는데, 항목 내용과 맞지 않는 오기로 보고 개발보안 가이드의 502를 씀.
+  - 48번(DNS lookup): 진단가이드는 247만 적음. 개발보안 가이드의 350;247을 씀. CWE-247은 CWE 4.20에서 폐기되어 350으로 통합된 번호라, 분석 결과에서는 범주가 "폐기"로 표시됩니다.
+  - 초안에서 바뀐 항목: 2·9·22·36·44·48·49번의 CWE, 7·29번의 항목명. 22번은 초안에 있던 311이 원문에 없어 뺐습니다.
+- **매뉴얼 보안약점 44개는 공개하지 않습니다.** 매뉴얼 보안약점 44개는 매뉴얼 별책(2020) 주의사항에 "일부 또는 전부를 발췌·복사·복제하려면 방위사업청장의 승인이 필요하다"는 이용 조건이 있고, 옮겨 온 2차 자료도 업체 저작물이어서 승인 전까지 저장소에 올리지 않습니다.
+  - 팀 안에서 분석할 때는 각자 `local/mapping_manual44.csv`(열 구성은 `mapping_mois49.csv`와 같음)를 두고 `--with-local`로 실행합니다. 결과는 `local/out/`, 그림은 `local/figures/`에 생기며 커밋되지 않습니다(`.gitignore`).
+  - 공개 결과(`data/overlap_*.csv`, `figures/`)에는 이 목록이 들어가지 않습니다. 보고서에는 목록이나 개별 CWE 번호 없이, 로컬에서 계산한 개수·비율만 출처와 함께 적습니다.
+
+## 3. 겹침 분석 결과 (B3)
+
+`analysis/overlap.py`가 만드는 파일입니다. 직접 고치지 말고 스크립트를 다시 실행합니다.
+
+| 파일 | 내용 |
+|---|---|
+| `overlap_matrix.csv` | CWE × 제도 0/1 매트릭스. 몇 개 제도에 들어 있는지(`n_sets`), Pillar, 성격별 범주(`category`, `category_ko`) 포함 |
+| `overlap_pairs.csv` | 제도 쌍별 크기, 교집합, 합집합, Jaccard 유사도, 한쪽에만 있는 수 |
+| `overlap_summary.csv` | 제도별 항목 수, 다른 어느 제도에도 없는 고유 항목 수 |
+| `overlap_common.csv` | 비교한 모든 제도에 공통인 CWE |
+
+## 다시 만들기
 
 ```bash
 python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt
 .venv/Scripts/python analysis/fetch_cwe.py
+.venv/Scripts/python analysis/overlap.py
+.venv/Scripts/python analysis/plot_overlap.py
 ```
 
-macOS·Linux에서는 `.venv/Scripts/python` 대신 `.venv/bin/python`을 씁니다. Top 25 연도나 뷰 번호가 바뀌면 `analysis/fetch_cwe.py` 위쪽의 `TOP25_YEAR`, `TOP25_VIEW`를 고칩니다.
+비공개 자료까지 넣어 보려면(팀 내부용, 커밋하지 않음): `analysis/overlap.py --with-local` 다음에 `analysis/plot_overlap.py --with-local`.
+
+macOS·Linux에서는 `.venv/Scripts/python` 대신 `.venv/bin/python`을 씁니다. Top 25 연도나 뷰 번호가 바뀌면 `analysis/fetch_cwe.py` 위쪽의 `TOP25_YEAR`, `TOP25_VIEW`를 고칩니다. 매뉴얼 취약점 점검이 CWE-658·659·660을 모두 쓰므로 Java(CWE-660)도 기본으로 비교에 넣습니다. C/C++만 보려면 `analysis/overlap.py --exclude-java`로 실행합니다.

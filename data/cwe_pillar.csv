@@ -1,0 +1,945 @@
+cwe_id,name,abstraction,pillar_id,pillar,pillar_name
+5,J2EE Misconfiguration: Data Transmission Without Encryption,Variant,693,CWE-693,Protection Mechanism Failure
+6,J2EE Misconfiguration: Insufficient Session-ID Length,Variant,693,CWE-693,Protection Mechanism Failure
+7,J2EE Misconfiguration: Missing Custom Error Page,Variant,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+8,J2EE Misconfiguration: Entity Bean Declared Remote,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+9,J2EE Misconfiguration: Weak Access Permissions for EJB Methods,Variant,284,CWE-284,Improper Access Control
+11,ASP.NET Misconfiguration: Creating Debug Binary,Variant,710,CWE-710,Improper Adherence to Coding Standards
+12,ASP.NET Misconfiguration: Missing Custom Error Page,Variant,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+13,ASP.NET Misconfiguration: Password in Configuration File,Variant,284,CWE-284,Improper Access Control
+14,Compiler Removal of Code to Clear Buffers,Variant,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+15,External Control of System or Configuration Setting,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+20,Improper Input Validation,Class,707,CWE-707,Improper Neutralization
+22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+23,Relative Path Traversal,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+24,Path Traversal: '../filedir',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+25,Path Traversal: '/../filedir',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+26,Path Traversal: '/dir/../filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+27,Path Traversal: 'dir/../../filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+28,Path Traversal: '..filedir',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+29,Path Traversal: '..filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+30,Path Traversal: 'dir..filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+31,Path Traversal: 'dir....filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+32,Path Traversal: '...' (Triple Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+33,Path Traversal: '....' (Multiple Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+34,Path Traversal: '....//',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+35,Path Traversal: '.../...//',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+36,Absolute Path Traversal,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+37,Path Traversal: '/absolute/pathname/here',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+38,Path Traversal: 'absolutepathnamehere',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+39,Path Traversal: 'C:dirname',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+40,Path Traversal: 'UNCsharename' (Windows UNC Share),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+41,Improper Resolution of Path Equivalence,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+42,Path Equivalence: 'filename.' (Trailing Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+43,Path Equivalence: 'filename....' (Multiple Trailing Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+44,Path Equivalence: 'file.name' (Internal Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+45,Path Equivalence: 'file...name' (Multiple Internal Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+46,Path Equivalence: 'filename ' (Trailing Space),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+47,Path Equivalence: ' filename' (Leading Space),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+48,Path Equivalence: 'file name' (Internal Whitespace),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+49,Path Equivalence: 'filename/' (Trailing Slash),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+50,Path Equivalence: '//multiple/leading/slash',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+51,Path Equivalence: '/multiple//internal/slash',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+52,Path Equivalence: '/multiple/trailing/slash//',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+53,Path Equivalence: 'multipleinternalbackslash',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+54,Path Equivalence: 'filedir' (Trailing Backslash),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+55,Path Equivalence: '/./' (Single Dot Directory),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+56,Path Equivalence: 'filedir*' (Wildcard),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+57,Path Equivalence: 'fakedir/../realdir/filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+58,Path Equivalence: Windows 8.3 Filename,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+59,Improper Link Resolution Before File Access ('Link Following'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+61,UNIX Symbolic Link (Symlink) Following,Compound,664,CWE-664,Improper Control of a Resource Through its Lifetime
+62,UNIX Hard Link,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+64,Windows Shortcut Following (.LNK),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+65,Windows Hard Link,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+66,Improper Handling of File Names that Identify Virtual Resources,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+67,Improper Handling of Windows Device Names,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+69,Improper Handling of Windows ::DATA Alternate Data Stream,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+72,Improper Handling of Apple HFS+ Alternate Data Stream Path,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+73,External Control of File Name or Path,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+74,Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection'),Class,707,CWE-707,Improper Neutralization
+75,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Class,707,CWE-707,Improper Neutralization
+76,Improper Neutralization of Equivalent Special Elements,Base,707,CWE-707,Improper Neutralization
+77,Improper Neutralization of Special Elements used in a Command ('Command Injection'),Class,707,CWE-707,Improper Neutralization
+78,Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),Base,707,CWE-707,Improper Neutralization
+79,Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),Base,707,CWE-707,Improper Neutralization
+80,Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS),Variant,707,CWE-707,Improper Neutralization
+81,Improper Neutralization of Script in an Error Message Web Page,Variant,707,CWE-707,Improper Neutralization
+82,Improper Neutralization of Script in Attributes of IMG Tags in a Web Page,Variant,707,CWE-707,Improper Neutralization
+83,Improper Neutralization of Script in Attributes in a Web Page,Variant,707,CWE-707,Improper Neutralization
+84,Improper Neutralization of Encoded URI Schemes in a Web Page,Variant,707,CWE-707,Improper Neutralization
+85,Doubled Character XSS Manipulations,Variant,707,CWE-707,Improper Neutralization
+86,Improper Neutralization of Invalid Characters in Identifiers in Web Pages,Variant,707,CWE-707,Improper Neutralization
+87,Improper Neutralization of Alternate XSS Syntax,Variant,707,CWE-707,Improper Neutralization
+88,Improper Neutralization of Argument Delimiters in a Command ('Argument Injection'),Base,707,CWE-707,Improper Neutralization
+89,Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection'),Base,707,CWE-707,Improper Neutralization
+90,Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection'),Base,707,CWE-707,Improper Neutralization
+91,XML Injection (aka Blind XPath Injection),Base,707,CWE-707,Improper Neutralization
+93,Improper Neutralization of CRLF Sequences ('CRLF Injection'),Base,707,CWE-707,Improper Neutralization
+94,Improper Control of Generation of Code ('Code Injection'),Base,707,CWE-707,Improper Neutralization
+95,Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection'),Variant,707,CWE-707,Improper Neutralization
+96,Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection'),Base,707,CWE-707,Improper Neutralization
+97,Improper Neutralization of Server-Side Includes (SSI) Within a Web Page,Variant,707,CWE-707,Improper Neutralization
+98,Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion'),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+99,Improper Control of Resource Identifiers ('Resource Injection'),Class,707,CWE-707,Improper Neutralization
+102,Struts: Duplicate Validation Forms,Variant,707,CWE-707,Improper Neutralization
+103,Struts: Incomplete validate() Method Definition,Variant,710,CWE-710,Improper Adherence to Coding Standards
+104,Struts: Form Bean Does Not Extend Validation Class,Variant,710,CWE-710,Improper Adherence to Coding Standards
+105,Struts: Form Field Without Validator,Variant,707,CWE-707,Improper Neutralization
+106,Struts: Plug-in Framework not in Use,Variant,707,CWE-707,Improper Neutralization
+107,Struts: Unused Validation Form,Variant,710,CWE-710,Improper Adherence to Coding Standards
+108,Struts: Unvalidated Action Form,Variant,707,CWE-707,Improper Neutralization
+109,Struts: Validator Turned Off,Variant,707,CWE-707,Improper Neutralization
+110,Struts: Validator Without Form Field,Variant,710,CWE-710,Improper Adherence to Coding Standards
+111,Direct Use of Unsafe JNI,Variant,710,CWE-710,Improper Adherence to Coding Standards
+112,Missing XML Validation,Base,707,CWE-707,Improper Neutralization
+113,Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting'),Variant,707,CWE-707,Improper Neutralization
+114,Process Control,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+115,Misinterpretation of Input,Base,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+116,Improper Encoding or Escaping of Output,Class,707,CWE-707,Improper Neutralization
+117,Improper Output Neutralization for Logs,Base,707,CWE-707,Improper Neutralization
+118,Incorrect Access of Indexable Resource ('Range Error'),Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+119,Improper Restriction of Operations within the Bounds of a Memory Buffer,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+120,Buffer Copy without Checking Size of Input ('Classic Buffer Overflow'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+121,Stack-based Buffer Overflow,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+122,Heap-based Buffer Overflow,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+123,Write-what-where Condition,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+124,Buffer Underwrite ('Buffer Underflow'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+125,Out-of-bounds Read,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+126,Buffer Over-read,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+127,Buffer Under-read,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+128,Wrap-around Error,Base,682,CWE-682,Incorrect Calculation
+129,Improper Validation of Array Index,Variant,707,CWE-707,Improper Neutralization
+130,Improper Handling of Length Parameter Inconsistency,Base,707,CWE-707,Improper Neutralization
+131,Incorrect Calculation of Buffer Size,Base,682,CWE-682,Incorrect Calculation
+134,Use of Externally-Controlled Format String,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+135,Incorrect Calculation of Multi-Byte String Length,Base,682,CWE-682,Incorrect Calculation
+138,Improper Neutralization of Special Elements,Class,707,CWE-707,Improper Neutralization
+140,Improper Neutralization of Delimiters,Base,707,CWE-707,Improper Neutralization
+141,Improper Neutralization of Parameter/Argument Delimiters,Variant,707,CWE-707,Improper Neutralization
+142,Improper Neutralization of Value Delimiters,Variant,707,CWE-707,Improper Neutralization
+143,Improper Neutralization of Record Delimiters,Variant,707,CWE-707,Improper Neutralization
+144,Improper Neutralization of Line Delimiters,Variant,707,CWE-707,Improper Neutralization
+145,Improper Neutralization of Section Delimiters,Variant,707,CWE-707,Improper Neutralization
+146,Improper Neutralization of Expression/Command Delimiters,Variant,707,CWE-707,Improper Neutralization
+147,Improper Neutralization of Input Terminators,Variant,707,CWE-707,Improper Neutralization
+148,Improper Neutralization of Input Leaders,Variant,707,CWE-707,Improper Neutralization
+149,Improper Neutralization of Quoting Syntax,Variant,707,CWE-707,Improper Neutralization
+150,"Improper Neutralization of Escape, Meta, or Control Sequences",Variant,707,CWE-707,Improper Neutralization
+151,Improper Neutralization of Comment Delimiters,Variant,707,CWE-707,Improper Neutralization
+152,Improper Neutralization of Macro Symbols,Variant,707,CWE-707,Improper Neutralization
+153,Improper Neutralization of Substitution Characters,Variant,707,CWE-707,Improper Neutralization
+154,Improper Neutralization of Variable Name Delimiters,Variant,707,CWE-707,Improper Neutralization
+155,Improper Neutralization of Wildcards or Matching Symbols,Variant,707,CWE-707,Improper Neutralization
+156,Improper Neutralization of Whitespace,Variant,707,CWE-707,Improper Neutralization
+157,Failure to Sanitize Paired Delimiters,Variant,707,CWE-707,Improper Neutralization
+158,Improper Neutralization of Null Byte or NUL Character,Variant,707,CWE-707,Improper Neutralization
+159,Improper Handling of Invalid Use of Special Elements,Class,707,CWE-707,Improper Neutralization
+160,Improper Neutralization of Leading Special Elements,Variant,707,CWE-707,Improper Neutralization
+161,Improper Neutralization of Multiple Leading Special Elements,Variant,707,CWE-707,Improper Neutralization
+162,Improper Neutralization of Trailing Special Elements,Variant,707,CWE-707,Improper Neutralization
+163,Improper Neutralization of Multiple Trailing Special Elements,Variant,707,CWE-707,Improper Neutralization
+164,Improper Neutralization of Internal Special Elements,Variant,707,CWE-707,Improper Neutralization
+165,Improper Neutralization of Multiple Internal Special Elements,Variant,707,CWE-707,Improper Neutralization
+166,Improper Handling of Missing Special Element,Base,707,CWE-707,Improper Neutralization
+167,Improper Handling of Additional Special Element,Base,707,CWE-707,Improper Neutralization
+168,Improper Handling of Inconsistent Special Elements,Base,707,CWE-707,Improper Neutralization
+170,Improper Null Termination,Base,707,CWE-707,Improper Neutralization
+172,Encoding Error,Class,707,CWE-707,Improper Neutralization
+173,Improper Handling of Alternate Encoding,Variant,707,CWE-707,Improper Neutralization
+174,Double Decoding of the Same Data,Variant,710,CWE-710,Improper Adherence to Coding Standards
+175,Improper Handling of Mixed Encoding,Variant,707,CWE-707,Improper Neutralization
+176,Improper Handling of Unicode Encoding,Variant,707,CWE-707,Improper Neutralization
+177,Improper Handling of URL Encoding (Hex Encoding),Variant,707,CWE-707,Improper Neutralization
+178,Improper Handling of Case Sensitivity,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+179,Incorrect Behavior Order: Early Validation,Base,691,CWE-691,Insufficient Control Flow Management
+180,Incorrect Behavior Order: Validate Before Canonicalize,Variant,691,CWE-691,Insufficient Control Flow Management
+181,Incorrect Behavior Order: Validate Before Filter,Variant,691,CWE-691,Insufficient Control Flow Management
+182,Collapse of Data into Unsafe Value,Base,707,CWE-707,Improper Neutralization
+183,Permissive List of Allowed Inputs,Base,697,CWE-697,Incorrect Comparison
+184,Incomplete List of Disallowed Inputs,Base,693,CWE-693,Protection Mechanism Failure
+185,Incorrect Regular Expression,Class,697,CWE-697,Incorrect Comparison
+186,Overly Restrictive Regular Expression,Base,697,CWE-697,Incorrect Comparison
+187,Partial String Comparison,Variant,697,CWE-697,Incorrect Comparison
+188,Reliance on Data/Memory Layout,Base,710,CWE-710,Improper Adherence to Coding Standards
+190,Integer Overflow or Wraparound,Base,682,CWE-682,Incorrect Calculation
+191,Integer Underflow (Wrap or Wraparound),Base,682,CWE-682,Incorrect Calculation
+192,Integer Coercion Error,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+193,Off-by-one Error,Base,682,CWE-682,Incorrect Calculation
+194,Unexpected Sign Extension,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+195,Signed to Unsigned Conversion Error,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+196,Unsigned to Signed Conversion Error,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+197,Numeric Truncation Error,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+198,Use of Incorrect Byte Ordering,Variant,710,CWE-710,Improper Adherence to Coding Standards
+200,Exposure of Sensitive Information to an Unauthorized Actor,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+201,Insertion of Sensitive Information Into Sent Data,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+202,Exposure of Sensitive Information Through Data Queries,Base,284,CWE-284,Improper Access Control
+203,Observable Discrepancy,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+204,Observable Response Discrepancy,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+205,Observable Behavioral Discrepancy,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+206,Observable Internal Behavioral Discrepancy,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+207,Observable Behavioral Discrepancy With Equivalent Products,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+208,Observable Timing Discrepancy,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+209,Generation of Error Message Containing Sensitive Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+210,Self-generated Error Message Containing Sensitive Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+211,Externally-Generated Error Message Containing Sensitive Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+212,Improper Removal of Sensitive Information Before Storage or Transfer,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+213,Exposure of Sensitive Information Due to Incompatible Policies,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+214,Invocation of Process Using Visible Sensitive Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+215,Insertion of Sensitive Information Into Debugging Code,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+219,Storage of File with Sensitive Data Under Web Root,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+220,Storage of File With Sensitive Data Under FTP Root,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+221,Information Loss or Omission,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+222,Truncation of Security-relevant Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+223,Omission of Security-relevant Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+224,Obscured Security-relevant Information by Alternate Name,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+226,Sensitive Information in Resource Not Removed Before Reuse,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+228,Improper Handling of Syntactically Invalid Structure,Class,707,CWE-707,Improper Neutralization
+229,Improper Handling of Values,Base,707,CWE-707,Improper Neutralization
+230,Improper Handling of Missing Values,Variant,707,CWE-707,Improper Neutralization
+231,Improper Handling of Extra Values,Variant,707,CWE-707,Improper Neutralization
+232,Improper Handling of Undefined Values,Variant,707,CWE-707,Improper Neutralization
+233,Improper Handling of Parameters,Base,707,CWE-707,Improper Neutralization
+234,Failure to Handle Missing Parameter,Variant,707,CWE-707,Improper Neutralization
+235,Improper Handling of Extra Parameters,Variant,707,CWE-707,Improper Neutralization
+236,Improper Handling of Undefined Parameters,Variant,707,CWE-707,Improper Neutralization
+237,Improper Handling of Structural Elements,Base,707,CWE-707,Improper Neutralization
+238,Improper Handling of Incomplete Structural Elements,Variant,707,CWE-707,Improper Neutralization
+239,Failure to Handle Incomplete Element,Variant,707,CWE-707,Improper Neutralization
+240,Improper Handling of Inconsistent Structural Elements,Base,707,CWE-707,Improper Neutralization
+241,Improper Handling of Unexpected Data Type,Base,707,CWE-707,Improper Neutralization
+242,Use of Inherently Dangerous Function,Base,710,CWE-710,Improper Adherence to Coding Standards
+243,Creation of chroot Jail Without Changing Working Directory,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+244,Improper Clearing of Heap Memory Before Release ('Heap Inspection'),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+245,J2EE Bad Practices: Direct Management of Connections,Variant,710,CWE-710,Improper Adherence to Coding Standards
+246,J2EE Bad Practices: Direct Use of Sockets,Variant,710,CWE-710,Improper Adherence to Coding Standards
+248,Uncaught Exception,Base,691,CWE-691,Insufficient Control Flow Management
+250,Execution with Unnecessary Privileges,Base,284,CWE-284,Improper Access Control
+252,Unchecked Return Value,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+253,Incorrect Check of Function Return Value,Base,710,CWE-710,Improper Adherence to Coding Standards
+256,Plaintext Storage of a Password,Base,284,CWE-284,Improper Access Control
+257,Storing Passwords in a Recoverable Format,Base,284,CWE-284,Improper Access Control
+258,Empty Password in Configuration File,Variant,284,CWE-284,Improper Access Control
+259,Use of Hard-coded Password,Variant,284,CWE-284,Improper Access Control
+260,Password in Configuration File,Base,284,CWE-284,Improper Access Control
+261,Weak Encoding for Password,Base,284,CWE-284,Improper Access Control
+262,Not Using Password Aging,Base,284,CWE-284,Improper Access Control
+263,Password Aging with Long Expiration,Base,284,CWE-284,Improper Access Control
+266,Incorrect Privilege Assignment,Base,284,CWE-284,Improper Access Control
+267,Privilege Defined With Unsafe Actions,Base,284,CWE-284,Improper Access Control
+268,Privilege Chaining,Base,284,CWE-284,Improper Access Control
+269,Improper Privilege Management,Class,284,CWE-284,Improper Access Control
+270,Privilege Context Switching Error,Base,284,CWE-284,Improper Access Control
+271,Privilege Dropping / Lowering Errors,Class,284,CWE-284,Improper Access Control
+272,Least Privilege Violation,Base,284,CWE-284,Improper Access Control
+273,Improper Check for Dropped Privileges,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+274,Improper Handling of Insufficient Privileges,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+276,Incorrect Default Permissions,Base,284,CWE-284,Improper Access Control
+277,Insecure Inherited Permissions,Variant,284,CWE-284,Improper Access Control
+278,Insecure Preserved Inherited Permissions,Variant,284,CWE-284,Improper Access Control
+279,Incorrect Execution-Assigned Permissions,Variant,284,CWE-284,Improper Access Control
+280,Improper Handling of Insufficient Permissions or Privileges,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+281,Improper Preservation of Permissions,Base,284,CWE-284,Improper Access Control
+282,Improper Ownership Management,Class,284,CWE-284,Improper Access Control
+283,Unverified Ownership,Base,284,CWE-284,Improper Access Control
+284,Improper Access Control,Pillar,284,CWE-284,Improper Access Control
+285,Improper Authorization,Class,284,CWE-284,Improper Access Control
+286,Incorrect User Management,Class,284,CWE-284,Improper Access Control
+287,Improper Authentication,Class,284,CWE-284,Improper Access Control
+288,Authentication Bypass Using an Alternate Path or Channel,Base,284,CWE-284,Improper Access Control
+289,Authentication Bypass by Alternate Name,Base,284,CWE-284,Improper Access Control
+290,Authentication Bypass by Spoofing,Base,284,CWE-284,Improper Access Control
+291,Reliance on IP Address for Authentication,Variant,284,CWE-284,Improper Access Control
+293,Using Referer Field for Authentication,Variant,284,CWE-284,Improper Access Control
+294,Authentication Bypass by Capture-replay,Base,284,CWE-284,Improper Access Control
+295,Improper Certificate Validation,Base,284,CWE-284,Improper Access Control
+296,Improper Following of a Certificate's Chain of Trust,Base,284,CWE-284,Improper Access Control
+297,Improper Validation of Certificate with Host Mismatch,Variant,284,CWE-284,Improper Access Control
+298,Improper Validation of Certificate Expiration,Variant,284,CWE-284,Improper Access Control
+299,Improper Check for Certificate Revocation,Base,284,CWE-284,Improper Access Control
+300,Channel Accessible by Non-Endpoint,Class,284,CWE-284,Improper Access Control
+301,Reflection Attack in an Authentication Protocol,Base,284,CWE-284,Improper Access Control
+302,Authentication Bypass by Assumed-Immutable Data,Base,284,CWE-284,Improper Access Control
+303,Incorrect Implementation of Authentication Algorithm,Base,284,CWE-284,Improper Access Control
+304,Missing Critical Step in Authentication,Base,284,CWE-284,Improper Access Control
+305,Authentication Bypass by Primary Weakness,Base,284,CWE-284,Improper Access Control
+306,Missing Authentication for Critical Function,Base,284,CWE-284,Improper Access Control
+307,Improper Restriction of Excessive Authentication Attempts,Base,284,CWE-284,Improper Access Control
+308,Use of Single-factor Authentication,Base,284,CWE-284,Improper Access Control
+309,Use of Password System for Primary Authentication,Base,284,CWE-284,Improper Access Control
+311,Missing Encryption of Sensitive Data,Class,693,CWE-693,Protection Mechanism Failure
+312,Cleartext Storage of Sensitive Information,Base,693,CWE-693,Protection Mechanism Failure
+313,Cleartext Storage in a File or on Disk,Variant,693,CWE-693,Protection Mechanism Failure
+314,Cleartext Storage in the Registry,Variant,693,CWE-693,Protection Mechanism Failure
+315,Cleartext Storage of Sensitive Information in a Cookie,Variant,693,CWE-693,Protection Mechanism Failure
+316,Cleartext Storage of Sensitive Information in Memory,Variant,693,CWE-693,Protection Mechanism Failure
+317,Cleartext Storage of Sensitive Information in GUI,Variant,693,CWE-693,Protection Mechanism Failure
+318,Cleartext Storage of Sensitive Information in Executable,Variant,693,CWE-693,Protection Mechanism Failure
+319,Cleartext Transmission of Sensitive Information,Base,693,CWE-693,Protection Mechanism Failure
+321,Use of Hard-coded Cryptographic Key,Variant,284,CWE-284,Improper Access Control
+322,Key Exchange without Entity Authentication,Base,284,CWE-284,Improper Access Control
+323,"Reusing a Nonce, Key Pair in Encryption",Base,693,CWE-693,Protection Mechanism Failure
+324,Use of a Key Past its Expiration Date,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+325,Missing Cryptographic Step,Base,693,CWE-693,Protection Mechanism Failure
+326,Inadequate Encryption Strength,Class,693,CWE-693,Protection Mechanism Failure
+327,Use of a Broken or Risky Cryptographic Algorithm,Class,693,CWE-693,Protection Mechanism Failure
+328,Use of Weak Hash,Base,693,CWE-693,Protection Mechanism Failure
+329,Generation of Predictable IV with CBC Mode,Variant,693,CWE-693,Protection Mechanism Failure
+330,Use of Insufficiently Random Values,Class,693,CWE-693,Protection Mechanism Failure
+331,Insufficient Entropy,Base,693,CWE-693,Protection Mechanism Failure
+332,Insufficient Entropy in PRNG,Variant,693,CWE-693,Protection Mechanism Failure
+333,Improper Handling of Insufficient Entropy in TRNG,Variant,693,CWE-693,Protection Mechanism Failure
+334,Small Space of Random Values,Base,693,CWE-693,Protection Mechanism Failure
+335,Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG),Base,693,CWE-693,Protection Mechanism Failure
+336,Same Seed in Pseudo-Random Number Generator (PRNG),Variant,693,CWE-693,Protection Mechanism Failure
+337,Predictable Seed in Pseudo-Random Number Generator (PRNG),Variant,693,CWE-693,Protection Mechanism Failure
+338,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Base,693,CWE-693,Protection Mechanism Failure
+339,Small Seed Space in PRNG,Variant,693,CWE-693,Protection Mechanism Failure
+340,Generation of Predictable Numbers or Identifiers,Class,693,CWE-693,Protection Mechanism Failure
+341,Predictable from Observable State,Base,693,CWE-693,Protection Mechanism Failure
+342,Predictable Exact Value from Previous Values,Base,693,CWE-693,Protection Mechanism Failure
+343,Predictable Value Range from Previous Values,Base,693,CWE-693,Protection Mechanism Failure
+344,Use of Invariant Value in Dynamically Changing Context,Base,693,CWE-693,Protection Mechanism Failure
+345,Insufficient Verification of Data Authenticity,Class,693,CWE-693,Protection Mechanism Failure
+346,Origin Validation Error,Class,693,CWE-693,Protection Mechanism Failure
+347,Improper Verification of Cryptographic Signature,Base,693,CWE-693,Protection Mechanism Failure
+348,Use of Less Trusted Source,Base,693,CWE-693,Protection Mechanism Failure
+349,Acceptance of Extraneous Untrusted Data With Trusted Data,Base,693,CWE-693,Protection Mechanism Failure
+350,Reliance on Reverse DNS Resolution for a Security-Critical Action,Variant,284,CWE-284,Improper Access Control
+351,Insufficient Type Distinction,Base,693,CWE-693,Protection Mechanism Failure
+352,Cross-Site Request Forgery (CSRF),Compound,693,CWE-693,Protection Mechanism Failure
+353,Missing Support for Integrity Check,Base,693,CWE-693,Protection Mechanism Failure
+354,Improper Validation of Integrity Check Value,Base,693,CWE-693,Protection Mechanism Failure
+356,Product UI does not Warn User of Unsafe Actions,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+357,Insufficient UI Warning of Dangerous Operations,Base,693,CWE-693,Protection Mechanism Failure
+358,Improperly Implemented Security Check for Standard,Base,710,CWE-710,Improper Adherence to Coding Standards
+359,Exposure of Private Personal Information to an Unauthorized Actor,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+360,Trust of System Event Data,Base,693,CWE-693,Protection Mechanism Failure
+362,Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition'),Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+363,Race Condition Enabling Link Following,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+364,Signal Handler Race Condition,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+366,Race Condition within a Thread,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+367,Time-of-check Time-of-use (TOCTOU) Race Condition,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+368,Context Switching Race Condition,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+369,Divide By Zero,Base,682,CWE-682,Incorrect Calculation
+370,Missing Check for Certificate Revocation after Initial Check,Variant,284,CWE-284,Improper Access Control
+372,Incomplete Internal State Distinction,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+374,Passing Mutable Objects to an Untrusted Method,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+375,Returning a Mutable Object to an Untrusted Caller,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+377,Insecure Temporary File,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+378,Creation of Temporary File With Insecure Permissions,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+379,Creation of Temporary File in Directory with Insecure Permissions,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+382,J2EE Bad Practices: Use of System.exit(),Variant,691,CWE-691,Insufficient Control Flow Management
+383,J2EE Bad Practices: Direct Use of Threads,Variant,710,CWE-710,Improper Adherence to Coding Standards
+384,Session Fixation,Compound,664,CWE-664,Improper Control of a Resource Through its Lifetime
+385,Covert Timing Channel,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+386,Symbolic Name not Mapping to Correct Object,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+390,Detection of Error Condition Without Action,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+391,Unchecked Error Condition,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+392,Missing Report of Error Condition,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+393,Return of Wrong Status Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+394,Unexpected Status Code or Return Value,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+395,Use of NullPointerException Catch to Detect NULL Pointer Dereference,Base,691,CWE-691,Insufficient Control Flow Management
+396,Declaration of Catch for Generic Exception,Base,691,CWE-691,Insufficient Control Flow Management
+397,Declaration of Throws for Generic Exception,Base,691,CWE-691,Insufficient Control Flow Management
+400,Uncontrolled Resource Consumption,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+401,Missing Release of Memory after Effective Lifetime,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+402,Transmission of Private Resources into a New Sphere ('Resource Leak'),Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+403,Exposure of File Descriptor to Unintended Control Sphere ('File Descriptor Leak'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+404,Improper Resource Shutdown or Release,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+405,Asymmetric Resource Consumption (Amplification),Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+406,Insufficient Control of Network Message Volume (Network Amplification),Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+407,Inefficient Algorithmic Complexity,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+408,Incorrect Behavior Order: Early Amplification,Base,691,CWE-691,Insufficient Control Flow Management
+409,Improper Handling of Highly Compressed Data (Data Amplification),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+410,Insufficient Resource Pool,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+412,Unrestricted Externally Accessible Lock,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+413,Improper Resource Locking,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+414,Missing Lock Check,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+415,Double Free,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+416,Use After Free,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+419,Unprotected Primary Channel,Base,284,CWE-284,Improper Access Control
+420,Unprotected Alternate Channel,Base,284,CWE-284,Improper Access Control
+421,Race Condition During Access to Alternate Channel,Base,284,CWE-284,Improper Access Control
+422,Unprotected Windows Messaging Channel ('Shatter'),Variant,284,CWE-284,Improper Access Control
+424,Improper Protection of Alternate Path,Class,710,CWE-710,Improper Adherence to Coding Standards
+425,Direct Request ('Forced Browsing'),Base,284,CWE-284,Improper Access Control
+426,Untrusted Search Path,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+427,Uncontrolled Search Path Element,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+428,Unquoted Search Path or Element,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+430,Deployment of Wrong Handler,Base,691,CWE-691,Insufficient Control Flow Management
+431,Missing Handler,Base,691,CWE-691,Insufficient Control Flow Management
+432,Dangerous Signal Handler not Disabled During Sensitive Operations,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+433,Unparsed Raw Web Content Delivery,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+434,Unrestricted Upload of File with Dangerous Type,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+435,Improper Interaction Between Multiple Correctly-Behaving Entities,Pillar,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+436,Interpretation Conflict,Class,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+437,Incomplete Model of Endpoint Features,Base,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+439,Behavioral Change in New Version or Environment,Base,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+440,Expected Behavior Violation,Base,710,CWE-710,Improper Adherence to Coding Standards
+441,Unintended Proxy or Intermediary ('Confused Deputy'),Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+444,Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling'),Base,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+446,UI Discrepancy for Security Feature,Class,710,CWE-710,Improper Adherence to Coding Standards
+447,Unimplemented or Unsupported Feature in UI,Base,710,CWE-710,Improper Adherence to Coding Standards
+448,Obsolete Feature in UI,Base,710,CWE-710,Improper Adherence to Coding Standards
+449,The UI Performs the Wrong Action,Base,710,CWE-710,Improper Adherence to Coding Standards
+450,Multiple Interpretations of UI Input,Base,693,CWE-693,Protection Mechanism Failure
+451,User Interface (UI) Misrepresentation of Critical Information,Class,710,CWE-710,Improper Adherence to Coding Standards
+453,Insecure Default Variable Initialization,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+454,External Initialization of Trusted Variables or Data Stores,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+455,Non-exit on Failed Initialization,Base,691,CWE-691,Insufficient Control Flow Management
+456,Missing Initialization of a Variable,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+457,Use of Uninitialized Variable,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+459,Incomplete Cleanup,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+460,Improper Cleanup on Thrown Exception,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+462,Duplicate Key in Associative List (Alist),Variant,707,CWE-707,Improper Neutralization
+463,Deletion of Data Structure Sentinel,Base,707,CWE-707,Improper Neutralization
+464,Addition of Data Structure Sentinel,Base,707,CWE-707,Improper Neutralization
+466,Return of Pointer Value Outside of Expected Range,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+467,Use of sizeof() on a Pointer Type,Variant,682,CWE-682,Incorrect Calculation
+468,Incorrect Pointer Scaling,Base,682,CWE-682,Incorrect Calculation
+469,Use of Pointer Subtraction to Determine Size,Base,682,CWE-682,Incorrect Calculation
+470,Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+471,Modification of Assumed-Immutable Data (MAID),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+472,External Control of Assumed-Immutable Web Parameter,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+473,PHP External Variable Modification,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+474,Use of Function with Inconsistent Implementations,Base,710,CWE-710,Improper Adherence to Coding Standards
+475,Undefined Behavior for Input to API,Base,710,CWE-710,Improper Adherence to Coding Standards
+476,NULL Pointer Dereference,Base,710,CWE-710,Improper Adherence to Coding Standards
+477,Use of Obsolete Function,Base,710,CWE-710,Improper Adherence to Coding Standards
+478,Missing Default Case in Multiple Condition Expression,Base,697,CWE-697,Incorrect Comparison
+479,Signal Handler Use of a Non-reentrant Function,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+480,Use of Incorrect Operator,Base,691,CWE-691,Insufficient Control Flow Management
+481,Assigning instead of Comparing,Variant,691,CWE-691,Insufficient Control Flow Management
+482,Comparing instead of Assigning,Variant,691,CWE-691,Insufficient Control Flow Management
+483,Incorrect Block Delimitation,Base,691,CWE-691,Insufficient Control Flow Management
+484,Omitted Break Statement in Switch,Base,710,CWE-710,Improper Adherence to Coding Standards
+486,Comparison of Classes by Name,Variant,697,CWE-697,Incorrect Comparison
+487,Reliance on Package-level Scope,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+488,Exposure of Data Element to Wrong Session,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+489,Active Debug Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+491,Public cloneable() Method Without Final ('Object Hijack'),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+492,Use of Inner Class Containing Sensitive Data,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+493,Critical Public Variable Without Final Modifier,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+494,Download of Code Without Integrity Check,Base,693,CWE-693,Protection Mechanism Failure
+495,Private Data Structure Returned From A Public Method,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+496,Public Data Assigned to Private Array-Typed Field,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+497,Exposure of Sensitive System Information to an Unauthorized Control Sphere,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+498,Cloneable Class Containing Sensitive Information,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+499,Serializable Class Containing Sensitive Data,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+500,Public Static Field Not Marked Final,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+501,Trust Boundary Violation,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+502,Deserialization of Untrusted Data,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+506,Embedded Malicious Code,Class,710,CWE-710,Improper Adherence to Coding Standards
+507,Trojan Horse,Base,710,CWE-710,Improper Adherence to Coding Standards
+508,Non-Replicating Malicious Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+509,Replicating Malicious Code (Virus or Worm),Base,710,CWE-710,Improper Adherence to Coding Standards
+510,Trapdoor,Base,710,CWE-710,Improper Adherence to Coding Standards
+511,Logic/Time Bomb,Base,710,CWE-710,Improper Adherence to Coding Standards
+512,Spyware,Base,710,CWE-710,Improper Adherence to Coding Standards
+514,Covert Channel,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+515,Covert Storage Channel,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+520,.NET Misconfiguration: Use of Impersonation,Variant,284,CWE-284,Improper Access Control
+521,Weak Password Requirements,Base,284,CWE-284,Improper Access Control
+522,Insufficiently Protected Credentials,Class,284,CWE-284,Improper Access Control
+523,Unprotected Transport of Credentials,Base,284,CWE-284,Improper Access Control
+524,Use of Cache Containing Sensitive Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+525,Use of Web Browser Cache Containing Sensitive Information,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+526,Cleartext Storage of Sensitive Information in an Environment Variable,Variant,693,CWE-693,Protection Mechanism Failure
+527,Exposure of Version-Control Repository to an Unauthorized Control Sphere,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+528,Exposure of Core Dump File to an Unauthorized Control Sphere,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+529,Exposure of Access Control List Files to an Unauthorized Control Sphere,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+530,Exposure of Backup File to an Unauthorized Control Sphere,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+531,Inclusion of Sensitive Information in Test Code,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+532,Insertion of Sensitive Information into Log File,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+535,Exposure of Information Through Shell Error Message,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+536,Servlet Runtime Error Message Containing Sensitive Information,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+537,Java Runtime Error Message Containing Sensitive Information,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+538,Insertion of Sensitive Information into Externally-Accessible File or Directory,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+539,Use of Persistent Cookies Containing Sensitive Information,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+540,Inclusion of Sensitive Information in Source Code,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+541,Inclusion of Sensitive Information in an Include File,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+543,Use of Singleton Pattern Without Synchronization in a Multithreaded Context,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+544,Missing Standardized Error Handling Mechanism,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+546,Suspicious Comment,Variant,710,CWE-710,Improper Adherence to Coding Standards
+547,"Use of Hard-coded, Security-relevant Constants",Base,710,CWE-710,Improper Adherence to Coding Standards
+548,Exposure of Information Through Directory Listing,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+549,Missing Password Field Masking,Base,284,CWE-284,Improper Access Control
+550,Server-generated Error Message Containing Sensitive Information,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+551,Incorrect Behavior Order: Authorization Before Parsing and Canonicalization,Base,284,CWE-284,Improper Access Control
+552,Files or Directories Accessible to External Parties,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+553,Command Shell in Externally Accessible Directory,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+554,ASP.NET Misconfiguration: Not Using Input Validation Framework,Variant,707,CWE-707,Improper Neutralization
+555,J2EE Misconfiguration: Plaintext Password in Configuration File,Variant,284,CWE-284,Improper Access Control
+556,ASP.NET Misconfiguration: Use of Identity Impersonation,Variant,284,CWE-284,Improper Access Control
+558,Use of getlogin() in Multithreaded Application,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+560,Use of umask() with chmod-style Argument,Variant,710,CWE-710,Improper Adherence to Coding Standards
+561,Dead Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+562,Return of Stack Variable Address,Base,710,CWE-710,Improper Adherence to Coding Standards
+563,Assignment to Variable without Use,Base,710,CWE-710,Improper Adherence to Coding Standards
+564,SQL Injection: Hibernate,Variant,707,CWE-707,Improper Neutralization
+565,Reliance on Cookies without Validation and Integrity Checking,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+566,Authorization Bypass Through User-Controlled SQL Primary Key,Variant,284,CWE-284,Improper Access Control
+567,Unsynchronized Access to Shared Data in a Multithreaded Context,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+568,finalize() Method Without super.finalize(),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+570,Expression is Always False,Base,710,CWE-710,Improper Adherence to Coding Standards
+571,Expression is Always True,Base,710,CWE-710,Improper Adherence to Coding Standards
+572,Call to Thread run() instead of start(),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+573,Improper Following of Specification by Caller,Class,710,CWE-710,Improper Adherence to Coding Standards
+574,EJB Bad Practices: Use of Synchronization Primitives,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+575,EJB Bad Practices: Use of AWT Swing,Variant,710,CWE-710,Improper Adherence to Coding Standards
+576,EJB Bad Practices: Use of Java I/O,Variant,710,CWE-710,Improper Adherence to Coding Standards
+577,EJB Bad Practices: Use of Sockets,Variant,710,CWE-710,Improper Adherence to Coding Standards
+578,EJB Bad Practices: Use of Class Loader,Variant,710,CWE-710,Improper Adherence to Coding Standards
+579,J2EE Bad Practices: Non-serializable Object Stored in Session,Variant,710,CWE-710,Improper Adherence to Coding Standards
+580,clone() Method Without super.clone(),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+581,Object Model Violation: Just One of Equals and Hashcode Defined,Variant,710,CWE-710,Improper Adherence to Coding Standards
+582,"Array Declared Public, Final, and Static",Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+583,finalize() Method Declared Public,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+584,Return Inside Finally Block,Base,691,CWE-691,Insufficient Control Flow Management
+585,Empty Synchronized Block,Variant,710,CWE-710,Improper Adherence to Coding Standards
+586,Explicit Call to Finalize(),Base,710,CWE-710,Improper Adherence to Coding Standards
+587,Assignment of a Fixed Address to a Pointer,Variant,710,CWE-710,Improper Adherence to Coding Standards
+588,Attempt to Access Child of a Non-structure Pointer,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+589,Call to Non-ubiquitous API,Variant,710,CWE-710,Improper Adherence to Coding Standards
+590,Free of Memory not on the Heap,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+591,Sensitive Data Storage in Improperly Locked Memory,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+593,Authentication Bypass: OpenSSL CTX Object Modified after SSL Objects are Created,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+594,J2EE Framework: Saving Unserializable Objects to Disk,Variant,710,CWE-710,Improper Adherence to Coding Standards
+595,Comparison of Object References Instead of Object Contents,Variant,697,CWE-697,Incorrect Comparison
+597,Use of Wrong Operator in String Comparison,Variant,697,CWE-697,Incorrect Comparison
+598,Use of HTTP Request With Sensitive Query String,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+599,Missing Validation of OpenSSL Certificate,Variant,284,CWE-284,Improper Access Control
+600,Uncaught Exception in Servlet,Variant,691,CWE-691,Insufficient Control Flow Management
+601,URL Redirection to Untrusted Site ('Open Redirect'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+602,Client-Side Enforcement of Server-Side Security,Class,693,CWE-693,Protection Mechanism Failure
+603,Use of Client-Side Authentication,Base,284,CWE-284,Improper Access Control
+605,Multiple Binds to the Same Port,Variant,710,CWE-710,Improper Adherence to Coding Standards
+606,Unchecked Input for Loop Condition,Base,707,CWE-707,Improper Neutralization
+607,Public Static Final Field References Mutable Object,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+608,Struts: Non-private Field in ActionForm Class,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+609,Double-Checked Locking,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+610,Externally Controlled Reference to a Resource in Another Sphere,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+611,Improper Restriction of XML External Entity Reference,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+612,Improper Authorization of Index Containing Sensitive Information,Base,284,CWE-284,Improper Access Control
+613,Insufficient Session Expiration,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+614,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Variant,693,CWE-693,Protection Mechanism Failure
+615,Inclusion of Sensitive Information in Source Code Comments,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+616,Incomplete Identification of Uploaded File Variables (PHP),Variant,693,CWE-693,Protection Mechanism Failure
+617,Reachable Assertion,Base,691,CWE-691,Insufficient Control Flow Management
+618,Exposed Unsafe ActiveX Method,Variant,284,CWE-284,Improper Access Control
+619,Dangling Database Cursor ('Cursor Injection'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+620,Unverified Password Change,Base,284,CWE-284,Improper Access Control
+621,Variable Extraction Error,Variant,707,CWE-707,Improper Neutralization
+622,Improper Validation of Function Hook Arguments,Variant,707,CWE-707,Improper Neutralization
+623,Unsafe ActiveX Control Marked Safe For Scripting,Variant,284,CWE-284,Improper Access Control
+624,Executable Regular Expression Error,Base,707,CWE-707,Improper Neutralization
+625,Permissive Regular Expression,Base,697,CWE-697,Incorrect Comparison
+626,Null Byte Interaction Error (Poison Null Byte),Variant,707,CWE-707,Improper Neutralization
+627,Dynamic Variable Evaluation,Variant,707,CWE-707,Improper Neutralization
+628,Function Call with Incorrectly Specified Arguments,Base,710,CWE-710,Improper Adherence to Coding Standards
+636,Not Failing Securely ('Failing Open'),Class,710,CWE-710,Improper Adherence to Coding Standards
+637,Unnecessary Complexity in Protection Mechanism (Not Using 'Economy of Mechanism'),Class,710,CWE-710,Improper Adherence to Coding Standards
+638,Not Using Complete Mediation,Class,710,CWE-710,Improper Adherence to Coding Standards
+639,Authorization Bypass Through User-Controlled Key,Base,284,CWE-284,Improper Access Control
+640,Weak Password Recovery Mechanism for Forgotten Password,Base,284,CWE-284,Improper Access Control
+641,Improper Restriction of Names for Files and Other Resources,Base,707,CWE-707,Improper Neutralization
+642,External Control of Critical State Data,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+643,Improper Neutralization of Data within XPath Expressions ('XPath Injection'),Base,707,CWE-707,Improper Neutralization
+644,Improper Neutralization of HTTP Headers for Scripting Syntax,Variant,707,CWE-707,Improper Neutralization
+645,Overly Restrictive Account Lockout Mechanism,Base,284,CWE-284,Improper Access Control
+646,Reliance on File Name or Extension of Externally-Supplied File,Variant,693,CWE-693,Protection Mechanism Failure
+647,Use of Non-Canonical URL Paths for Authorization Decisions,Variant,284,CWE-284,Improper Access Control
+648,Incorrect Use of Privileged APIs,Base,284,CWE-284,Improper Access Control
+649,Reliance on Obfuscation or Encryption of Security-Relevant Inputs without Integrity Checking,Base,693,CWE-693,Protection Mechanism Failure
+650,Trusting HTTP Permission Methods on the Server Side,Variant,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+651,Exposure of WSDL File Containing Sensitive Information,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+652,Improper Neutralization of Data within XQuery Expressions ('XQuery Injection'),Base,707,CWE-707,Improper Neutralization
+653,Improper Isolation or Compartmentalization,Class,710,CWE-710,Improper Adherence to Coding Standards
+654,Reliance on a Single Factor in a Security Decision,Base,710,CWE-710,Improper Adherence to Coding Standards
+655,Insufficient Psychological Acceptability,Class,710,CWE-710,Improper Adherence to Coding Standards
+656,Reliance on Security Through Obscurity,Class,710,CWE-710,Improper Adherence to Coding Standards
+657,Violation of Secure Design Principles,Class,710,CWE-710,Improper Adherence to Coding Standards
+662,Improper Synchronization,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+663,Use of a Non-reentrant Function in a Concurrent Context,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+664,Improper Control of a Resource Through its Lifetime,Pillar,664,CWE-664,Improper Control of a Resource Through its Lifetime
+665,Improper Initialization,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+666,Operation on Resource in Wrong Phase of Lifetime,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+667,Improper Locking,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+668,Exposure of Resource to Wrong Sphere,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+669,Incorrect Resource Transfer Between Spheres,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+670,Always-Incorrect Control Flow Implementation,Class,691,CWE-691,Insufficient Control Flow Management
+671,Lack of Administrator Control over Security,Class,710,CWE-710,Improper Adherence to Coding Standards
+672,Operation on a Resource after Expiration or Release,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+673,External Influence of Sphere Definition,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+674,Uncontrolled Recursion,Class,691,CWE-691,Insufficient Control Flow Management
+675,Multiple Operations on Resource in Single-Operation Context,Class,710,CWE-710,Improper Adherence to Coding Standards
+676,Use of Potentially Dangerous Function,Base,710,CWE-710,Improper Adherence to Coding Standards
+680,Integer Overflow to Buffer Overflow,Compound,682,CWE-682,Incorrect Calculation
+681,Incorrect Conversion between Numeric Types,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+682,Incorrect Calculation,Pillar,682,CWE-682,Incorrect Calculation
+683,Function Call With Incorrect Order of Arguments,Variant,710,CWE-710,Improper Adherence to Coding Standards
+684,Incorrect Provision of Specified Functionality,Class,710,CWE-710,Improper Adherence to Coding Standards
+685,Function Call With Incorrect Number of Arguments,Variant,710,CWE-710,Improper Adherence to Coding Standards
+686,Function Call With Incorrect Argument Type,Variant,710,CWE-710,Improper Adherence to Coding Standards
+687,Function Call With Incorrectly Specified Argument Value,Variant,710,CWE-710,Improper Adherence to Coding Standards
+688,Function Call With Incorrect Variable or Reference as Argument,Variant,710,CWE-710,Improper Adherence to Coding Standards
+689,Permission Race Condition During Resource Copy,Compound,664,CWE-664,Improper Control of a Resource Through its Lifetime
+690,Unchecked Return Value to NULL Pointer Dereference,Compound,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+691,Insufficient Control Flow Management,Pillar,691,CWE-691,Insufficient Control Flow Management
+692,Incomplete Denylist to Cross-Site Scripting,Compound,693,CWE-693,Protection Mechanism Failure
+693,Protection Mechanism Failure,Pillar,693,CWE-693,Protection Mechanism Failure
+694,Use of Multiple Resources with Duplicate Identifier,Base,707,CWE-707,Improper Neutralization
+695,Use of Low-Level Functionality,Base,710,CWE-710,Improper Adherence to Coding Standards
+696,Incorrect Behavior Order,Class,691,CWE-691,Insufficient Control Flow Management
+697,Incorrect Comparison,Pillar,697,CWE-697,Incorrect Comparison
+698,Execution After Redirect (EAR),Base,691,CWE-691,Insufficient Control Flow Management
+703,Improper Check or Handling of Exceptional Conditions,Pillar,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+704,Incorrect Type Conversion or Cast,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+705,Incorrect Control Flow Scoping,Class,691,CWE-691,Insufficient Control Flow Management
+706,Use of Incorrectly-Resolved Name or Reference,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+707,Improper Neutralization,Pillar,707,CWE-707,Improper Neutralization
+708,Incorrect Ownership Assignment,Base,284,CWE-284,Improper Access Control
+710,Improper Adherence to Coding Standards,Pillar,710,CWE-710,Improper Adherence to Coding Standards
+732,Incorrect Permission Assignment for Critical Resource,Class,284,CWE-284,Improper Access Control
+733,Compiler Optimization Removal or Modification of Security-critical Code,Base,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+749,Exposed Dangerous Method or Function,Base,284,CWE-284,Improper Access Control
+754,Improper Check for Unusual or Exceptional Conditions,Class,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+755,Improper Handling of Exceptional Conditions,Class,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+756,Missing Custom Error Page,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+757,Selection of Less-Secure Algorithm During Negotiation ('Algorithm Downgrade'),Base,693,CWE-693,Protection Mechanism Failure
+758,"Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",Class,710,CWE-710,Improper Adherence to Coding Standards
+759,Use of a One-Way Hash without a Salt,Variant,693,CWE-693,Protection Mechanism Failure
+760,Use of a One-Way Hash with a Predictable Salt,Variant,693,CWE-693,Protection Mechanism Failure
+761,Free of Pointer not at Start of Buffer,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+762,Mismatched Memory Management Routines,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+763,Release of Invalid Pointer or Reference,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+764,Multiple Locks of a Critical Resource,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+765,Multiple Unlocks of a Critical Resource,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+766,Critical Data Element Declared Public,Base,284,CWE-284,Improper Access Control
+767,Access to Critical Private Variable via Public Method,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+768,Incorrect Short Circuit Evaluation,Variant,691,CWE-691,Insufficient Control Flow Management
+770,Allocation of Resources Without Limits or Throttling,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+771,Missing Reference to Active Allocated Resource,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+772,Missing Release of Resource after Effective Lifetime,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+773,Missing Reference to Active File Descriptor or Handle,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+774,Allocation of File Descriptors or Handles Without Limits or Throttling,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+775,Missing Release of File Descriptor or Handle after Effective Lifetime,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+776,Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion'),Base,691,CWE-691,Insufficient Control Flow Management
+777,Regular Expression without Anchors,Variant,697,CWE-697,Incorrect Comparison
+778,Insufficient Logging,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+779,Logging of Excessive Data,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+780,Use of RSA Algorithm without OAEP,Variant,693,CWE-693,Protection Mechanism Failure
+781,Improper Address Validation in IOCTL with METHOD_NEITHER I/O Control Code,Variant,707,CWE-707,Improper Neutralization
+782,Exposed IOCTL with Insufficient Access Control,Variant,284,CWE-284,Improper Access Control
+783,Operator Precedence Logic Error,Base,691,CWE-691,Insufficient Control Flow Management
+784,Reliance on Cookies without Validation and Integrity Checking in a Security Decision,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+785,Use of Path Manipulation Function without Maximum-sized Buffer,Variant,710,CWE-710,Improper Adherence to Coding Standards
+786,Access of Memory Location Before Start of Buffer,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+787,Out-of-bounds Write,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+788,Access of Memory Location After End of Buffer,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+789,Memory Allocation with Excessive Size Value,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+790,Improper Filtering of Special Elements,Class,707,CWE-707,Improper Neutralization
+791,Incomplete Filtering of Special Elements,Base,707,CWE-707,Improper Neutralization
+792,Incomplete Filtering of One or More Instances of Special Elements,Variant,707,CWE-707,Improper Neutralization
+793,Only Filtering One Instance of a Special Element,Variant,707,CWE-707,Improper Neutralization
+794,Incomplete Filtering of Multiple Instances of Special Elements,Variant,707,CWE-707,Improper Neutralization
+795,Only Filtering Special Elements at a Specified Location,Base,707,CWE-707,Improper Neutralization
+796,Only Filtering Special Elements Relative to a Marker,Variant,707,CWE-707,Improper Neutralization
+797,Only Filtering Special Elements at an Absolute Position,Variant,707,CWE-707,Improper Neutralization
+798,Use of Hard-coded Credentials,Base,284,CWE-284,Improper Access Control
+799,Improper Control of Interaction Frequency,Class,691,CWE-691,Insufficient Control Flow Management
+804,Guessable CAPTCHA,Base,284,CWE-284,Improper Access Control
+805,Buffer Access with Incorrect Length Value,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+806,Buffer Access Using Size of Source Buffer,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+807,Reliance on Untrusted Inputs in a Security Decision,Base,693,CWE-693,Protection Mechanism Failure
+820,Missing Synchronization,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+821,Incorrect Synchronization,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+822,Untrusted Pointer Dereference,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+823,Use of Out-of-range Pointer Offset,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+824,Access of Uninitialized Pointer,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+825,Expired Pointer Dereference,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+826,Premature Release of Resource During Expected Lifetime,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+827,Improper Control of Document Type Definition,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+828,Signal Handler with Functionality that is not Asynchronous-Safe,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+829,Inclusion of Functionality from Untrusted Control Sphere,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+830,Inclusion of Web Functionality from an Untrusted Source,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+831,Signal Handler Function Associated with Multiple Signals,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+832,Unlock of a Resource that is not Locked,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+833,Deadlock,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+834,Excessive Iteration,Class,691,CWE-691,Insufficient Control Flow Management
+835,Loop with Unreachable Exit Condition ('Infinite Loop'),Base,691,CWE-691,Insufficient Control Flow Management
+836,Use of Password Hash Instead of Password for Authentication,Base,284,CWE-284,Improper Access Control
+837,"Improper Enforcement of a Single, Unique Action",Base,691,CWE-691,Insufficient Control Flow Management
+838,Inappropriate Encoding for Output Context,Base,707,CWE-707,Improper Neutralization
+839,Numeric Range Comparison Without Minimum Check,Base,697,CWE-697,Incorrect Comparison
+841,Improper Enforcement of Behavioral Workflow,Class,691,CWE-691,Insufficient Control Flow Management
+842,Placement of User into Incorrect Group,Base,284,CWE-284,Improper Access Control
+843,Access of Resource Using Incompatible Type ('Type Confusion'),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+862,Missing Authorization,Class,284,CWE-284,Improper Access Control
+863,Incorrect Authorization,Class,284,CWE-284,Improper Access Control
+908,Use of Uninitialized Resource,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+909,Missing Initialization of Resource,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+910,Use of Expired File Descriptor,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+911,Improper Update of Reference Count,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+912,Hidden Functionality,Class,710,CWE-710,Improper Adherence to Coding Standards
+913,Improper Control of Dynamically-Managed Code Resources,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+914,Improper Control of Dynamically-Identified Variables,Base,707,CWE-707,Improper Neutralization
+915,Improperly Controlled Modification of Dynamically-Determined Object Attributes,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+916,Use of Password Hash With Insufficient Computational Effort,Base,693,CWE-693,Protection Mechanism Failure
+917,Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection'),Base,707,CWE-707,Improper Neutralization
+918,Server-Side Request Forgery (SSRF),Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+920,Improper Restriction of Power Consumption,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+921,Storage of Sensitive Data in a Mechanism without Access Control,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+922,Insecure Storage of Sensitive Information,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+923,Improper Restriction of Communication Channel to Intended Endpoints,Class,284,CWE-284,Improper Access Control
+924,Improper Enforcement of Message Integrity During Transmission in a Communication Channel,Base,693,CWE-693,Protection Mechanism Failure
+925,Improper Verification of Intent by Broadcast Receiver,Variant,284,CWE-284,Improper Access Control
+926,Improper Export of Android Application Components,Variant,284,CWE-284,Improper Access Control
+927,Use of Implicit Intent for Sensitive Communication,Variant,284,CWE-284,Improper Access Control
+939,Improper Authorization in Handler for Custom URL Scheme,Base,284,CWE-284,Improper Access Control
+940,Improper Verification of Source of a Communication Channel,Base,284,CWE-284,Improper Access Control
+941,Incorrectly Specified Destination in a Communication Channel,Base,284,CWE-284,Improper Access Control
+942,Permissive Cross-domain Security Policy with Untrusted Domains,Variant,284,CWE-284,Improper Access Control
+943,Improper Neutralization of Special Elements in Data Query Logic,Class,707,CWE-707,Improper Neutralization
+1004,Sensitive Cookie Without 'HttpOnly' Flag,Variant,284,CWE-284,Improper Access Control
+1007,Insufficient Visual Distinction of Homoglyphs Presented to User,Base,710,CWE-710,Improper Adherence to Coding Standards
+1021,Improper Restriction of Rendered UI Layers or Frames,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1022,Use of Web Link to Untrusted Target with window.opener Access,Variant,284,CWE-284,Improper Access Control
+1023,Incomplete Comparison with Missing Factors,Class,697,CWE-697,Incorrect Comparison
+1024,Comparison of Incompatible Types,Base,697,CWE-697,Incorrect Comparison
+1025,Comparison Using Wrong Factors,Base,697,CWE-697,Incorrect Comparison
+1037,Processor Optimization Removal or Modification of Security-critical Code,Base,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+1038,Insecure Automated Optimizations,Class,435,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities
+1039,Inadequate Detection or Handling of Adversarial Input Perturbations in Automated Recognition Mechanism,Class,693,CWE-693,Protection Mechanism Failure
+1041,Use of Redundant Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+1042,Static Member Data Element outside of a Singleton Class Element,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1043,Data Element Aggregating an Excessively Large Number of Non-Primitive Elements,Base,710,CWE-710,Improper Adherence to Coding Standards
+1044,Architecture with Number of Horizontal Layers Outside of Expected Range,Base,710,CWE-710,Improper Adherence to Coding Standards
+1045,Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor,Base,710,CWE-710,Improper Adherence to Coding Standards
+1046,Creation of Immutable Text Using String Concatenation,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1047,Modules with Circular Dependencies,Base,710,CWE-710,Improper Adherence to Coding Standards
+1048,Invokable Control Element with Large Number of Outward Calls,Base,710,CWE-710,Improper Adherence to Coding Standards
+1049,Excessive Data Query Operations in a Large Data Table,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1050,Excessive Platform Resource Consumption within a Loop,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1051,Initialization with Hard-Coded Network Resource Configuration Data,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1052,Excessive Use of Hard-Coded Literals in Initialization,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1053,Missing Documentation for Design,Base,710,CWE-710,Improper Adherence to Coding Standards
+1054,Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer,Base,710,CWE-710,Improper Adherence to Coding Standards
+1055,Multiple Inheritance from Concrete Classes,Base,710,CWE-710,Improper Adherence to Coding Standards
+1056,Invokable Control Element with Variadic Parameters,Base,710,CWE-710,Improper Adherence to Coding Standards
+1057,Data Access Operations Outside of Expected Data Manager Component,Base,710,CWE-710,Improper Adherence to Coding Standards
+1058,Invokable Control Element in Multi-Thread Context with non-Final Static Storable or Member Element,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1059,Insufficient Technical Documentation,Class,710,CWE-710,Improper Adherence to Coding Standards
+1060,Excessive Number of Inefficient Server-Side Data Accesses,Base,710,CWE-710,Improper Adherence to Coding Standards
+1061,Insufficient Encapsulation,Class,710,CWE-710,Improper Adherence to Coding Standards
+1062,Parent Class with References to Child Class,Base,710,CWE-710,Improper Adherence to Coding Standards
+1063,Creation of Class Instance within a Static Code Block,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1064,Invokable Control Element with Signature Containing an Excessive Number of Parameters,Base,710,CWE-710,Improper Adherence to Coding Standards
+1065,Runtime Resource Management Control Element in a Component Built to Run on Application Servers,Base,710,CWE-710,Improper Adherence to Coding Standards
+1066,Missing Serialization Control Element,Base,710,CWE-710,Improper Adherence to Coding Standards
+1067,Excessive Execution of Sequential Searches of Data Resource,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1068,Inconsistency Between Implementation and Documented Design,Base,710,CWE-710,Improper Adherence to Coding Standards
+1069,Empty Exception Block,Variant,710,CWE-710,Improper Adherence to Coding Standards
+1070,Serializable Data Element Containing non-Serializable Item Elements,Base,710,CWE-710,Improper Adherence to Coding Standards
+1071,Empty Code Block,Base,710,CWE-710,Improper Adherence to Coding Standards
+1072,Data Resource Access without Use of Connection Pooling,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1073,Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1074,Class with Excessively Deep Inheritance,Base,710,CWE-710,Improper Adherence to Coding Standards
+1075,Unconditional Control Flow Transfer outside of Switch Block,Base,710,CWE-710,Improper Adherence to Coding Standards
+1076,Insufficient Adherence to Expected Conventions,Class,710,CWE-710,Improper Adherence to Coding Standards
+1077,Floating Point Comparison with Incorrect Operator,Variant,697,CWE-697,Incorrect Comparison
+1078,Inappropriate Source Code Style or Formatting,Class,710,CWE-710,Improper Adherence to Coding Standards
+1079,Parent Class without Virtual Destructor Method,Base,710,CWE-710,Improper Adherence to Coding Standards
+1080,Source Code File with Excessive Number of Lines of Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+1082,Class Instance Self Destruction Control Element,Base,710,CWE-710,Improper Adherence to Coding Standards
+1083,Data Access from Outside Expected Data Manager Component,Base,710,CWE-710,Improper Adherence to Coding Standards
+1084,Invokable Control Element with Excessive File or Data Access Operations,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1085,Invokable Control Element with Excessive Volume of Commented-out Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+1086,Class with Excessive Number of Child Classes,Base,710,CWE-710,Improper Adherence to Coding Standards
+1087,Class with Virtual Method without a Virtual Destructor,Base,710,CWE-710,Improper Adherence to Coding Standards
+1088,Synchronous Access of Remote Resource without Timeout,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1089,Large Data Table with Excessive Number of Indices,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1090,Method Containing Access of a Member Element from Another Class,Base,710,CWE-710,Improper Adherence to Coding Standards
+1091,Use of Object without Invoking Destructor Method,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1092,Use of Same Invokable Control Element in Multiple Architectural Layers,Base,710,CWE-710,Improper Adherence to Coding Standards
+1093,Excessively Complex Data Representation,Class,710,CWE-710,Improper Adherence to Coding Standards
+1094,Excessive Index Range Scan for a Data Resource,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1095,Loop Condition Value Update within the Loop,Base,710,CWE-710,Improper Adherence to Coding Standards
+1096,Singleton Class Instance Creation without Proper Locking or Synchronization,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1097,Persistent Storable Data Element without Associated Comparison Control Element,Base,710,CWE-710,Improper Adherence to Coding Standards
+1098,Data Element containing Pointer Item without Proper Copy Control Element,Base,710,CWE-710,Improper Adherence to Coding Standards
+1099,Inconsistent Naming Conventions for Identifiers,Base,710,CWE-710,Improper Adherence to Coding Standards
+1100,Insufficient Isolation of System-Dependent Functions,Base,710,CWE-710,Improper Adherence to Coding Standards
+1101,Reliance on Runtime Component in Generated Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+1102,Reliance on Machine-Dependent Data Representation,Base,710,CWE-710,Improper Adherence to Coding Standards
+1103,Use of Platform-Dependent Third Party Components,Base,710,CWE-710,Improper Adherence to Coding Standards
+1104,Use of Unmaintained Third Party Components,Base,710,CWE-710,Improper Adherence to Coding Standards
+1105,Insufficient Encapsulation of Machine-Dependent Functionality,Base,710,CWE-710,Improper Adherence to Coding Standards
+1106,Insufficient Use of Symbolic Constants,Base,710,CWE-710,Improper Adherence to Coding Standards
+1107,Insufficient Isolation of Symbolic Constant Definitions,Base,710,CWE-710,Improper Adherence to Coding Standards
+1108,Excessive Reliance on Global Variables,Base,710,CWE-710,Improper Adherence to Coding Standards
+1109,Use of Same Variable for Multiple Purposes,Base,710,CWE-710,Improper Adherence to Coding Standards
+1110,Incomplete Design Documentation,Base,710,CWE-710,Improper Adherence to Coding Standards
+1111,Incomplete I/O Documentation,Base,710,CWE-710,Improper Adherence to Coding Standards
+1112,Incomplete Documentation of Program Execution,Base,710,CWE-710,Improper Adherence to Coding Standards
+1113,Inappropriate Comment Style,Base,710,CWE-710,Improper Adherence to Coding Standards
+1114,Inappropriate Whitespace Style,Base,710,CWE-710,Improper Adherence to Coding Standards
+1115,Source Code Element without Standard Prologue,Base,710,CWE-710,Improper Adherence to Coding Standards
+1116,Inaccurate Source Code Comments,Base,710,CWE-710,Improper Adherence to Coding Standards
+1117,Callable with Insufficient Behavioral Summary,Base,710,CWE-710,Improper Adherence to Coding Standards
+1118,Insufficient Documentation of Error Handling Techniques,Base,710,CWE-710,Improper Adherence to Coding Standards
+1119,Excessive Use of Unconditional Branching,Base,710,CWE-710,Improper Adherence to Coding Standards
+1120,Excessive Code Complexity,Class,710,CWE-710,Improper Adherence to Coding Standards
+1121,Excessive McCabe Cyclomatic Complexity,Base,710,CWE-710,Improper Adherence to Coding Standards
+1122,Excessive Halstead Complexity,Base,710,CWE-710,Improper Adherence to Coding Standards
+1123,Excessive Use of Self-Modifying Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+1124,Excessively Deep Nesting,Base,710,CWE-710,Improper Adherence to Coding Standards
+1125,Excessive Attack Surface,Base,710,CWE-710,Improper Adherence to Coding Standards
+1126,Declaration of Variable with Unnecessarily Wide Scope,Base,710,CWE-710,Improper Adherence to Coding Standards
+1127,Compilation with Insufficient Warnings or Errors,Base,710,CWE-710,Improper Adherence to Coding Standards
+1164,Irrelevant Code,Class,710,CWE-710,Improper Adherence to Coding Standards
+1173,Improper Use of Validation Framework,Base,707,CWE-707,Improper Neutralization
+1174,ASP.NET Misconfiguration: Improper Model Validation,Variant,707,CWE-707,Improper Neutralization
+1176,Inefficient CPU Computation,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1177,Use of Prohibited Code,Class,710,CWE-710,Improper Adherence to Coding Standards
+1188,Initialization of a Resource with an Insecure Default,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1189,Improper Isolation of Shared Resources on System-on-a-Chip (SoC),Base,710,CWE-710,Improper Adherence to Coding Standards
+1190,DMA Device Enabled Too Early in Boot Phase,Base,691,CWE-691,Insufficient Control Flow Management
+1191,On-Chip Debug and Test Interface With Improper Access Control,Base,284,CWE-284,Improper Access Control
+1192,Improper Identifier for IP Block used in System-On-Chip (SOC),Base,710,CWE-710,Improper Adherence to Coding Standards
+1193,Power-On of Untrusted Execution Core Before Enabling Fabric Access Control,Base,691,CWE-691,Insufficient Control Flow Management
+1204,Generation of Weak Initialization Vector (IV),Base,693,CWE-693,Protection Mechanism Failure
+1209,Failure to Disable Reserved Bits,Base,710,CWE-710,Improper Adherence to Coding Standards
+1220,Insufficient Granularity of Access Control,Base,284,CWE-284,Improper Access Control
+1221,Incorrect Register Defaults or Module Parameters,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1222,Insufficient Granularity of Address Regions Protected by Register Locks,Variant,284,CWE-284,Improper Access Control
+1223,Race Condition for Write-Once Attributes,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1224,Improper Restriction of Write-Once Bit Fields,Base,284,CWE-284,Improper Access Control
+1229,Creation of Emergent Resource,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1230,Exposure of Sensitive Information Through Metadata,Base,284,CWE-284,Improper Access Control
+1231,Improper Prevention of Lock Bit Modification,Base,284,CWE-284,Improper Access Control
+1232,Improper Lock Behavior After Power State Transition,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1233,Security-Sensitive Hardware Controls with Missing Lock Bit Protection,Base,284,CWE-284,Improper Access Control
+1234,Hardware Internal or Debug Modes Allow Override of Locks,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1235,Incorrect Use of Autoboxing and Unboxing for Performance Critical Operations,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1236,Improper Neutralization of Formula Elements in a CSV File,Base,707,CWE-707,Improper Neutralization
+1239,Improper Zeroization of Hardware Register,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1240,Use of a Cryptographic Primitive with a Risky Implementation,Base,693,CWE-693,Protection Mechanism Failure
+1241,Use of Predictable Algorithm in Random Number Generator,Base,693,CWE-693,Protection Mechanism Failure
+1242,Inclusion of Undocumented Features or Chicken Bits,Base,710,CWE-710,Improper Adherence to Coding Standards
+1243,Sensitive Non-Volatile Information Not Protected During Debug,Base,284,CWE-284,Improper Access Control
+1244,Internal Asset Exposed to Unsafe Debug Access Level or State,Base,284,CWE-284,Improper Access Control
+1245,Improper Finite State Machines (FSMs) in Hardware Logic,Base,710,CWE-710,Improper Adherence to Coding Standards
+1246,Improper Write Handling in Limited-write Non-Volatile Memories,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1247,Improper Protection Against Voltage and Clock Glitches,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+1248,Semiconductor Defects in Hardware Logic with Security-Sensitive Implications,Base,693,CWE-693,Protection Mechanism Failure
+1249,Application-Level Admin Tool with Inconsistent View of Underlying Operating System,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1250,Improper Preservation of Consistency Between Independent Representations of Shared State,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1251,Mirrored Regions with Different Values,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1252,CPU Hardware Not Configured to Support Exclusivity of Write and Execute Operations,Base,284,CWE-284,Improper Access Control
+1253,Incorrect Selection of Fuse Values,Base,693,CWE-693,Protection Mechanism Failure
+1254,Incorrect Comparison Logic Granularity,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1255,Comparison Logic is Vulnerable to Power Side-Channel Attacks,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1256,Improper Restriction of Software Interfaces to Hardware Features,Base,284,CWE-284,Improper Access Control
+1257,Improper Access Control Applied to Mirrored or Aliased Memory Regions,Base,284,CWE-284,Improper Access Control
+1258,Exposure of Sensitive System Information Due to Uncleared Debug Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1259,Improper Restriction of Security Token Assignment,Base,284,CWE-284,Improper Access Control
+1260,Improper Handling of Overlap Between Protected Memory Ranges,Base,284,CWE-284,Improper Access Control
+1261,Improper Handling of Single Event Upsets,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+1262,Improper Access Control for Register Interface,Base,284,CWE-284,Improper Access Control
+1263,Improper Physical Access Control,Class,284,CWE-284,Improper Access Control
+1264,Hardware Logic with Insecure De-Synchronization between Control and Data Channels,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1265,Unintended Reentrant Invocation of Non-reentrant Code Via Nested Calls,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1266,Improper Scrubbing of Sensitive Data from Decommissioned Device,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1267,Policy Uses Obsolete Encoding,Base,284,CWE-284,Improper Access Control
+1268,Policy Privileges are not Assigned Consistently Between Control and Data Agents,Base,284,CWE-284,Improper Access Control
+1269,Product Released in Non-Release Configuration,Base,693,CWE-693,Protection Mechanism Failure
+1270,Generation of Incorrect Security Tokens,Base,284,CWE-284,Improper Access Control
+1271,Uninitialized Value on Reset for Registers Holding Security Settings,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1272,Sensitive Information Uncleared Before Debug/Power State Transition,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1273,Device Unlock Credential Sharing,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1274,Improper Access Control for Volatile Memory Containing Boot Code,Base,284,CWE-284,Improper Access Control
+1275,Sensitive Cookie with Improper SameSite Attribute,Variant,284,CWE-284,Improper Access Control
+1276,Hardware Child Block Incorrectly Connected to Parent System,Base,284,CWE-284,Improper Access Control
+1277,Firmware Not Updateable,Base,710,CWE-710,Improper Adherence to Coding Standards
+1278,Missing Protection Against Hardware Reverse Engineering Using Integrated Circuit (IC) Imaging Techniques,Base,693,CWE-693,Protection Mechanism Failure
+1279,Cryptographic Operations are run Before Supporting Units are Ready,Base,691,CWE-691,Insufficient Control Flow Management
+1280,Access Control Check Implemented After Asset is Accessed,Base,691,CWE-691,Insufficient Control Flow Management
+1281,Sequence of Processor Instructions Leads to Unexpected Behavior,Base,691,CWE-691,Insufficient Control Flow Management
+1282,Assumed-Immutable Data is Stored in Writable Memory,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1283,Mutable Attestation or Measurement Reporting Data,Base,284,CWE-284,Improper Access Control
+1284,Improper Validation of Specified Quantity in Input,Base,707,CWE-707,Improper Neutralization
+1285,"Improper Validation of Specified Index, Position, or Offset in Input",Base,707,CWE-707,Improper Neutralization
+1286,Improper Validation of Syntactic Correctness of Input,Base,707,CWE-707,Improper Neutralization
+1287,Improper Validation of Specified Type of Input,Base,707,CWE-707,Improper Neutralization
+1288,Improper Validation of Consistency within Input,Base,707,CWE-707,Improper Neutralization
+1289,Improper Validation of Unsafe Equivalence in Input,Base,707,CWE-707,Improper Neutralization
+1290,Incorrect Decoding of Security Identifiers,Base,284,CWE-284,Improper Access Control
+1291,Public Key Re-Use for Signing both Debug and Production Code,Base,693,CWE-693,Protection Mechanism Failure
+1292,Incorrect Conversion of Security Identifiers,Base,284,CWE-284,Improper Access Control
+1293,Missing Source Correlation of Multiple Independent Data,Base,693,CWE-693,Protection Mechanism Failure
+1294,Insecure Security Identifier Mechanism,Class,284,CWE-284,Improper Access Control
+1295,Debug Messages Revealing Unnecessary Information,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1296,Incorrect Chaining or Granularity of Debug Components,Base,284,CWE-284,Improper Access Control
+1297,Unprotected Confidential Information on Device is Accessible by OSAT Vendors,Base,284,CWE-284,Improper Access Control
+1298,Hardware Logic Contains Race Conditions,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1299,Missing Protection Mechanism for Alternate Hardware Interface,Base,284,CWE-284,Improper Access Control
+1300,Improper Protection of Physical Side Channels,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1301,Insufficient or Incomplete Data Removal within Hardware Component,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1302,Missing Source Identifier in Entity Transactions on a System-On-Chip (SOC),Base,284,CWE-284,Improper Access Control
+1303,Non-Transparent Sharing of Microarchitectural Resources,Base,710,CWE-710,Improper Adherence to Coding Standards
+1304,Improperly Preserved Integrity of Hardware Configuration State During a Power Save/Restore Operation,Base,284,CWE-284,Improper Access Control
+1310,Missing Ability to Patch ROM Code,Base,710,CWE-710,Improper Adherence to Coding Standards
+1311,Improper Translation of Security Attributes by Fabric Bridge,Base,284,CWE-284,Improper Access Control
+1312,Missing Protection for Mirrored Regions in On-Chip Fabric Firewall,Base,284,CWE-284,Improper Access Control
+1313,Hardware Allows Activation of Test or Debug Logic at Runtime,Base,284,CWE-284,Improper Access Control
+1314,Missing Write Protection for Parametric Data Values,Base,284,CWE-284,Improper Access Control
+1315,Improper Setting of Bus Controlling Capability in Fabric End-point,Base,284,CWE-284,Improper Access Control
+1316,Fabric-Address Map Allows Programming of Unwarranted Overlaps of Protected and Unprotected Ranges,Base,284,CWE-284,Improper Access Control
+1317,Improper Access Control in Fabric Bridge,Base,284,CWE-284,Improper Access Control
+1318,Missing Support for Security Features in On-chip Fabrics or Buses,Base,693,CWE-693,Protection Mechanism Failure
+1319,Improper Protection against Electromagnetic Fault Injection (EM-FI),Base,693,CWE-693,Protection Mechanism Failure
+1320,Improper Protection for Outbound Error Messages and Alert Signals,Base,284,CWE-284,Improper Access Control
+1321,Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution'),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1322,"Use of Blocking Code in Single-threaded, Non-blocking Context",Base,691,CWE-691,Insufficient Control Flow Management
+1323,Improper Management of Sensitive Trace Data,Base,284,CWE-284,Improper Access Control
+1325,Improperly Controlled Sequential Memory Allocation,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1326,Missing Immutable Root of Trust in Hardware,Base,693,CWE-693,Protection Mechanism Failure
+1327,Binding to an Unrestricted IP Address,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1328,Security Version Number Mutable to Older Versions,Base,284,CWE-284,Improper Access Control
+1329,Reliance on Component That is Not Updateable,Base,710,CWE-710,Improper Adherence to Coding Standards
+1330,Remanent Data Readable after Memory Erase,Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1331,Improper Isolation of Shared Resources in Network On Chip (NoC),Base,710,CWE-710,Improper Adherence to Coding Standards
+1332,Improper Handling of Faults that Lead to Instruction Skips,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+1333,Inefficient Regular Expression Complexity,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1334,Unauthorized Error Injection Can Degrade Hardware Redundancy,Base,284,CWE-284,Improper Access Control
+1335,Incorrect Bitwise Shift of Integer,Base,682,CWE-682,Incorrect Calculation
+1336,Improper Neutralization of Special Elements Used in a Template Engine,Base,707,CWE-707,Improper Neutralization
+1338,Improper Protections Against Hardware Overheating,Base,693,CWE-693,Protection Mechanism Failure
+1339,Insufficient Precision or Accuracy of a Real Number,Base,682,CWE-682,Incorrect Calculation
+1341,Multiple Releases of Same Resource or Handle,Base,710,CWE-710,Improper Adherence to Coding Standards
+1342,Information Exposure through Microarchitectural State after Transient Execution,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1351,Improper Handling of Hardware Behavior in Exceptionally Cold Environments,Base,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+1357,Reliance on Insufficiently Trustworthy Component,Class,710,CWE-710,Improper Adherence to Coding Standards
+1384,Improper Handling of Physical or Environmental Conditions,Class,703,CWE-703,Improper Check or Handling of Exceptional Conditions
+1385,Missing Origin Validation in WebSockets,Variant,693,CWE-693,Protection Mechanism Failure
+1386,Insecure Operation on Windows Junction / Mount Point,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1389,Incorrect Parsing of Numbers with Different Radices,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1390,Weak Authentication,Class,284,CWE-284,Improper Access Control
+1391,Use of Weak Credentials,Class,284,CWE-284,Improper Access Control
+1392,Use of Default Credentials,Base,284,CWE-284,Improper Access Control
+1393,Use of Default Password,Base,284,CWE-284,Improper Access Control
+1394,Use of Default Cryptographic Key,Base,284,CWE-284,Improper Access Control
+1395,Dependency on Vulnerable Third-Party Component,Class,710,CWE-710,Improper Adherence to Coding Standards
+1419,Incorrect Initialization of Resource,Class,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1420,Exposure of Sensitive Information during Transient Execution,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1421,Exposure of Sensitive Information in Shared Microarchitectural Structures during Transient Execution,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1422,Exposure of Sensitive Information caused by Incorrect Data Forwarding during Transient Execution,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1423,Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that Influences Transient Execution,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1426,Improper Validation of Generative AI Output,Base,707,CWE-707,Improper Neutralization
+1427,Improper Neutralization of Input Used for LLM Prompting,Base,707,CWE-707,Improper Neutralization
+1428,Reliance on HTTP instead of HTTPS,Base,693,CWE-693,Protection Mechanism Failure
+1429,Missing Security-Relevant Feedback for Unexecuted Operations in Hardware Interface,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1431,Driving Intermediate Cryptographic State/Results to Hardware Module Outputs,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
+1434,Insecure Setting of Generative AI/ML Model Inference Parameters,Base,710,CWE-710,Improper Adherence to Coding Standards
