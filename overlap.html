@@ -188,7 +188,7 @@
 
   <section aria-labelledby="t-fig">
     <h2 id="t-fig">그림</h2>
-    <p class="lead">보고서용 그림입니다. <code>analysis/plot_overlap.py</code>가 다시 만듭니다.</p>
+    <p class="lead">정적 그림(SVG)입니다. <code>analysis/plot_overlap.py</code>가 다시 만듭니다.</p>
     <div class="figs">
       <figure>
         <img src="figures/venn_manual_mois_top25.svg" alt="매뉴얼 신뢰성시험 합집합, 행안부 49, CWE Top 25 세 집합의 벤 다이어그램">
@@ -231,6 +231,7 @@
     </div>
   </section>
 
+  <!-- 링크 주의: 문서 링크는 지금 포크(minkwanchoi) 주소입니다. 팀 저장소에 병합할 때 suyoungi 주소로 바꿉니다. -->
   <section id="limits" aria-labelledby="t-lim">
     <h2 id="t-lim">분석 범위와 한계</h2>
     <p class="lead">아래 다섯 가지 이유로 이 페이지의 숫자는 국방 SW 시험 부담 전체가 아니라 공개 목록 사이의 관계로 읽어야 합니다.</p>
@@ -244,7 +245,7 @@
       <li><strong>CWE 번호가 같을 때만 겹친다고 셈.</strong> 상위·하위 CWE 관계(예: 119와 787)는 세지 않았습니다. 상위 번호를 주로 쓰는 행안부 목록의 겹침은 작게 나올 수 있습니다.</li>
       <li><strong>목록이 같아도 시험이 같은 것은 아님.</strong> 제도마다 다른 탐지·허용 기준, 오탐 소명 절차, 도구, 적용 대상은 비교하지 않았습니다.</li>
     </ol>
-    <p class="lead" style="margin-top:12px">자세한 설명과 보고서용 문안: <a href="https://github.com/suyoungi/seminar-team01/blob/main/docs/B_분석범위와_한계.md">docs/B_분석범위와_한계.md</a></p>
+    <p class="lead" style="margin-top:12px">자세한 설명: <a href="https://github.com/minkwanchoi/seminar-team01/blob/main/docs/B_분석범위와_한계.md">docs/B_분석범위와_한계.md</a></p>
   </section>
 
   <p id="error">데이터를 읽지 못했습니다. GitHub Pages 주소로 열거나, 저장소 폴더에서 <code>python -m http.server</code>를 실행한 뒤 열어 주세요.</p>
@@ -252,7 +253,7 @@
   <footer>
     데이터: <a href="data/overlap_matrix.csv">overlap_matrix.csv</a> · <a href="data/overlap_pairs.csv">overlap_pairs.csv</a> ·
     <a href="data/overlap_summary.csv">overlap_summary.csv</a> · 기준: CWE List Version 4.20 ·
-    만드는 방법: <a href="https://github.com/suyoungi/seminar-team01/blob/main/data/README.md">data/README.md</a> · <a href="index.html">처음으로</a>
+    만드는 방법: <a href="https://github.com/minkwanchoi/seminar-team01/blob/main/data/README.md">data/README.md</a> · <a href="index.html">처음으로</a>
     <p class="credits"><strong>연구 목적 안내:</strong> 이 자료는 「신흥기술 실습」 수업 팀 프로젝트(seminar-team01)의 연구·교육 목적 결과물입니다. 방위사업청·행정안전부 등 관계 기관의 공식 입장이나 해석이 아닙니다. 인용한 자료의 권리는 각 원저작자에게 있으며, 연구에 필요한 최소 범위로 출처를 밝혀 실었습니다.</p>
     <p class="credits">CWE 데이터: Copyright © 2006–2026, The MITRE Corporation. CWE™는 MITRE의 상표이며,
       <a href="https://cwe.mitre.org/about/termsofuse.html">CWE Terms of Use</a>에 따라 이용합니다.</p>
