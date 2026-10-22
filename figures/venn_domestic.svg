@@ -50,7 +50,7 @@ C 254.000075 264.601871 247.719013 252.401179 244.959517 239.21017
 C 242.200021 226.01916 243.063753 212.323811 247.458643 199.584012 
 C 244.104257 184.846834 246.128328 169.38508 253.163112 156.00793 
 C 260.197896 142.630781 271.789887 132.200609 285.832984 126.612431 
-" clip-path="url(#pa40961031f)" style="fill: #2a78d6; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#pa40961031f)" style="fill: #2672cf; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 285.832984 126.612431 
@@ -72,7 +72,7 @@ C 251.299173 188.451181 257.720432 178.38368 266.195856 170.20708
 C 274.671281 162.030481 284.962687 155.974566 296.226145 152.535944 
 C 294.987615 148.037348 293.496646 143.612093 291.760326 139.281214 
 C 290.024005 134.950335 288.045089 130.720705 285.832984 126.612431 
-" clip-path="url(#pa40961031f)" style="fill: #c29dba; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#pa40961031f)" style="fill: #bf99b5; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 263.133155 274.511683 
@@ -100,7 +100,7 @@ C 276.281261 240.615557 267.795906 234.547664 261.111016 226.737755
 C 254.426126 218.927846 249.740204 209.60783 247.458643 199.584012 
 C 243.063753 212.323811 242.200021 226.01916 244.959517 239.21017 
 C 247.719013 252.401179 254.000075 264.601871 263.133155 274.511683 
-" clip-path="url(#pa40961031f)" style="fill: #30ceeb; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#pa40961031f)" style="fill: #2dcae6; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 296.226145 152.535944 
@@ -122,7 +122,7 @@ C 293.341957 230.470977 298.115418 215.217358 299.895666 199.47911
 C 301.675914 183.740862 300.430325 167.806392 296.226145 152.535944 
 C 284.962687 155.974566 274.671281 162.030481 266.195856 170.20708 
 C 257.720432 178.38368 251.299173 188.451181 247.458643 199.584012 
-" clip-path="url(#pa40961031f)" style="fill: #7aa09b; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#pa40961031f)" style="fill: #789d98; opacity: 0.55; stroke: #fcfcfb; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="118.918395" y="178.686053" transform="rotate(-0 118.918395 178.686053)">147</text>

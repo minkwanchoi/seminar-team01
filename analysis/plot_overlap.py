@@ -30,7 +30,7 @@ DATA_DIR = ROOT / "data"
 FIG_DIR = ROOT / "figures"
 
 # 차트 색: 범주 1~3번(청·주황·청록), 크기는 파랑 한 색의 명도 단계
-SERIES = ["#2a78d6", "#eb6834", "#1baf7a"]
+SERIES = ["#2672cf", "#eb6834", "#1baf7a"]
 NONE_FILL = "#d6d5ce"  # 국내 목록에 없는 부분
 SEQ_BLUE = ["#f4f8fd", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"]
 INK, INK_2, MUTED, GRID = "#0b0b0b", "#52514e", "#898781", "#e1e0d9"
