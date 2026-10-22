@@ -1,26 +1,36 @@
-"""B1. MITRE CWE 목록 수집 및 정제.
+"""B1. MITRE CWE 목록 수집 및 정제 (CWE 버전별).
 
-MITRE에서 CWE 뷰(CWE-658/659/660)와 최신 CWE Top 25를 내려받아
-data/cwe_*.csv로 정리한다.
+MITRE의 CWE 버전 파일(cwec_vX.Y.xml.zip)을 내려받아, 이 연구가 쓰는 뷰와 범주를
+data/cwe/vX.Y/ 아래 CSV로 정리하고 data/cwe/versions.csv에 버전 정보를 적는다.
+버전 파일은 내려받아 계산에만 쓰고 저장소에는 넣지 않는다.
 
-실행: python analysis/fetch_cwe.py
+실행:
+  python analysis/fetch_cwe.py                 # 최신 버전
+  python analysis/fetch_cwe.py 4.10            # 버전 번호로
+  python analysis/fetch_cwe.py https://cwe.mitre.org/data/xml/cwec_v4.21.xml.zip   # 링크로
+  python analysis/fetch_cwe.py --top25 https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html
 """
 
+import argparse
 import html
-import io
 import re
+import sys
 import time
-import zipfile
 from datetime import date
 from pathlib import Path
 
 import pandas as pd
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from cwe_xml import Catalog  # noqa: E402
+
 BASE = "https://cwe.mitre.org"
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+CWE_DIR = DATA_DIR / "cwe"
+VERSIONS_CSV = CWE_DIR / "versions.csv"
 
-# 뷰 번호 → 출력 파일 이름
+# 뷰 번호 → 출력 파일 이름(버전 폴더 안)
 VIEWS = {
     658: "cwe_658.csv",  # Weaknesses in Software Written in C
     659: "cwe_659.csv",  # Weaknesses in Software Written in C++
@@ -31,14 +41,12 @@ VIEWS = {
     1305: "cwe_cisq.csv",      # CISQ Quality Measures (2020)
     1344: "cwe_owasp2021.csv", # Weaknesses in OWASP Top Ten (2021). 비교 집합이 아니라 보고서 참고용
 }
+REQUIRED_VIEWS = {658, 659, 660, 1154, 868, 1305}
 
-# 최신 Top 25: 연도와 MITRE 뷰 번호
-TOP25_YEAR = 2025
-TOP25_VIEW = 1435
 # 상위 범주(Pillar)를 찾을 때 쓰는 연구 관점 뷰
 RESEARCH_VIEW = 1000
 
-# 성격별 묶음에 쓰는 뷰. 모든 약점을 22개 범주 중 정확히 하나에 넣는다
+# 성격별 묶음에 쓰는 뷰. 모든 약점을 22개 범주 중 정확히 하나에 넣는다(CWE 4.12부터 있음)
 CATEGORY_VIEW = 1400
 CATEGORY_KO = {
     1396: "접근 제어", 1397: "비교", 1398: "구성요소 상호작용", 1399: "메모리 안전",
@@ -50,21 +58,15 @@ CATEGORY_KO = {
     1418: "보안 설계 원칙 위반",
 }
 
-TOP25_PAGE =f"{BASE}/top25/archive/{TOP25_YEAR}/{TOP25_YEAR}_cwe_top25.html"
-
-KEEP_COLUMNS = {
-    "CWE-ID": "cwe_id",
-    "Name": "name",
-    "Weakness Abstraction": "abstraction",
-    "Status": "status",
-}
+# Top 25는 연도별 목록이라 CWE 버전과 따로 관리한다(data/cwe_top25_YYYY.csv)
+TOP25_PAGE = f"{BASE}/top25/archive/2025/2025_cwe_top25.html"
 
 
 def get(url: str, tries: int = 3) -> requests.Response:
     # MITRE 서버가 큰 파일을 받는 도중 연결을 끊는 일이 있어 몇 번 다시 시도한다
     for attempt in range(1, tries + 1):
         try:
-            resp = requests.get(url, timeout=120, headers={"User-Agent": "seminar-team01 research"})
+            resp = requests.get(url, timeout=180, headers={"User-Agent": "seminar-team01 research"})
             resp.raise_for_status()
             return resp
         except requests.RequestException:
@@ -73,141 +75,129 @@ def get(url: str, tries: int = 3) -> requests.Response:
             time.sleep(5 * attempt)
 
 
-def fetch_cwe_version() -> str:
+def latest_version() -> str:
     m = re.search(r"CWE List Version ([0-9.]+)", get(f"{BASE}/data/index.html").text)
-    return m.group(1) if m else "unknown"
+    if not m:
+        raise SystemExit("MITRE 사이트에서 최신 CWE 버전을 찾지 못했습니다. 버전 번호나 링크를 직접 주세요")
+    return m.group(1)
 
 
-def read_view_csv(view_id: int) -> pd.DataFrame:
-    """뷰 CSV(zip)를 내려받아 모든 열을 그대로 읽는다."""
-    raw = get(f"{BASE}/data/csv/{view_id}.csv.zip").content
-    with zipfile.ZipFile(io.BytesIO(raw)) as zf:
-        name = next(n for n in zf.namelist() if n.endswith(".csv"))
-        # MITRE CSV는 행 끝에 여분의 쉼표가 있어 index_col=False로 읽는다
-        return pd.read_csv(zf.open(name), index_col=False, dtype=str)
+def resolve_source(arg: str | None) -> tuple[str, str]:
+    """버전 번호·링크·생략을 받아 (버전, 내려받을 링크)를 돌려준다."""
+    if arg and arg.startswith("http"):
+        m = re.search(r"cwec_v([0-9.]+)\.xml\.zip", arg)
+        if not m:
+            raise SystemExit("링크는 MITRE 버전 파일(…/cwec_vX.Y.xml.zip) 주소여야 합니다")
+        return m.group(1), arg
+    version = arg or latest_version()
+    return version, f"{BASE}/data/xml/cwec_v{version}.xml.zip"
 
 
-def fetch_view(view_id: int) -> pd.DataFrame:
-    """뷰 CSV(zip)를 내려받아 핵심 열만 남긴다."""
-    df = read_view_csv(view_id)
-    df = df[list(KEEP_COLUMNS)].rename(columns=KEEP_COLUMNS)
-    df["cwe_id"] = df["cwe_id"].astype(int)
-    df.insert(1, "cwe", "CWE-" + df["cwe_id"].astype(str))
-    return df.sort_values("cwe_id").reset_index(drop=True)
+def version_dir(version: str) -> Path:
+    return CWE_DIR / f"v{version}"
 
 
-def fetch_top25_ranks() -> pd.DataFrame:
-    """Top 25 페이지 표에서 순위·점수·KEV 건수·전년 대비 순위 변동을 읽는다."""
-    page = get(TOP25_PAGE).text
+def known_versions() -> pd.DataFrame:
+    if VERSIONS_CSV.exists():
+        return pd.read_csv(VERSIONS_CSV, dtype=str)
+    return pd.DataFrame(columns=["version", "release_date", "source", "retrieved", "category_source", "note"])
+
+
+def sort_versions(versions) -> list[str]:
+    return sorted(versions, key=lambda v: tuple(int(x) for x in v.split(".")))
+
+
+def build_version(version: str, url: str) -> dict:
+    print(f"CWE {version} 내려받는 중: {url}")
+    cat = Catalog.from_zip(get(url).content)
+    if cat.version != version:
+        raise SystemExit(f"파일 안의 버전({cat.version})이 요청한 버전({version})과 다릅니다")
+    out = version_dir(version)
+    out.mkdir(parents=True, exist_ok=True)
+
+    cat.weakness_table().to_csv(out / "cwe_all.csv", index=False, encoding="utf-8")
+    for view_id, filename in VIEWS.items():
+        if view_id not in cat.views:
+            if view_id in REQUIRED_VIEWS:
+                raise SystemExit(f"CWE {version}에 필요한 뷰 CWE-{view_id}가 없습니다")
+            print(f"  CWE-{view_id}: 이 버전에 없음, 건너뜀")
+            continue
+        df = cat.view_table(view_id)
+        df.to_csv(out / filename, index=False, encoding="utf-8")
+        print(f"  {filename}: {len(df)}개")
+
+    pillars = cat.pillar_table(RESEARCH_VIEW)
+    pillars.to_csv(out / "cwe_pillar.csv", index=False, encoding="utf-8")
+    print(f"  cwe_pillar.csv: {len(pillars)}개, Pillar {pillars['pillar_id'].nunique()}개")
+
+    note = ""
+    if CATEGORY_VIEW in cat.views:
+        categories = cat.category_table(CATEGORY_VIEW, CATEGORY_KO)
+        category_source = version
+    else:
+        # 성격별 범주 뷰가 없는 옛 버전은, 이 뷰가 있는 가장 가까운 버전의 분류를 빌려 쓴다
+        donors = [v for v in sort_versions(known_versions()["version"])
+                  if v != version and known_versions().set_index("version").loc[v, "category_source"] == v]
+        if not donors:
+            raise SystemExit(f"CWE {version}에는 CWE-{CATEGORY_VIEW}가 없습니다. 4.12 이후 버전을 먼저 수집하세요")
+        category_source = donors[0]
+        categories = pd.read_csv(version_dir(category_source) / "cwe_category.csv")
+        note = f"CWE-{CATEGORY_VIEW}가 없어 CWE {category_source}의 성격별 범주를 적용"
+        print(f"  {note}")
+    categories.to_csv(out / "cwe_category.csv", index=False, encoding="utf-8")
+    print(f"  cwe_category.csv: {len(categories)}개")
+
+    return {"version": version, "release_date": cat.date, "source": url,
+            "retrieved": date.today().isoformat(), "category_source": category_source, "note": note}
+
+
+def save_version_row(row: dict) -> None:
+    df = known_versions()
+    df = pd.concat([df[df["version"] != row["version"]], pd.DataFrame([row])], ignore_index=True)
+    df = df.set_index("version").loc[sort_versions(df["version"])].reset_index()
+    df.to_csv(VERSIONS_CSV, index=False, encoding="utf-8")
+
+
+def fetch_top25(page_url: str) -> None:
+    """Top 25 페이지 표에서 순위·점수·KEV 건수·전년 대비 순위 변동을 읽어 data/cwe_top25_YYYY.csv로 쓴다."""
+    year = re.search(r"/(\d{4})/", page_url).group(1)
+    page = get(page_url).text
     table = page[page.index('<table id="Detail"'):]
     table = table[: table.index("</table>")]
     cell = r'\s*<td[^>]*>(.*?)</td>'
     row = re.compile(r"<tr>" + cell * 6 + r"\s*</tr>", re.S)
     rows = []
-    for rank, cwe, _name, score, kev, change in row.findall(table):
+    for rank, cwe, name, score, kev, change in row.findall(table):
         change = html.unescape(change).strip()
         rows.append({
             "rank": int(re.sub(r"<[^>]+>", "", rank)),
             "cwe_id": int(re.search(r"CWE-(\d+)", cwe).group(1)),
+            "name": html.unescape(re.sub(r"<[^>]+>", "", name)).strip(),
             "score": float(score),
             "kev_cves": int(kev),
             # 전년 목록에 없던 항목은 MITRE 표에 N/A로 적혀 있다
             "rank_change": "new" if change == "N/A" else change,
         })
-    return pd.DataFrame(rows)
-
-
-def fetch_pillars() -> pd.DataFrame:
-    """연구 관점 뷰(CWE-1000)의 기본(Primary) 부모를 따라 올라가 CWE마다 최상위 Pillar를 찾는다."""
-    df = read_view_csv(RESEARCH_VIEW)
-    parent, info = {}, {}
-    for _, row in df.iterrows():
-        cid = int(row["CWE-ID"])
-        info[cid] = (row["Name"], row["Weakness Abstraction"])
-        m = re.search(r"NATURE:ChildOf:CWE ID:(\d+):VIEW ID:1000:ORDINAL:Primary",
-                      str(row["Related Weaknesses"]))
-        if m:
-            parent[cid] = int(m.group(1))
-
-    rows = []
-    for cid in sorted(info):
-        top, seen = cid, set()
-        while top in parent and top not in seen:
-            seen.add(top)
-            top = parent[top]
-        rows.append({
-            "cwe_id": cid,
-            "name": info[cid][0],
-            "abstraction": info[cid][1],
-            "pillar_id": top,
-            "pillar": f"CWE-{top}",
-            "pillar_name": info.get(top, ("", ""))[0],
-        })
-    return pd.DataFrame(rows)
-
-
-def fetch_categories() -> pd.DataFrame:
-    """CWE-1400 뷰 XML에서 범주마다 소속 CWE를 읽어 CWE → 성격별 범주 표를 만든다."""
-    raw = get(f"{BASE}/data/xml/views/{CATEGORY_VIEW}.xml.zip").content
-    with zipfile.ZipFile(io.BytesIO(raw)) as zf:
-        xml = zf.read(next(n for n in zf.namelist() if n.endswith(".xml"))).decode("utf-8")
-    rows = []
-    for cid, name, body in re.findall(r'<Category ID="(\d+)" Name="([^"]+)"[^>]*>(.*?)</Category>', xml, re.S):
-        cid = int(cid)
-        if cid not in CATEGORY_KO:
-            continue
-        for member in re.findall(rf'<Has_Member CWE_ID="(\d+)" View_ID="{CATEGORY_VIEW}"', body):
-            rows.append({
-                "cwe_id": int(member),
-                "category_id": cid,
-                "category": name.replace("Comprehensive Categorization: ", ""),
-                "category_ko": CATEGORY_KO[cid],
-            })
-    df = pd.DataFrame(rows).drop_duplicates("cwe_id")
-    return df.sort_values("cwe_id").reset_index(drop=True)
+    df = pd.DataFrame(rows).sort_values("rank")
+    if len(df) != 25:
+        raise SystemExit(f"Top 25 표에서 {len(df)}개를 읽었습니다. 페이지 형식을 확인하세요")
+    df.insert(2, "cwe", "CWE-" + df["cwe_id"].astype(str))
+    df.to_csv(DATA_DIR / f"cwe_top25_{year}.csv", index=False, encoding="utf-8")
+    print(f"cwe_top25_{year}.csv: {len(df)}개 ({page_url})")
 
 
 def main() -> None:
-    DATA_DIR.mkdir(exist_ok=True)
-    version = fetch_cwe_version()
-    today = date.today().isoformat()
-    sources = []
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("source", nargs="?", help="CWE 버전 번호(예: 4.10) 또는 버전 파일 링크. 생략하면 최신 버전")
+    parser.add_argument("--top25", metavar="URL", help="CWE Top 25 연도별 페이지 링크. 주면 Top 25도 다시 받는다")
+    args = parser.parse_args()
 
-    for view_id, filename in VIEWS.items():
-        df = fetch_view(view_id)
-        df.to_csv(DATA_DIR / filename, index=False, encoding="utf-8")
-        sources.append((filename, f"CWE-{view_id}", len(df), f"{BASE}/data/csv/{view_id}.csv.zip"))
-        print(f"{filename}: {len(df)}개")
-
-    members = fetch_view(TOP25_VIEW)
-    ranks = fetch_top25_ranks()
-    if set(members["cwe_id"]) != set(ranks["cwe_id"]) or len(ranks) != 25:
-        raise SystemExit("Top 25 뷰 CSV와 순위 표의 CWE 목록이 다릅니다")
-    top25 = ranks.merge(members, on="cwe_id")
-    top25 = top25[["rank", "cwe_id", "cwe", "name", "abstraction", "status",
-                   "score", "kev_cves", "rank_change"]].sort_values("rank")
-    filename = f"cwe_top25_{TOP25_YEAR}.csv"
-    top25.to_csv(DATA_DIR / filename, index=False, encoding="utf-8")
-    sources.append((filename, f"{TOP25_YEAR} CWE Top 25 (CWE-{TOP25_VIEW})", len(top25), TOP25_PAGE))
-    print(f"{filename}: {len(top25)}개")
-
-    pillars = fetch_pillars()
-    pillars.to_csv(DATA_DIR / "cwe_pillar.csv", index=False, encoding="utf-8")
-    sources.append(("cwe_pillar.csv", f"CWE-{RESEARCH_VIEW} 기본 부모 체인의 최상위 Pillar",
-                    len(pillars), f"{BASE}/data/csv/{RESEARCH_VIEW}.csv.zip"))
-    print(f"cwe_pillar.csv: {len(pillars)}개, Pillar {pillars['pillar_id'].nunique()}개")
-
-    categories = fetch_categories()
-    categories.to_csv(DATA_DIR / "cwe_category.csv", index=False, encoding="utf-8")
-    sources.append(("cwe_category.csv", f"CWE-{CATEGORY_VIEW} 성격별 범주(Comprehensive Categorization)",
-                    len(categories), f"{BASE}/data/xml/views/{CATEGORY_VIEW}.xml.zip"))
-    print(f"cwe_category.csv: {len(categories)}개, 범주 {categories['category_id'].nunique()}개")
-
-    meta = pd.DataFrame(sources, columns=["file", "source", "count", "url"])
-    meta["cwe_version"] = version
-    meta["retrieved"] = today
-    meta.to_csv(DATA_DIR / "cwe_sources.csv", index=False, encoding="utf-8")
-    print(f"CWE List Version {version}, 수집일 {today}")
+    CWE_DIR.mkdir(parents=True, exist_ok=True)
+    version, url = resolve_source(args.source)
+    save_version_row(build_version(version, url))
+    if args.top25:
+        fetch_top25(args.top25)
+    print(f"CWE {version} → {version_dir(version).relative_to(DATA_DIR.parent)}")
 
 
 if __name__ == "__main__":

@@ -1,10 +1,11 @@
 """B3. 국내 시험 목록 간 CWE 겹침 분석.
 
-data/의 CWE 목록과 매핑을 읽어 CWE × 목록 매트릭스를 만든다.
+data/cwe/vX.Y/의 CWE 목록(버전별)과 data/의 매핑을 읽어 CWE × 목록 매트릭스를 만든다.
 겹침(쌍별 교집합·Jaccard 유사도, 고유 항목, 공통 항목)은 국내 목록끼리만 계산하고,
 해외 목록(Top 25, SEI CERT C·C++, CISQ)은 참고 사례로 두어 국내 목록이 얼마나 덮는지만 계산한다.
 
-실행: python analysis/overlap.py [--exclude-java] [--with-local]
+실행: python analysis/overlap.py [--cwe-version 4.20 | --all-versions] [--exclude-java] [--with-local]
+결과는 그 버전 폴더(data/cwe/vX.Y/overlap_*.csv)에 쓴다. 버전을 생략하면 data/cwe/versions.csv의 최신 버전.
 
 공개할 수 없는 자료는 local/mapping_*.csv로 두고 커밋하지 않는다(.gitignore).
 --with-local을 주면 그 자료까지 넣어 비교하고, 결과는 공개 결과(data/)와 섞이지 않게 local/out/에 쓴다.
@@ -18,11 +19,20 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+CWE_DIR = DATA_DIR / "cwe"
 LOCAL_DIR = ROOT / "local"  # .gitignore 대상. 공개·재배포할 수 없는 자료
+VDIR = CWE_DIR  # 분석할 CWE 버전 폴더. main()에서 정한다
+
+
+def versions() -> list[str]:
+    vs = pd.read_csv(CWE_DIR / "versions.csv", dtype=str)["version"]
+    return sorted(vs, key=lambda v: tuple(int(x) for x in v.split(".")))
 
 
 def cwe_ids_from_list(filename: str) -> set[int]:
-    return set(pd.read_csv(DATA_DIR / filename)["cwe_id"].astype(int))
+    """버전 폴더의 뷰 목록. Top 25처럼 연도별 목록은 data/에 있다."""
+    path = VDIR / filename if (VDIR / filename).exists() else DATA_DIR / filename
+    return set(pd.read_csv(path)["cwe_id"].astype(int))
 
 
 def cwe_ids_from_mapping(path: Path) -> set[int]:
@@ -80,18 +90,27 @@ def split_sets(sets: dict[str, set[int]]) -> tuple[dict[str, set[int]], dict[str
 
 
 def build_matrix(sets: dict[str, set[int]]) -> pd.DataFrame:
-    pillars = pd.read_csv(DATA_DIR / "cwe_pillar.csv")
+    pillars = pd.read_csv(VDIR / "cwe_pillar.csv")
     all_ids = sorted(set().union(*sets.values()))
     m = pd.DataFrame({"cwe_id": all_ids})
     m.insert(1, "cwe", "CWE-" + m["cwe_id"].astype(str))
     m = m.merge(pillars[["cwe_id", "name", "abstraction", "pillar", "pillar_name"]],
                 on="cwe_id", how="left")
-    categories = pd.read_csv(DATA_DIR / "cwe_category.csv")
+    categories = pd.read_csv(VDIR / "cwe_category.csv")
     m = m.merge(categories[["cwe_id", "category", "category_ko"]], on="cwe_id", how="left")
-    # 원문이 인용했지만 CWE 4.20에서 폐기된 번호(예: 247)는 두 뷰 어디에도 없다
-    m = m.fillna({"name": "(CWE 4.20에서 폐기됨)", "abstraction": "Deprecated",
-                  "pillar": "폐기", "pillar_name": "CWE 4.20에서 폐기된 번호",
-                  "category": "Deprecated", "category_ko": "폐기된 번호"})
+    # 원문이 인용했지만 이 버전에서 폐기되었거나 아직 없는 번호(예: 4.20의 247)는 연구 관점 뷰에 없다
+    version = VDIR.name.removeprefix("v")
+    catalog = pd.read_csv(VDIR / "cwe_all.csv").set_index("cwe_id")
+    for i in m.index[m["pillar"].isna()]:
+        cid = m.at[i, "cwe_id"]
+        if cid in catalog.index:
+            m.at[i, "name"] = catalog.at[cid, "name"]  # MITRE 이름이 "DEPRECATED: …"로 시작함
+            label, note = "폐기", f"CWE {version}에서 폐기된 번호"
+        else:
+            m.at[i, "name"] = f"(CWE {version}에 없는 번호)"
+            label, note = "없음", f"CWE {version}에 없는 번호"
+        m.loc[i, ["abstraction", "pillar", "pillar_name"]] = ["Deprecated", label, note]
+    m = m.fillna({"category": "Deprecated", "category_ko": "폐기·없는 번호"})
     for name, ids in sets.items():
         m[name] = m["cwe_id"].isin(ids).astype(int)
     domestic, _ = split_sets(sets)
@@ -151,12 +170,26 @@ def main() -> None:
     parser.add_argument("--exclude-java", action="store_true",
                         help="CWE-660(Java)을 비교에서 뺀다. 매뉴얼 취약점 점검이 세 뷰를 모두 쓰므로 기본은 포함")
     parser.add_argument("--with-local", action="store_true",
-                        help="local/mapping_*.csv의 비공개 자료까지 넣고, 결과를 local/out/에 쓴다")
+                        help="local/mapping_*.csv의 비공개 자료까지 넣고, 결과를 local/out/vX.Y/에 쓴다")
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--cwe-version", help="분석할 CWE 버전(예: 4.10). 생략하면 최신 버전")
+    group.add_argument("--all-versions", action="store_true", help="data/cwe/versions.csv의 모든 버전을 분석")
     args = parser.parse_args()
 
+    known = versions()
+    targets = known if args.all_versions else [args.cwe_version or known[-1]]
+    for version in targets:
+        if version not in known:
+            raise SystemExit(f"CWE {version} 자료가 없습니다. 먼저 python analysis/fetch_cwe.py {version}")
+        run(version, args)
+
+
+def run(version: str, args) -> None:
+    global VDIR
+    VDIR = CWE_DIR / f"v{version}"
     sets = load_sets(args.exclude_java, args.with_local)
     domestic, _ = split_sets(sets)
-    out = LOCAL_DIR / "out" if args.with_local else DATA_DIR
+    out = LOCAL_DIR / "out" / f"v{version}" if args.with_local else VDIR
     out.mkdir(parents=True, exist_ok=True)
     matrix = build_matrix(sets)
     pairs = pair_table(domestic)
@@ -171,7 +204,7 @@ def main() -> None:
     reference.to_csv(out / "overlap_reference.csv", index=False, encoding="utf-8")
 
     pd.set_option("display.width", 200)
-    print(f"[{'로컬(비공개 포함) → local/out/' if args.with_local else '공개 → data/'}]")
+    print(f"[CWE {version} · {'로컬(비공개 포함)' if args.with_local else '공개'} → {out.relative_to(ROOT)}]")
     n_domestic = int((matrix["n_sets"] > 0).sum())
     print(f"국내 목록 {len(domestic)}개, 국내 CWE {n_domestic}개, 국내 공통 {len(common)}개"
           f" (해외 참고 사례까지 합친 전체 {len(matrix)}개)\n")

@@ -1,0 +1,139 @@
+cwe_id,cwe,name,abstraction,status
+22,CWE-22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),Base,Stable
+23,CWE-23,Relative Path Traversal,Base,Draft
+36,CWE-36,Absolute Path Traversal,Base,Draft
+77,CWE-77,Improper Neutralization of Special Elements used in a Command ('Command Injection'),Class,Draft
+78,CWE-78,Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),Base,Stable
+79,CWE-79,Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),Base,Stable
+88,CWE-88,Improper Neutralization of Argument Delimiters in a Command ('Argument Injection'),Base,Draft
+89,CWE-89,Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection'),Base,Stable
+90,CWE-90,Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection'),Base,Draft
+91,CWE-91,XML Injection (aka Blind XPath Injection),Base,Draft
+99,CWE-99,Improper Control of Resource Identifiers ('Resource Injection'),Class,Draft
+119,CWE-119,Improper Restriction of Operations within the Bounds of a Memory Buffer,Class,Stable
+120,CWE-120,Buffer Copy without Checking Size of Input ('Classic Buffer Overflow'),Base,Incomplete
+123,CWE-123,Write-what-where Condition,Base,Draft
+125,CWE-125,Out-of-bounds Read,Base,Draft
+129,CWE-129,Improper Validation of Array Index,Variant,Draft
+130,CWE-130,Improper Handling of Length Parameter Inconsistency,Base,Incomplete
+131,CWE-131,Incorrect Calculation of Buffer Size,Base,Draft
+134,CWE-134,Use of Externally-Controlled Format String,Base,Draft
+170,CWE-170,Improper Null Termination,Base,Incomplete
+194,CWE-194,Unexpected Sign Extension,Variant,Incomplete
+195,CWE-195,Signed to Unsigned Conversion Error,Variant,Draft
+196,CWE-196,Unsigned to Signed Conversion Error,Variant,Draft
+197,CWE-197,Numeric Truncation Error,Base,Incomplete
+248,CWE-248,Uncaught Exception,Base,Draft
+252,CWE-252,Unchecked Return Value,Base,Draft
+259,CWE-259,Use of Hard-coded Password,Variant,Draft
+321,CWE-321,Use of Hard-coded Cryptographic Key,Variant,Draft
+366,CWE-366,Race Condition within a Thread,Base,Draft
+369,CWE-369,Divide By Zero,Base,Draft
+390,CWE-390,Detection of Error Condition Without Action,Base,Draft
+391,CWE-391,Unchecked Error Condition,Base,Incomplete
+392,CWE-392,Missing Report of Error Condition,Base,Draft
+394,CWE-394,Unexpected Status Code or Return Value,Base,Draft
+401,CWE-401,Missing Release of Memory after Effective Lifetime,Variant,Draft
+404,CWE-404,Improper Resource Shutdown or Release,Class,Draft
+407,CWE-407,Inefficient Algorithmic Complexity,Class,Incomplete
+415,CWE-415,Double Free,Variant,Draft
+416,CWE-416,Use After Free,Variant,Stable
+424,CWE-424,Improper Protection of Alternate Path,Class,Draft
+434,CWE-434,Unrestricted Upload of File with Dangerous Type,Base,Draft
+456,CWE-456,Missing Initialization of a Variable,Variant,Draft
+457,CWE-457,Use of Uninitialized Variable,Variant,Draft
+459,CWE-459,Incomplete Cleanup,Base,Draft
+476,CWE-476,NULL Pointer Dereference,Base,Stable
+477,CWE-477,Use of Obsolete Function,Base,Draft
+478,CWE-478,Missing Default Case in Multiple Condition Expression,Base,Draft
+480,CWE-480,Use of Incorrect Operator,Base,Draft
+484,CWE-484,Omitted Break Statement in Switch,Base,Draft
+502,CWE-502,Deserialization of Untrusted Data,Base,Draft
+543,CWE-543,Use of Singleton Pattern Without Synchronization in a Multithreaded Context,Variant,Incomplete
+561,CWE-561,Dead Code,Base,Draft
+562,CWE-562,Return of Stack Variable Address,Base,Draft
+564,CWE-564,SQL Injection: Hibernate,Variant,Incomplete
+567,CWE-567,Unsynchronized Access to Shared Data in a Multithreaded Context,Base,Draft
+570,CWE-570,Expression is Always False,Base,Draft
+571,CWE-571,Expression is Always True,Base,Draft
+595,CWE-595,Comparison of Object References Instead of Object Contents,Variant,Incomplete
+597,CWE-597,Use of Wrong Operator in String Comparison,Variant,Draft
+606,CWE-606,Unchecked Input for Loop Condition,Base,Draft
+611,CWE-611,Improper Restriction of XML External Entity Reference,Base,Draft
+624,CWE-624,Executable Regular Expression Error,Base,Incomplete
+643,CWE-643,Improper Neutralization of Data within XPath Expressions ('XPath Injection'),Base,Incomplete
+652,CWE-652,Improper Neutralization of Data within XQuery Expressions ('XQuery Injection'),Base,Incomplete
+662,CWE-662,Improper Synchronization,Class,Draft
+665,CWE-665,Improper Initialization,Class,Draft
+667,CWE-667,Improper Locking,Class,Draft
+672,CWE-672,Operation on a Resource after Expiration or Release,Class,Draft
+681,CWE-681,Incorrect Conversion between Numeric Types,Base,Draft
+682,CWE-682,Incorrect Calculation,Pillar,Draft
+703,CWE-703,Improper Check or Handling of Exceptional Conditions,Pillar,Incomplete
+704,CWE-704,Incorrect Type Conversion or Cast,Class,Incomplete
+732,CWE-732,Incorrect Permission Assignment for Critical Resource,Class,Draft
+758,CWE-758,"Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",Class,Incomplete
+764,CWE-764,Multiple Locks of a Critical Resource,Base,Incomplete
+772,CWE-772,Missing Release of Resource after Effective Lifetime,Base,Draft
+775,CWE-775,Missing Release of File Descriptor or Handle after Effective Lifetime,Variant,Incomplete
+778,CWE-778,Insufficient Logging,Base,Draft
+783,CWE-783,Operator Precedence Logic Error,Base,Draft
+786,CWE-786,Access of Memory Location Before Start of Buffer,Base,Incomplete
+787,CWE-787,Out-of-bounds Write,Base,Draft
+788,CWE-788,Access of Memory Location After End of Buffer,Base,Incomplete
+789,CWE-789,Memory Allocation with Excessive Size Value,Variant,Draft
+798,CWE-798,Use of Hard-coded Credentials,Base,Draft
+805,CWE-805,Buffer Access with Incorrect Length Value,Base,Incomplete
+820,CWE-820,Missing Synchronization,Base,Incomplete
+821,CWE-821,Incorrect Synchronization,Base,Incomplete
+822,CWE-822,Untrusted Pointer Dereference,Base,Incomplete
+823,CWE-823,Use of Out-of-range Pointer Offset,Base,Incomplete
+824,CWE-824,Access of Uninitialized Pointer,Base,Incomplete
+825,CWE-825,Expired Pointer Dereference,Base,Incomplete
+833,CWE-833,Deadlock,Base,Incomplete
+835,CWE-835,Loop with Unreachable Exit Condition ('Infinite Loop'),Base,Incomplete
+908,CWE-908,Use of Uninitialized Resource,Base,Incomplete
+917,CWE-917,Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection'),Base,Incomplete
+1041,CWE-1041,Use of Redundant Code,Base,Incomplete
+1042,CWE-1042,Static Member Data Element outside of a Singleton Class Element,Variant,Incomplete
+1043,CWE-1043,Data Element Aggregating an Excessively Large Number of Non-Primitive Elements,Base,Incomplete
+1045,CWE-1045,Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor,Variant,Incomplete
+1046,CWE-1046,Creation of Immutable Text Using String Concatenation,Base,Incomplete
+1047,CWE-1047,Modules with Circular Dependencies,Base,Incomplete
+1048,CWE-1048,Invokable Control Element with Large Number of Outward Calls,Base,Incomplete
+1049,CWE-1049,Excessive Data Query Operations in a Large Data Table,Base,Incomplete
+1050,CWE-1050,Excessive Platform Resource Consumption within a Loop,Base,Incomplete
+1051,CWE-1051,Initialization with Hard-Coded Network Resource Configuration Data,Base,Incomplete
+1052,CWE-1052,Excessive Use of Hard-Coded Literals in Initialization,Base,Incomplete
+1054,CWE-1054,Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer,Base,Incomplete
+1055,CWE-1055,Multiple Inheritance from Concrete Classes,Base,Incomplete
+1057,CWE-1057,Data Access Operations Outside of Expected Data Manager Component,Base,Incomplete
+1058,CWE-1058,Invokable Control Element in Multi-Thread Context with non-Final Static Storable or Member Element,Base,Incomplete
+1060,CWE-1060,Excessive Number of Inefficient Server-Side Data Accesses,Base,Incomplete
+1062,CWE-1062,Parent Class with References to Child Class,Base,Incomplete
+1064,CWE-1064,Invokable Control Element with Signature Containing an Excessive Number of Parameters,Base,Incomplete
+1066,CWE-1066,Missing Serialization Control Element,Base,Incomplete
+1067,CWE-1067,Excessive Execution of Sequential Searches of Data Resource,Base,Incomplete
+1070,CWE-1070,Serializable Data Element Containing non-Serializable Item Elements,Base,Incomplete
+1072,CWE-1072,Data Resource Access without Use of Connection Pooling,Base,Incomplete
+1073,CWE-1073,Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses,Base,Incomplete
+1074,CWE-1074,Class with Excessively Deep Inheritance,Base,Incomplete
+1075,CWE-1075,Unconditional Control Flow Transfer outside of Switch Block,Base,Incomplete
+1077,CWE-1077,Floating Point Comparison with Incorrect Operator,Variant,Incomplete
+1079,CWE-1079,Parent Class without Virtual Destructor Method,Base,Incomplete
+1080,CWE-1080,Source Code File with Excessive Number of Lines of Code,Base,Incomplete
+1082,CWE-1082,Class Instance Self Destruction Control Element,Base,Incomplete
+1083,CWE-1083,Data Access from Outside Expected Data Manager Component,Base,Incomplete
+1084,CWE-1084,Invokable Control Element with Excessive File or Data Access Operations,Base,Incomplete
+1085,CWE-1085,Invokable Control Element with Excessive Volume of Commented-out Code,Base,Incomplete
+1086,CWE-1086,Class with Excessive Number of Child Classes,Base,Incomplete
+1087,CWE-1087,Class with Virtual Method without a Virtual Destructor,Base,Incomplete
+1088,CWE-1088,Synchronous Access of Remote Resource without Timeout,Base,Incomplete
+1089,CWE-1089,Large Data Table with Excessive Number of Indices,Base,Incomplete
+1090,CWE-1090,Method Containing Access of a Member Element from Another Class,Base,Incomplete
+1091,CWE-1091,Use of Object without Invoking Destructor Method,Base,Incomplete
+1094,CWE-1094,Excessive Index Range Scan for a Data Resource,Base,Incomplete
+1095,CWE-1095,Loop Condition Value Update within the Loop,Base,Incomplete
+1096,CWE-1096,Singleton Class Instance Creation without Proper Locking or Synchronization,Variant,Incomplete
+1097,CWE-1097,Persistent Storable Data Element without Associated Comparison Control Element,Base,Incomplete
+1098,CWE-1098,Data Element containing Pointer Item without Proper Copy Control Element,Variant,Incomplete

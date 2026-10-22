@@ -234,7 +234,7 @@ L 503.006875 36.099844
     <g id="ytick_22">
      <g id="line2d_35"/>
      <g id="text_27">
-      <text style="font-size: 10px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="97.746875" y="623.912313" transform="rotate(-0 97.746875 623.912313)">폐기된 번호</text>
+      <text style="font-size: 10px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="97.746875" y="623.912313" transform="rotate(-0 97.746875 623.912313)">폐기·없는 번호</text>
      </g>
     </g>
     <g id="ytick_23">
@@ -767,7 +767,7 @@ L 603.446875 633.212748
    </g>
    <g id="text_144">
     <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(193.089063 17.44875)">성격별 범주(CWE-1400)마다 국내 목록이 요구하는 CWE 수</text>
-    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(238.721875 30.099844)">(숫자는 개수, 색은 그 목록 안에서의 비율)</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(195.221875 30.099844)">(숫자는 개수, 색은 그 목록 안에서의 비율, CWE 4.20 기준)</text>
    </g>
   </g>
  </g>

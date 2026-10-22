@@ -1,0 +1,3 @@
+version,release_date,source,retrieved,category_source,note
+4.10,2023-01-31,https://cwe.mitre.org/data/xml/cwec_v4.10.xml.zip,2026-10-22,4.20,CWE-1400가 없어 CWE 4.20의 성격별 범주를 적용
+4.20,2026-04-30,https://cwe.mitre.org/data/xml/cwec_v4.20.xml.zip,2026-10-22,4.20,

@@ -1,6 +1,7 @@
 """B4. 겹침 분석 결과 시각화.
 
-analysis/overlap.py가 만든 data/overlap_*.csv를 읽어 figures/에 SVG 그림 다섯 장을 만든다.
+analysis/overlap.py가 만든 data/cwe/vX.Y/overlap_*.csv를 읽어 figures/에 SVG 그림 다섯 장을 만든다.
+그림은 보고서용이라 한 버전(기본은 최신)으로만 만들고, 제목에 그 버전을 적는다.
 겹침 그림(1~4)은 국내 목록만 그리고, 해외 목록은 참고 사례 그림(5)에만 쓴다.
   1. venn_domestic.svg           매뉴얼 취약점 점검(CWE-658·659·660) · 매뉴얼 보안약점 44 · 행안부 49 벤 다이어그램
   2. jaccard_heatmap.svg         국내 목록 쌍별 Jaccard 유사도 히트맵
@@ -8,7 +9,7 @@ analysis/overlap.py가 만든 data/overlap_*.csv를 읽어 figures/에 SVG 그�
   4. category_by_set.svg         성격별 범주(CWE-1400)마다 국내 목록이 요구하는 CWE 수
   5. reference_coverage.svg      해외 참고 사례의 CWE를 국내 목록이 덮는 정도
 
-실행: python analysis/plot_overlap.py [--with-local]
+실행: python analysis/plot_overlap.py [--cwe-version 4.20] [--with-local]
 
 --with-local을 주면 비공개 자료까지 넣은 local/out/의 결과로 그려 local/figures/에 쓴다(커밋하지 않음).
 """
@@ -27,6 +28,8 @@ from matplotlib_venn import venn3  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+CWE_DIR = DATA_DIR / "cwe"
+CWE_VERSION = ""  # main()에서 정한다
 FIG_DIR = ROOT / "figures"
 
 # 차트 색: 범주 1~3번(청·주황·청록), 크기는 파랑 한 색의 명도 단계
@@ -86,7 +89,7 @@ def plot_venn(matrix: pd.DataFrame, names: list[str]) -> None:
     for text in v.subset_labels:
         if text is not None:
             text.set_fontsize(12)
-    ax.set_title("국내 목록 세 묶음의 겹침\n(CWE 번호 단위, CWE 4.20 기준)", fontsize=12, color=INK)
+    ax.set_title(f"국내 목록 세 묶음의 겹침\n(CWE 번호 단위, CWE {CWE_VERSION} 기준)", fontsize=12, color=INK)
     fig.savefig(FIG_DIR / "venn_domestic.svg", bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
 
@@ -112,7 +115,7 @@ def plot_jaccard(pairs: pd.DataFrame, names: list[str]) -> None:
     ax.tick_params(which="both", length=0)
     for s in ax.spines.values():
         s.set_visible(False)
-    ax.set_title("국내 목록 쌍별 Jaccard 유사도 (교집합 ÷ 합집합, CWE 번호 단위)", fontsize=12, color=INK)
+    ax.set_title(f"국내 목록 쌍별 Jaccard 유사도 (교집합 ÷ 합집합, CWE {CWE_VERSION} 기준)", fontsize=12, color=INK)
     fig.savefig(FIG_DIR / "jaccard_heatmap.svg", bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
 
@@ -143,7 +146,7 @@ def plot_pillar_share(matrix: pd.DataFrame, names: list[str]) -> None:
     ax.tick_params(which="both", length=0)
     for s in ax.spines.values():
         s.set_visible(False)
-    ax.set_title("국내 목록별 CWE의 상위 범주(Pillar) 구성비 (열마다 합계 100%)", fontsize=12, color=INK)
+    ax.set_title(f"국내 목록별 CWE의 상위 범주(Pillar) 구성비 (열마다 합계 100%, CWE {CWE_VERSION} 기준)", fontsize=12, color=INK)
     fig.savefig(FIG_DIR / "pillar_share.svg", bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
 
@@ -171,7 +174,7 @@ def plot_category(matrix: pd.DataFrame, names: list[str]) -> None:
     ax.tick_params(which="both", length=0)
     for s in ax.spines.values():
         s.set_visible(False)
-    ax.set_title("성격별 범주(CWE-1400)마다 국내 목록이 요구하는 CWE 수\n(숫자는 개수, 색은 그 목록 안에서의 비율)",
+    ax.set_title(f"성격별 범주(CWE-1400)마다 국내 목록이 요구하는 CWE 수\n(숫자는 개수, 색은 그 목록 안에서의 비율, CWE {CWE_VERSION} 기준)",
                  fontsize=12, color=INK)
     fig.savefig(FIG_DIR / "category_by_set.svg", bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
@@ -213,19 +216,23 @@ def plot_reference(matrix: pd.DataFrame, names: list[str]) -> None:
         ax.spines[s].set_visible(False)
     ax.tick_params(axis="y", length=0)
     ax.legend(ncol=4, fontsize=9, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.28))
-    ax.set_title("해외 참고 사례의 CWE를 국내 목록이 덮는 정도 (막대 끝: 국내 목록에 있는 수/전체)",
+    ax.set_title(f"해외 참고 사례의 CWE를 국내 목록이 덮는 정도 (막대 끝: 국내 목록에 있는 수/전체, CWE {CWE_VERSION} 기준)",
                  fontsize=12, color=INK)
     fig.savefig(FIG_DIR / "reference_coverage.svg", bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
 
 
 def main() -> None:
-    global FIG_DIR
+    global FIG_DIR, CWE_VERSION
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--with-local", action="store_true",
                         help="local/out/의 비공개 포함 결과로 그려 local/figures/에 쓴다")
+    parser.add_argument("--cwe-version", help="그릴 CWE 버전(예: 4.10). 생략하면 최신 버전")
     args = parser.parse_args()
-    src = ROOT / "local" / "out" if args.with_local else DATA_DIR
+    known = sorted(pd.read_csv(CWE_DIR / "versions.csv", dtype=str)["version"],
+                   key=lambda v: tuple(int(x) for x in v.split(".")))
+    CWE_VERSION = args.cwe_version or known[-1]
+    src = (ROOT / "local" / "out" if args.with_local else CWE_DIR) / f"v{CWE_VERSION}"
     if args.with_local:
         FIG_DIR = ROOT / "local" / "figures"
     FIG_DIR.mkdir(parents=True, exist_ok=True)

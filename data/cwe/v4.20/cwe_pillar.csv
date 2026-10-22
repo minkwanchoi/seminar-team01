@@ -16,19 +16,19 @@ cwe_id,name,abstraction,pillar_id,pillar,pillar_name
 25,Path Traversal: '/../filedir',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 26,Path Traversal: '/dir/../filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 27,Path Traversal: 'dir/../../filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-28,Path Traversal: '..filedir',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-29,Path Traversal: '..filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-30,Path Traversal: 'dir..filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-31,Path Traversal: 'dir....filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+28,Path Traversal: '..\filedir',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+29,Path Traversal: '\..\filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+30,Path Traversal: '\dir\..\filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+31,Path Traversal: 'dir\..\..\filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 32,Path Traversal: '...' (Triple Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 33,Path Traversal: '....' (Multiple Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 34,Path Traversal: '....//',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 35,Path Traversal: '.../...//',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 36,Absolute Path Traversal,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
 37,Path Traversal: '/absolute/pathname/here',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-38,Path Traversal: 'absolutepathnamehere',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+38,Path Traversal: '\absolute\pathname\here',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 39,Path Traversal: 'C:dirname',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-40,Path Traversal: 'UNCsharename' (Windows UNC Share),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+40,Path Traversal: '\\UNC\share\name\' (Windows UNC Share),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 41,Improper Resolution of Path Equivalence,Base,664,CWE-664,Improper Control of a Resource Through its Lifetime
 42,Path Equivalence: 'filename.' (Trailing Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 43,Path Equivalence: 'filename....' (Multiple Trailing Dot),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
@@ -41,8 +41,8 @@ cwe_id,name,abstraction,pillar_id,pillar,pillar_name
 50,Path Equivalence: '//multiple/leading/slash',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 51,Path Equivalence: '/multiple//internal/slash',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 52,Path Equivalence: '/multiple/trailing/slash//',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-53,Path Equivalence: 'multipleinternalbackslash',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
-54,Path Equivalence: 'filedir' (Trailing Backslash),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+53,Path Equivalence: '\multiple\\internal\backslash',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
+54,Path Equivalence: 'filedir\' (Trailing Backslash),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 55,Path Equivalence: '/./' (Single Dot Directory),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 56,Path Equivalence: 'filedir*' (Wildcard),Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime
 57,Path Equivalence: 'fakedir/../realdir/filename',Variant,664,CWE-664,Improper Control of a Resource Through its Lifetime

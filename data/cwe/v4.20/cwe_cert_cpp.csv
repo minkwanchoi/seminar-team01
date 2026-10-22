@@ -3,7 +3,7 @@ cwe_id,cwe,name,abstraction,status
 20,CWE-20,Improper Input Validation,Class,Stable
 22,CWE-22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),Base,Stable
 37,CWE-37,Path Traversal: '/absolute/pathname/here',Variant,Draft
-38,CWE-38,Path Traversal: 'absolutepathnamehere',Variant,Draft
+38,CWE-38,Path Traversal: '\absolute\pathname\here',Variant,Draft
 39,CWE-39,Path Traversal: 'C:dirname',Variant,Draft
 41,CWE-41,Improper Resolution of Path Equivalence,Base,Incomplete
 59,CWE-59,Improper Link Resolution Before File Access ('Link Following'),Base,Draft

@@ -2,15 +2,13 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 5,CWE-5,J2EE Misconfiguration: Data Transmission Without Encryption,Variant,CWE-693,Protection Mechanism Failure,Encryption,암호화,0,0,1,0,0,0,0,0,1
 6,CWE-6,J2EE Misconfiguration: Insufficient Session-ID Length,Variant,CWE-693,Protection Mechanism Failure,Randomness,난수,0,0,1,0,0,0,0,0,1
 7,CWE-7,J2EE Misconfiguration: Missing Custom Error Page,Variant,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,1,0,0,0,0,0,1
-8,CWE-8,J2EE Misconfiguration: Entity Bean Declared Remote,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,0,1,0,0,0,0,0,1
-9,CWE-9,J2EE Misconfiguration: Weak Access Permissions for EJB Methods,Variant,CWE-284,Improper Access Control,Access Control,접근 제어,0,0,1,0,0,0,0,0,1
 14,CWE-14,Compiler Removal of Code to Clear Buffers,Variant,CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities,Component Interaction,구성요소 상호작용,1,1,0,0,0,0,1,0,2
 20,CWE-20,Improper Input Validation,Class,CWE-707,Improper Neutralization,Improper Input Validation,입력값 검증,0,0,0,0,0,1,1,0,0
 22,CWE-22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),Base,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,1,1,1,1,1,2
 23,CWE-23,Relative Path Traversal,Base,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,0,0,0,0,1,0
 36,CWE-36,Absolute Path Traversal,Base,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,0,0,0,0,1,0
 37,CWE-37,Path Traversal: '/absolute/pathname/here',Variant,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,0,0,0,1,0,0
-38,CWE-38,Path Traversal: 'absolutepathnamehere',Variant,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,0,0,0,1,0,0
+38,CWE-38,Path Traversal: '\absolute\pathname\here',Variant,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,0,0,0,1,0,0
 39,CWE-39,Path Traversal: 'C:dirname',Variant,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,0,0,0,1,0,0
 41,CWE-41,Improper Resolution of Path Equivalence,Base,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,0,0,0,1,0,0
 59,CWE-59,Improper Link Resolution Before File Access ('Link Following'),Base,CWE-664,Improper Control of a Resource Through its Lifetime,File Handling,파일 처리,0,0,0,1,0,0,1,0,1
@@ -56,14 +54,13 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 131,CWE-131,Incorrect Calculation of Buffer Size,Base,CWE-682,Incorrect Calculation,Memory Safety,메모리 안전,1,1,0,0,0,0,1,1,2
 134,CWE-134,Use of Externally-Controlled Format String,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,1,1,0,1,1,4
 135,CWE-135,Incorrect Calculation of Multi-Byte String Length,Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,1,1,0,0,0,0,0,0,2
-158,CWE-158,Improper Neutralization of Null Byte or NUL Character,Variant,CWE-707,Improper Neutralization,Improper Neutralization,특수 요소 중화,1,1,0,0,0,0,0,0,2
 170,CWE-170,Improper Null Termination,Base,CWE-707,Improper Neutralization,Improper Neutralization,특수 요소 중화,1,1,0,1,0,0,1,1,3
 176,CWE-176,Improper Handling of Unicode Encoding,Variant,CWE-707,Improper Neutralization,Improper Neutralization,특수 요소 중화,0,0,0,0,0,0,1,0,0
 188,CWE-188,Reliance on Data/Memory Layout,Base,CWE-710,Improper Adherence to Coding Standards,Memory Safety,메모리 안전,1,1,0,0,0,0,0,0,2
-190,CWE-190,Integer Overflow or Wraparound,Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,1,0,0,1,1,0,1,0,3
+190,CWE-190,Integer Overflow or Wraparound,Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,0,0,0,1,1,0,1,0,2
 191,CWE-191,Integer Underflow (Wrap or Wraparound),Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,1,1,1,0,0,0,1,0,3
 192,CWE-192,Integer Coercion Error,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,1,0,0,0,1,0,3
-193,CWE-193,Off-by-one Error,Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,1,0,0,0,0,0,1,0,1
+193,CWE-193,Off-by-one Error,Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,0,0,0,0,0,0,1,0,0
 194,CWE-194,Unexpected Sign Extension,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,0,0,0,0,1,1,2
 195,CWE-195,Signed to Unsigned Conversion Error,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,0,0,0,0,1,1,2
 196,CWE-196,Unsigned to Signed Conversion Error,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,0,0,0,0,0,1,2
@@ -77,7 +74,7 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 244,CWE-244,Improper Clearing of Heap Memory Before Release ('Heap Inspection'),Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,0,2
 245,CWE-245,J2EE Bad Practices: Direct Management of Connections,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
 246,CWE-246,J2EE Bad Practices: Direct Use of Sockets,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,1,0,0,0,2
-247,CWE-247,(CWE 4.20에서 폐기됨),Deprecated,폐기,CWE 4.20에서 폐기된 번호,Deprecated,폐기된 번호,0,0,0,0,1,0,0,0,1
+247,CWE-247,DEPRECATED: Reliance on DNS Lookups in a Security Decision,Deprecated,폐기,CWE 4.10에서 폐기된 번호,Deprecated,폐기·없는 번호,0,0,0,0,1,0,0,0,1
 248,CWE-248,Uncaught Exception,Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,1,1,0,0,0,0,1,2
 252,CWE-252,Unchecked Return Value,Base,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,0,0,0,0,1,1,0
 253,CWE-253,Incorrect Check of Function Return Value,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,0,0
@@ -101,11 +98,11 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 347,CWE-347,Improper Verification of Cryptographic Signature,Base,CWE-693,Protection Mechanism Failure,Encryption,암호화,0,0,0,0,1,0,0,0,1
 350,CWE-350,Reliance on Reverse DNS Resolution for a Security-Critical Action,Variant,CWE-284,Improper Access Control,Access Control,접근 제어,0,0,0,0,1,0,0,0,1
 352,CWE-352,Cross-Site Request Forgery (CSRF),Compound,CWE-693,Protection Mechanism Failure,Insufficient Verification of Data Authenticity,데이터 진위 검증,0,0,0,0,1,1,0,0,1
-362,CWE-362,Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition'),Class,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,1,1,0,0,0,1,0,3
-363,CWE-363,Race Condition Enabling Link Following,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,0,0,0,1,0,0
-364,CWE-364,Signal Handler Race Condition,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,1,0,0,0,0,0,0,2
-366,CWE-366,Race Condition within a Thread,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,1,1,0,0,0,1,1,3
-367,CWE-367,Time-of-check Time-of-use (TOCTOU) Race Condition,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,1,1,0,1,0,2
+362,CWE-362,Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition'),Class,CWE-691,Insufficient Control Flow Management,Concurrency,동시성,1,1,1,0,0,0,1,0,3
+363,CWE-363,Race Condition Enabling Link Following,Base,CWE-691,Insufficient Control Flow Management,Concurrency,동시성,0,0,0,0,0,0,1,0,0
+364,CWE-364,Signal Handler Race Condition,Base,CWE-691,Insufficient Control Flow Management,Concurrency,동시성,1,1,0,0,0,0,0,0,2
+366,CWE-366,Race Condition within a Thread,Base,CWE-691,Insufficient Control Flow Management,Concurrency,동시성,1,1,1,0,0,0,1,1,3
+367,CWE-367,Time-of-check Time-of-use (TOCTOU) Race Condition,Base,CWE-691,Insufficient Control Flow Management,Concurrency,동시성,0,0,0,1,1,0,1,0,2
 369,CWE-369,Divide By Zero,Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,0,0,0,1,0,0,1,1,1
 374,CWE-374,Passing Mutable Objects to an Untrusted Method,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,1,1,1,0,0,0,0,0,3
 375,CWE-375,Returning a Mutable Object to an Untrusted Caller,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,1,1,1,0,0,0,0,0,3
@@ -115,14 +112,14 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 383,CWE-383,J2EE Bad Practices: Direct Use of Threads,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
 390,CWE-390,Detection of Error Condition Without Action,Base,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,0,1,1,0,1,1,2
 391,CWE-391,Unchecked Error Condition,Base,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,0,0,0,0,1,1,0
-392,CWE-392,Missing Report of Error Condition,Base,CWE-703,Improper Check or Handling of Exceptional Conditions,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
+392,CWE-392,Missing Report of Error Condition,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
 394,CWE-394,Unexpected Status Code or Return Value,Base,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,0,0,0,0,0,1,0
 395,CWE-395,Use of NullPointerException Catch to Detect NULL Pointer Dereference,Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,0,1,0,0,0,0,0,1
 396,CWE-396,Declaration of Catch for Generic Exception,Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,1,1,0,0,0,0,0,2
 397,CWE-397,Declaration of Throws for Generic Exception,Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,1,1,0,0,0,0,0,2
 400,CWE-400,Uncontrolled Resource Consumption,Class,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,1,0,0,0,0,1
 401,CWE-401,Missing Release of Memory after Effective Lifetime,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,1,2
-403,CWE-403,Exposure of File Descriptor to Unintended Control Sphere ('File Descriptor Leak'),Base,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,1,0,0,0,0,0,1,0,1
+403,CWE-403,Exposure of File Descriptor to Unintended Control Sphere ('File Descriptor Leak'),Base,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,0,0,0,0,0,1,0,0
 404,CWE-404,Improper Resource Shutdown or Release,Class,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,1,1,0,1,1,2
 407,CWE-407,Inefficient Algorithmic Complexity,Class,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,0,1,0
 415,CWE-415,Double Free,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,1,0,0,1,1,3
@@ -134,7 +131,7 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 457,CWE-457,Use of Uninitialized Variable,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,0,1,1,0,0,1,4
 459,CWE-459,Incomplete Cleanup,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,1,0
 460,CWE-460,Improper Cleanup on Thrown Exception,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,1,0,0,0,1,0,3
-462,CWE-462,Duplicate Key in Associative List (Alist),Variant,CWE-707,Improper Neutralization,Poor Coding Practices,부적절한 코딩 관행,1,1,1,0,0,0,1,0,3
+462,CWE-462,Duplicate Key in Associative List (Alist),Base,CWE-707,Improper Neutralization,Poor Coding Practices,부적절한 코딩 관행,1,1,1,0,0,0,1,0,3
 463,CWE-463,Deletion of Data Structure Sentinel,Base,CWE-707,Improper Neutralization,Improper Neutralization,특수 요소 중화,1,1,0,0,0,0,0,0,2
 464,CWE-464,Addition of Data Structure Sentinel,Base,CWE-707,Improper Neutralization,Improper Neutralization,특수 요소 중화,1,1,0,0,0,0,1,0,2
 466,CWE-466,Return of Pointer Value Outside of Expected Range,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,0,2
@@ -146,7 +143,7 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 476,CWE-476,NULL Pointer Dereference,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,1,1,1,1,1,1,1,5
 477,CWE-477,Use of Obsolete Function,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
 478,CWE-478,Missing Default Case in Multiple Condition Expression,Base,CWE-697,Incorrect Comparison,Comparison,비교,1,1,1,0,0,0,0,1,3
-479,CWE-479,Signal Handler Use of a Non-reentrant Function,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,1,0,0,0,0,1,0,2
+479,CWE-479,Signal Handler Use of a Non-reentrant Function,Variant,CWE-691,Insufficient Control Flow Management,Concurrency,동시성,1,1,0,0,0,0,1,0,2
 480,CWE-480,Use of Incorrect Operator,Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,1,1,0,0,0,0,1,1,2
 481,CWE-481,Assigning instead of Comparing,Variant,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,1,1,1,0,0,0,1,0,3
 482,CWE-482,Comparing instead of Assigning,Variant,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,1,1,0,0,0,0,1,0,2
@@ -169,18 +166,16 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 502,CWE-502,Deserialization of Untrusted Data,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Control,자원 제어,0,0,1,0,1,1,0,1,2
 521,CWE-521,Weak Password Requirements,Base,CWE-284,Improper Access Control,Access Control,접근 제어,0,0,0,1,1,0,0,0,2
 528,CWE-528,Exposure of Core Dump File to an Unauthorized Control Sphere,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,0,0,0,0,0,1,0,0
-536,CWE-536,Servlet Runtime Error Message Containing Sensitive Information,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Sensitive Information Exposure,민감정보 노출,0,0,1,0,0,0,0,0,1
 537,CWE-537,Java Runtime Error Message Containing Sensitive Information,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Sensitive Information Exposure,민감정보 노출,0,0,1,0,0,0,0,0,1
 539,CWE-539,Use of Persistent Cookies Containing Sensitive Information,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,0,0,0,1,0,0,0,1
 543,CWE-543,Use of Singleton Pattern Without Synchronization in a Multithreaded Context,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,1,1,0,1,0,0,1,3
 544,CWE-544,Missing Standardized Error Handling Mechanism,Base,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,0,0,0,0,1,0,0
 552,CWE-552,Files or Directories Accessible to External Parties,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,0,0,0,0,0,1,0,0
-555,CWE-555,J2EE Misconfiguration: Plaintext Password in Configuration File,Variant,CWE-284,Improper Access Control,Access Control,접근 제어,0,0,1,0,0,0,0,0,1
 558,CWE-558,Use of getlogin() in Multithreaded Application,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,1,0,0,0,0,0,0,2
 560,CWE-560,Use of umask() with chmod-style Argument,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,0,0,0,0,0,0,0,1
 561,CWE-561,Dead Code,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,1,0
 562,CWE-562,Return of Stack Variable Address,Base,CWE-710,Improper Adherence to Coding Standards,Memory Safety,메모리 안전,1,1,0,1,0,0,1,1,3
-563,CWE-563,Assignment to Variable without Use,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,0,0
+563,CWE-563,Assignment to Variable without Use,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,0,0
 564,CWE-564,SQL Injection: Hibernate,Variant,CWE-707,Improper Neutralization,Injection,주입(Injection),0,0,0,0,0,0,0,1,0
 567,CWE-567,Unsynchronized Access to Shared Data in a Multithreaded Context,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,1,0,0,0,0,1,1
 568,CWE-568,finalize() Method Without super.finalize(),Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,1,0,0,0,0,0,1
@@ -194,19 +189,17 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 578,CWE-578,EJB Bad Practices: Use of Class Loader,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
 579,CWE-579,J2EE Bad Practices: Non-serializable Object Stored in Session,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
 580,CWE-580,clone() Method Without super.clone(),Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,1,0,0,0,0,0,1
-581,CWE-581,Object Model Violation: Just One of Equals and Hashcode Defined,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
+581,CWE-581,Object Model Violation: Just One of Equals and Hashcode Defined,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
 582,CWE-582,"Array Declared Public, Final, and Static",Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,0,1,0,0,0,0,0,1
 583,CWE-583,finalize() Method Declared Public,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,0,1,0,0,0,0,0,1
-585,CWE-585,Empty Synchronized Block,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
-586,CWE-586,Explicit Call to Finalize(),Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
-587,CWE-587,Assignment of a Fixed Address to a Pointer,Variant,CWE-710,Improper Adherence to Coding Standards,Memory Safety,메모리 안전,1,1,0,1,0,0,1,0,3
-588,CWE-588,Attempt to Access Child of a Non-structure Pointer,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,0,0,0,0,0,0,2
-590,CWE-590,Free of Memory not on the Heap,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,0,0,0,0,0,1,0,1
+585,CWE-585,Empty Synchronized Block,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
+586,CWE-586,Explicit Call to Finalize(),Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
+587,CWE-587,Assignment of a Fixed Address to a Pointer,Base,CWE-710,Improper Adherence to Coding Standards,Memory Safety,메모리 안전,1,1,0,1,0,0,1,0,3
+590,CWE-590,Free of Memory not on the Heap,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,1,0,0
 591,CWE-591,Sensitive Data Storage in Improperly Locked Memory,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,0,0,0,1,0,0
 594,CWE-594,J2EE Framework: Saving Unserializable Objects to Disk,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,1,0,0,0,0,0,1
 595,CWE-595,Comparison of Object References Instead of Object Contents,Variant,CWE-697,Incorrect Comparison,Comparison,비교,0,0,1,0,0,0,0,1,1
-597,CWE-597,Use of Wrong Operator in String Comparison,Variant,CWE-697,Incorrect Comparison,Comparison,비교,0,0,1,0,0,0,0,1,1
-600,CWE-600,Uncaught Exception in Servlet,Variant,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,0,1,0,0,0,0,0,1
+597,CWE-597,Use of Wrong Operator in String Comparison,Variant,CWE-697,Incorrect Comparison,Comparison,비교,0,0,0,0,0,0,0,1,0
 601,CWE-601,URL Redirection to Untrusted Site ('Open Redirect'),Base,CWE-664,Improper Control of a Resource Through its Lifetime,Access Control,접근 제어,0,0,0,0,1,0,0,0,1
 606,CWE-606,Unchecked Input for Loop Condition,Base,CWE-707,Improper Neutralization,Improper Input Validation,입력값 검증,0,0,0,0,0,0,1,1,0
 607,CWE-607,Public Static Final Field References Mutable Object,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,1,0,0,0,0,0,1
@@ -214,14 +207,12 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 609,CWE-609,Double-Checked Locking,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,1,0,0,0,0,0,1
 611,CWE-611,Improper Restriction of XML External Entity Reference,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Access Control,접근 제어,0,0,0,0,1,0,0,1,1
 615,CWE-615,Inclusion of Sensitive Information in Source Code Comments,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Sensitive Information Exposure,민감정보 노출,0,0,0,1,1,0,0,0,2
-617,CWE-617,Reachable Assertion,Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,1,0,1,0,0,0,0,0,2
 624,CWE-624,Executable Regular Expression Error,Base,CWE-707,Improper Neutralization,Injection,주입(Injection),0,0,0,0,0,0,0,1,0
 628,CWE-628,Function Call with Incorrectly Specified Arguments,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,1,0,0,1,0,1
 639,CWE-639,Authorization Bypass Through User-Controlled Key,Base,CWE-284,Improper Access Control,Access Control,접근 제어,0,0,0,0,0,1,0,0,0
 643,CWE-643,Improper Neutralization of Data within XPath Expressions ('XPath Injection'),Base,CWE-707,Improper Neutralization,Injection,주입(Injection),0,0,0,0,1,0,0,1,1
 652,CWE-652,Improper Neutralization of Data within XQuery Expressions ('XQuery Injection'),Base,CWE-707,Improper Neutralization,Injection,주입(Injection),0,0,0,0,1,0,0,1,1
 662,CWE-662,Improper Synchronization,Class,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,1,0
-663,CWE-663,Use of a Non-reentrant Function in a Concurrent Context,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,0,0,0,0,0,0,0,1
 664,CWE-664,Improper Control of a Resource Through its Lifetime,Pillar,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,0,0
 665,CWE-665,Improper Initialization,Class,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,1,0
 666,CWE-666,Operation on Resource in Wrong Phase of Lifetime,Class,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,0,0
@@ -230,15 +221,15 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 674,CWE-674,Uncontrolled Recursion,Class,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,0,0,0,1,0,0,0,1
 675,CWE-675,Multiple Operations on Resource in Single-Operation Context,Class,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,0,0
 676,CWE-676,Use of Potentially Dangerous Function,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,1,0,1,1,0,1,0,4
-680,CWE-680,Integer Overflow to Buffer Overflow,Compound,CWE-682,Incorrect Calculation,Memory Safety,메모리 안전,1,1,0,0,0,0,1,0,2
-681,CWE-681,Incorrect Conversion between Numeric Types,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,0,0,0,0,0,1,1,1
+680,CWE-680,Integer Overflow to Buffer Overflow,Compound,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,1,0,0
+681,CWE-681,Incorrect Conversion between Numeric Types,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,1,0
 682,CWE-682,Incorrect Calculation,Pillar,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,0,0,0,0,0,0,1,1,0
 685,CWE-685,Function Call With Incorrect Number of Arguments,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,0,0,0,0,0,1,0,1
 686,CWE-686,Function Call With Incorrect Argument Type,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,0,0
 687,CWE-687,Function Call With Incorrectly Specified Argument Value,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,0,0
 688,CWE-688,Function Call With Incorrect Variable or Reference as Argument,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,0,0,0,0,0,0,0,1
-689,CWE-689,Permission Race Condition During Resource Copy,Compound,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,0,0,0,0,0,0,0,1
-690,CWE-690,Unchecked Return Value to NULL Pointer Dereference,Compound,CWE-703,Improper Check or Handling of Exceptional Conditions,Memory Safety,메모리 안전,1,1,0,0,0,0,1,0,2
+689,CWE-689,Permission Race Condition During Resource Copy,Compound,CWE-691,Insufficient Control Flow Management,Concurrency,동시성,1,0,0,0,0,0,0,0,1
+690,CWE-690,Unchecked Return Value to NULL Pointer Dereference,Compound,CWE-710,Improper Adherence to Coding Standards,Memory Safety,메모리 안전,1,1,0,0,0,0,1,0,2
 696,CWE-696,Incorrect Behavior Order,Class,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,0,0,0,0,0,1,0,0
 697,CWE-697,Incorrect Comparison,Pillar,CWE-697,Incorrect Comparison,Comparison,비교,0,0,0,0,0,0,1,0,0
 703,CWE-703,Improper Check or Handling of Exceptional Conditions,Pillar,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,0,0,0,0,1,1,0
@@ -250,13 +241,11 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 755,CWE-755,Improper Handling of Exceptional Conditions,Class,CWE-703,Improper Check or Handling of Exceptional Conditions,Improper Check or Handling of Exceptional Conditions,예외 상황 처리,0,0,0,1,0,0,1,0,1
 758,CWE-758,"Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",Class,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,1,1,0
 759,CWE-759,Use of a One-Way Hash without a Salt,Variant,CWE-693,Protection Mechanism Failure,Encryption,암호화,0,0,0,1,1,0,0,0,2
-761,CWE-761,Free of Pointer not at Start of Buffer,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,0,0,0,0,0,0,0,1
 762,CWE-762,Mismatched Memory Management Routines,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,0,2
-763,CWE-763,Release of Invalid Pointer or Reference,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,0,0,2
 764,CWE-764,Multiple Locks of a Critical Resource,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,0,0,0,0,1,0
-766,CWE-766,Critical Data Element Declared Public,Base,CWE-284,Improper Access Control,Poor Coding Practices,부적절한 코딩 관행,0,1,1,0,0,0,0,0,2
-767,CWE-767,Access to Critical Private Variable via Public Method,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,1,1,0,0,0,0,0,2
-768,CWE-768,Incorrect Short Circuit Evaluation,Variant,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,1,0,0,0,0,0,1,0,1
+766,CWE-766,Critical Data Element Declared Public,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,1,1,0,0,0,0,0,2
+767,CWE-767,Access to Critical Private Variable via Public Method,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Exposed Resource,노출된 자원,0,1,1,0,0,0,0,0,2
+768,CWE-768,Incorrect Short Circuit Evaluation,Variant,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,0,0,0,0,0,1,0,0
 770,CWE-770,Allocation of Resources Without Limits or Throttling,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,1,1,0,0
 771,CWE-771,Missing Reference to Active Allocated Resource,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,0,0
 772,CWE-772,Missing Release of Resource after Effective Lifetime,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,1,1,0
@@ -267,9 +256,9 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 782,CWE-782,Exposed IOCTL with Insufficient Access Control,Variant,CWE-284,Improper Access Control,Resource Lifecycle Management,자원 생애주기 관리,1,1,0,0,0,0,0,0,2
 783,CWE-783,Operator Precedence Logic Error,Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,1,1,0,0,0,0,0,1,2
 785,CWE-785,Use of Path Manipulation Function without Maximum-sized Buffer,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,1,0,0,0,0,0,0,2
-786,CWE-786,Access of Memory Location Before Start of Buffer,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,1,2
+786,CWE-786,Access of Memory Location Before Start of Buffer,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,1,1,0
 787,CWE-787,Out-of-bounds Write,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,1,0,1,2
-788,CWE-788,Access of Memory Location After End of Buffer,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,0,1,2
+788,CWE-788,Access of Memory Location After End of Buffer,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,0,1,0
 789,CWE-789,Memory Allocation with Excessive Size Value,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,1,2
 798,CWE-798,Use of Hard-coded Credentials,Base,CWE-284,Improper Access Control,Access Control,접근 제어,0,0,0,0,0,0,0,1,0
 805,CWE-805,Buffer Access with Incorrect Length Value,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,1,2
@@ -277,11 +266,10 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 807,CWE-807,Reliance on Untrusted Inputs in a Security Decision,Base,CWE-693,Protection Mechanism Failure,Protection Mechanism Failure,보호 메커니즘 실패,0,0,0,0,1,0,1,0,1
 820,CWE-820,Missing Synchronization,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,0,0,0,0,1,0
 821,CWE-821,Incorrect Synchronization,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,0,0,0,0,1,0
-822,CWE-822,Untrusted Pointer Dereference,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,1,1,2
-823,CWE-823,Use of Out-of-range Pointer Offset,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,0,1,2
-824,CWE-824,Access of Uninitialized Pointer,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,0,1,2
-825,CWE-825,Expired Pointer Dereference,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,1,1,0,0,0,0,0,1,2
-828,CWE-828,Signal Handler with Functionality that is not Asynchronous-Safe,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,1,0,0,0,0,0,0,0,1
+822,CWE-822,Untrusted Pointer Dereference,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,1,1,0
+823,CWE-823,Use of Out-of-range Pointer Offset,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,0,1,0
+824,CWE-824,Access of Uninitialized Pointer,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,0,1,0
+825,CWE-825,Expired Pointer Dereference,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Memory Safety,메모리 안전,0,0,0,0,0,0,0,1,0
 833,CWE-833,Deadlock,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,0,0,0,0,1,0
 835,CWE-835,Loop with Unreachable Exit Condition ('Infinite Loop'),Base,CWE-691,Insufficient Control Flow Management,Insufficient Control Flow Management,제어 흐름 관리,0,0,0,0,1,0,0,1,1
 839,CWE-839,Numeric Range Comparison Without Minimum Check,Base,CWE-697,Incorrect Comparison,Comparison,비교,1,1,0,0,0,0,0,0,2
@@ -296,7 +284,7 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 1041,CWE-1041,Use of Redundant Code,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
 1042,CWE-1042,Static Member Data Element outside of a Singleton Class Element,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,0,1,0
 1043,CWE-1043,Data Element Aggregating an Excessively Large Number of Non-Primitive Elements,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
-1045,CWE-1045,Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
+1045,CWE-1045,Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
 1046,CWE-1046,Creation of Immutable Text Using String Concatenation,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,0,0,0,0,0,1,0
 1047,CWE-1047,Modules with Circular Dependencies,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
 1048,CWE-1048,Invokable Control Element with Large Number of Outward Calls,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
@@ -335,10 +323,9 @@ cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C
 1095,CWE-1095,Loop Condition Value Update within the Loop,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
 1096,CWE-1096,Singleton Class Instance Creation without Proper Locking or Synchronization,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Concurrency,동시성,0,0,0,0,0,0,0,1,0
 1097,CWE-1097,Persistent Storable Data Element without Associated Comparison Control Element,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
-1098,CWE-1098,Data Element containing Pointer Item without Proper Copy Control Element,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
+1098,CWE-1098,Data Element containing Pointer Item without Proper Copy Control Element,Variant,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,0,0,0,0,0,0,0,1,0
 1235,CWE-1235,Incorrect Use of Autoboxing and Unboxing for Performance Critical Operations,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,0,0,1,0,0,0,0,0,1
 1325,CWE-1325,Improperly Controlled Sequential Memory Allocation,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,0,0,0,0,0,0,2
 1335,CWE-1335,Incorrect Bitwise Shift of Integer,Base,CWE-682,Incorrect Calculation,Incorrect Calculation,잘못된 계산,1,1,1,0,0,0,0,0,3
 1336,CWE-1336,Improper Neutralization of Special Elements Used in a Template Engine,Base,CWE-707,Improper Neutralization,Injection,주입(Injection),0,0,1,0,0,0,0,0,1
 1341,CWE-1341,Multiple Releases of Same Resource or Handle,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,1,1,0,0,0,0,0,3
-1429,CWE-1429,Missing Security-Relevant Feedback for Unexecuted Operations in Hardware Interface,Base,CWE-664,Improper Control of a Resource Through its Lifetime,Protection Mechanism Failure,보호 메커니즘 실패,1,1,0,0,0,0,0,0,2

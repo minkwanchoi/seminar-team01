@@ -1,0 +1,4 @@
+cwe_id,cwe,name,abstraction,pillar,pillar_name,category,category_ko,매뉴얼·C (CWE-658),매뉴얼·C++ (CWE-659),매뉴얼·Java (CWE-660),매뉴얼 보안약점 44,행안부 49,CWE Top 25 (2025),SEI CERT C·C++,CISQ 품질 측정,n_sets
+476,CWE-476,NULL Pointer Dereference,Base,CWE-710,Improper Adherence to Coding Standards,Poor Coding Practices,부적절한 코딩 관행,1,1,1,1,1,1,1,1,5
+495,CWE-495,Private Data Structure Returned From A Public Method,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,1,1,1,0,0,0,5
+496,CWE-496,Public Data Assigned to Private Array-Typed Field,Variant,CWE-664,Improper Control of a Resource Through its Lifetime,Resource Lifecycle Management,자원 생애주기 관리,1,1,1,1,1,0,0,0,5

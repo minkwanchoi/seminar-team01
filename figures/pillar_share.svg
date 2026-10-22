@@ -418,7 +418,7 @@ L 824.752813 336.08625
     <text style="font-size: 10px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="774.532813" y="354.708297" transform="rotate(-0 774.532813 354.708297)">2%</text>
    </g>
    <g id="text_72">
-    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="573.652812" y="17.60625" transform="rotate(-0 573.652812 17.60625)">국내 목록별 CWE의 상위 범주(Pillar) 구성비 (열마다 합계 100%)</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="573.652812" y="17.60625" transform="rotate(-0 573.652812 17.60625)">국내 목록별 CWE의 상위 범주(Pillar) 구성비 (열마다 합계 100%, CWE 4.20 기준)</text>
    </g>
   </g>
  </g>

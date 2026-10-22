@@ -1,0 +1,3 @@
+version,release_date,size_cwe658,size_cwe659,size_cwe660,view_union,domestic_total,domestic_common,domestic_common_cwes,manual44_mois_common,manual44_mois_jaccard,c_mois_common,c_mois_jaccard,views_mois_common,manual44_flagged,manual44_flagged_outside_views,manual44_flagged_outside_cwes,top25_covered,top25_size,cert_covered,cert_size,cisq_covered,cisq_size
+4.10,2023-01-31,82,86,77,142,193,3,476;495;496,33,0.4583,9,0.0672,15,25,10,190;367;369;390;400;404;489;497;628;755,17,25,65,132,51,138
+4.20,2026-04-30,103,97,84,169,219,3,476;495;496,33,0.4583,10,0.0649,16,25,9,367;369;390;400;404;489;497;628;755,17,25,73,132,59,138

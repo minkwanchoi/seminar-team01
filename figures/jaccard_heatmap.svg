@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="453.502625pt" height="405.81914pt" viewBox="0 0 453.502625 405.81914" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="452.729187pt" height="405.81914pt" viewBox="0 0 452.729187 405.81914" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -21,8 +21,8 @@
  <g id="figure_1">
   <g id="patch_1">
    <path d="M -0 405.81914 
-L 453.502625 405.81914 
-L 453.502625 0 
+L 452.729187 405.81914 
+L 452.729187 0 
 L -0 0 
 z
 " style="fill: #fcfcfb"/>
@@ -244,7 +244,7 @@ L 425.0015 271.97745
     <text style="font-size: 11px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #fcfcfb" x="393.9551" y="306.321702" transform="rotate(-0 393.9551 306.321702)">—</text>
    </g>
    <g id="text_36">
-    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="269.7695" y="17.60625" transform="rotate(-0 269.7695 17.60625)">국내 목록 쌍별 Jaccard 유사도 (교집합 ÷ 합집합, CWE 번호 단위)</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="269.7695" y="17.60625" transform="rotate(-0 269.7695 17.60625)">국내 목록 쌍별 Jaccard 유사도 (교집합 ÷ 합집합, CWE 4.20 기준)</text>
    </g>
   </g>
  </g>

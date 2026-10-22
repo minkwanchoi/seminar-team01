@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="555.463125pt" height="279.02431pt" viewBox="0 0 555.463125 279.02431" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="598.963125pt" height="279.02431pt" viewBox="0 0 598.963125 279.02431" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -21,8 +21,8 @@
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 279.02431 
-L 555.463125 279.02431 
-L 555.463125 0 
+L 598.963125 279.02431 
+L 598.963125 0 
 L 0 0 
 z
 " style="fill: #fcfcfb"/>
@@ -339,7 +339,7 @@ L 544.064062 200.96175
     <text style="font-size: 10px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #52514e" x="459.959715" y="178.502856" transform="rotate(-0 459.959715 178.502856)">59/138 (43%)</text>
    </g>
    <g id="text_26">
-    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="320.864062" y="17.55375" transform="rotate(-0 320.864062 17.55375)">해외 참고 사례의 CWE를 국내 목록이 덮는 정도 (막대 끝: 국내 목록에 있는 수/전체)</text>
+    <text style="font-size: 12px; font-family: 'Malgun Gothic', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="320.864062" y="17.55375" transform="rotate(-0 320.864062 17.55375)">해외 참고 사례의 CWE를 국내 목록이 덮는 정도 (막대 끝: 국내 목록에 있는 수/전체, CWE 4.20 기준)</text>
    </g>
    <g id="legend_1">
     <g id="patch_16">
