@@ -2,6 +2,10 @@ file,source,count,url,cwe_version,retrieved
 cwe_658.csv,CWE-658,103,https://cwe.mitre.org/data/csv/658.csv.zip,4.20,2026-10-22
 cwe_659.csv,CWE-659,97,https://cwe.mitre.org/data/csv/659.csv.zip,4.20,2026-10-22
 cwe_660.csv,CWE-660,84,https://cwe.mitre.org/data/csv/660.csv.zip,4.20,2026-10-22
+cwe_cert_c.csv,CWE-1154,78,https://cwe.mitre.org/data/csv/1154.csv.zip,4.20,2026-10-22
+cwe_cert_cpp.csv,CWE-868,95,https://cwe.mitre.org/data/csv/868.csv.zip,4.20,2026-10-22
+cwe_cisq.csv,CWE-1305,138,https://cwe.mitre.org/data/csv/1305.csv.zip,4.20,2026-10-22
+cwe_owasp2021.csv,CWE-1344,182,https://cwe.mitre.org/data/csv/1344.csv.zip,4.20,2026-10-22
 cwe_top25_2025.csv,2025 CWE Top 25 (CWE-1435),25,https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html,4.20,2026-10-22
 cwe_pillar.csv,CWE-1000 기본 부모 체인의 최상위 Pillar,944,https://cwe.mitre.org/data/csv/1000.csv.zip,4.20,2026-10-22
 cwe_category.csv,CWE-1400 성격별 범주(Comprehensive Categorization),944,https://cwe.mitre.org/data/xml/views/1400.xml.zip,4.20,2026-10-22

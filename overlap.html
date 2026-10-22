@@ -9,7 +9,7 @@
       color-scheme: light;
       --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
       --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,.10);
-      --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300;
+      --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948;
       --seq-0: #f4f8fd; --seq-hi: #0d366b; --accent-wash: #eef4fc;
     }
     @media (prefers-color-scheme: dark) {
@@ -17,7 +17,7 @@
         color-scheme: dark;
         --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
         --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,.10);
-        --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+        --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
         --seq-0: #1f2a38; --seq-hi: #86b6ef; --accent-wash: #16263a;
       }
     }
@@ -25,7 +25,7 @@
       color-scheme: dark;
       --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
       --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,.10);
-      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
       --seq-0: #1f2a38; --seq-hi: #86b6ef; --accent-wash: #16263a;
     }
     * { box-sizing: border-box; }
@@ -104,7 +104,7 @@
 <main>
   <header>
     <h1>국방 SW 보안약점 기준, 얼마나 겹치나</h1>
-    <p>방사청 매뉴얼 신뢰성시험(취약점 점검 CWE-658·659·660, 보안약점 44개), 행안부 개발보안 49개 항목, CWE Top 25(2025)를 CWE 번호로 맞춰 겹침을 셉니다.</p>
+    <p>방사청 매뉴얼 신뢰성시험(취약점 점검 CWE-658·659·660, 보안약점 44개), 행안부 개발보안 49개 항목, CWE Top 25(2025), 해외 비교군(SEI CERT C·C++, CISQ 품질 측정)을 CWE 번호로 맞춰 겹침을 셉니다.</p>
     <div class="note">
       <strong>읽기 전에:</strong> 이 결과는 <strong>공개적으로 확인할 수 있는 요구 목록끼리</strong> 비교한 것이며, 비공개 기준은 들어 있지 않습니다. 매뉴얼 보안약점 44개는 2차 자료를 학술 인용 기준으로 인용했습니다.
       <a href="#limits">분석 범위와 한계</a>를 먼저 확인해 주세요.
@@ -215,7 +215,7 @@
 </main>
 
 <script>
-  const SERIES_VARS = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6"];
+  const SERIES_VARS = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6", "--s7", "--s8"];
   const FIXED = new Set(["cwe_id", "cwe", "name", "abstraction", "pillar", "pillar_name", "category", "category_ko", "n_sets"]);
 
   // 따옴표 안의 쉼표를 지키는 작은 CSV 파서

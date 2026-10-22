@@ -25,6 +25,11 @@ VIEWS = {
     658: "cwe_658.csv",  # Weaknesses in Software Written in C
     659: "cwe_659.csv",  # Weaknesses in Software Written in C++
     660: "cwe_660.csv",  # Weaknesses in Software Written in Java
+    # 해외 비교군
+    1154: "cwe_cert_c.csv",    # Weaknesses Addressed by the SEI CERT C Coding Standard
+    868: "cwe_cert_cpp.csv",   # Weaknesses Addressed by the SEI CERT C++ Coding Standard (2016 Version)
+    1305: "cwe_cisq.csv",      # CISQ Quality Measures (2020)
+    1344: "cwe_owasp2021.csv", # Weaknesses in OWASP Top Ten (2021). 비교 집합이 아니라 보고서 참고용
 }
 
 # 최신 Top 25: 연도와 MITRE 뷰 번호

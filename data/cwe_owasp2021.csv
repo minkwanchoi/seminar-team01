@@ -1,0 +1,183 @@
+cwe_id,cwe,name,abstraction,status
+11,CWE-11,ASP.NET Misconfiguration: Creating Debug Binary,Variant,Draft
+13,CWE-13,ASP.NET Misconfiguration: Password in Configuration File,Variant,Draft
+15,CWE-15,External Control of System or Configuration Setting,Base,Incomplete
+20,CWE-20,Improper Input Validation,Class,Stable
+22,CWE-22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),Base,Stable
+23,CWE-23,Relative Path Traversal,Base,Draft
+35,CWE-35,Path Traversal: '.../...//',Variant,Incomplete
+59,CWE-59,Improper Link Resolution Before File Access ('Link Following'),Base,Draft
+73,CWE-73,External Control of File Name or Path,Base,Draft
+74,CWE-74,Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection'),Class,Incomplete
+75,CWE-75,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Class,Draft
+77,CWE-77,Improper Neutralization of Special Elements used in a Command ('Command Injection'),Class,Draft
+78,CWE-78,Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),Base,Stable
+79,CWE-79,Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),Base,Stable
+80,CWE-80,Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS),Variant,Incomplete
+83,CWE-83,Improper Neutralization of Script in Attributes in a Web Page,Variant,Draft
+87,CWE-87,Improper Neutralization of Alternate XSS Syntax,Variant,Draft
+88,CWE-88,Improper Neutralization of Argument Delimiters in a Command ('Argument Injection'),Base,Draft
+89,CWE-89,Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection'),Base,Stable
+90,CWE-90,Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection'),Base,Draft
+91,CWE-91,XML Injection (aka Blind XPath Injection),Base,Draft
+93,CWE-93,Improper Neutralization of CRLF Sequences ('CRLF Injection'),Base,Draft
+94,CWE-94,Improper Control of Generation of Code ('Code Injection'),Base,Draft
+95,CWE-95,Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection'),Variant,Incomplete
+96,CWE-96,Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection'),Base,Draft
+97,CWE-97,Improper Neutralization of Server-Side Includes (SSI) Within a Web Page,Variant,Draft
+98,CWE-98,Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion'),Variant,Draft
+99,CWE-99,Improper Control of Resource Identifiers ('Resource Injection'),Class,Draft
+113,CWE-113,Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting'),Variant,Incomplete
+116,CWE-116,Improper Encoding or Escaping of Output,Class,Draft
+117,CWE-117,Improper Output Neutralization for Logs,Base,Draft
+138,CWE-138,Improper Neutralization of Special Elements,Class,Draft
+183,CWE-183,Permissive List of Allowed Inputs,Base,Draft
+184,CWE-184,Incomplete List of Disallowed Inputs,Base,Draft
+200,CWE-200,Exposure of Sensitive Information to an Unauthorized Actor,Class,Draft
+201,CWE-201,Insertion of Sensitive Information Into Sent Data,Base,Draft
+209,CWE-209,Generation of Error Message Containing Sensitive Information,Base,Draft
+213,CWE-213,Exposure of Sensitive Information Due to Incompatible Policies,Base,Draft
+219,CWE-219,Storage of File with Sensitive Data Under Web Root,Variant,Draft
+223,CWE-223,Omission of Security-relevant Information,Base,Draft
+235,CWE-235,Improper Handling of Extra Parameters,Variant,Draft
+256,CWE-256,Plaintext Storage of a Password,Base,Incomplete
+257,CWE-257,Storing Passwords in a Recoverable Format,Base,Incomplete
+259,CWE-259,Use of Hard-coded Password,Variant,Draft
+260,CWE-260,Password in Configuration File,Base,Incomplete
+261,CWE-261,Weak Encoding for Password,Base,Incomplete
+266,CWE-266,Incorrect Privilege Assignment,Base,Draft
+269,CWE-269,Improper Privilege Management,Class,Draft
+276,CWE-276,Incorrect Default Permissions,Base,Draft
+280,CWE-280,Improper Handling of Insufficient Permissions or Privileges,Base,Draft
+284,CWE-284,Improper Access Control,Pillar,Incomplete
+285,CWE-285,Improper Authorization,Class,Draft
+287,CWE-287,Improper Authentication,Class,Draft
+288,CWE-288,Authentication Bypass Using an Alternate Path or Channel,Base,Incomplete
+290,CWE-290,Authentication Bypass by Spoofing,Base,Incomplete
+294,CWE-294,Authentication Bypass by Capture-replay,Base,Incomplete
+295,CWE-295,Improper Certificate Validation,Base,Draft
+296,CWE-296,Improper Following of a Certificate's Chain of Trust,Base,Draft
+297,CWE-297,Improper Validation of Certificate with Host Mismatch,Variant,Incomplete
+300,CWE-300,Channel Accessible by Non-Endpoint,Class,Draft
+302,CWE-302,Authentication Bypass by Assumed-Immutable Data,Base,Incomplete
+304,CWE-304,Missing Critical Step in Authentication,Base,Draft
+306,CWE-306,Missing Authentication for Critical Function,Base,Draft
+307,CWE-307,Improper Restriction of Excessive Authentication Attempts,Base,Draft
+311,CWE-311,Missing Encryption of Sensitive Data,Class,Draft
+312,CWE-312,Cleartext Storage of Sensitive Information,Base,Draft
+313,CWE-313,Cleartext Storage in a File or on Disk,Variant,Draft
+315,CWE-315,Cleartext Storage of Sensitive Information in a Cookie,Variant,Draft
+316,CWE-316,Cleartext Storage of Sensitive Information in Memory,Variant,Draft
+319,CWE-319,Cleartext Transmission of Sensitive Information,Base,Draft
+321,CWE-321,Use of Hard-coded Cryptographic Key,Variant,Draft
+322,CWE-322,Key Exchange without Entity Authentication,Base,Draft
+323,CWE-323,"Reusing a Nonce, Key Pair in Encryption",Base,Incomplete
+324,CWE-324,Use of a Key Past its Expiration Date,Base,Draft
+325,CWE-325,Missing Cryptographic Step,Base,Draft
+326,CWE-326,Inadequate Encryption Strength,Class,Draft
+327,CWE-327,Use of a Broken or Risky Cryptographic Algorithm,Class,Draft
+328,CWE-328,Use of Weak Hash,Base,Draft
+329,CWE-329,Generation of Predictable IV with CBC Mode,Variant,Draft
+330,CWE-330,Use of Insufficiently Random Values,Class,Stable
+331,CWE-331,Insufficient Entropy,Base,Draft
+335,CWE-335,Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG),Base,Draft
+336,CWE-336,Same Seed in Pseudo-Random Number Generator (PRNG),Variant,Draft
+337,CWE-337,Predictable Seed in Pseudo-Random Number Generator (PRNG),Variant,Draft
+338,CWE-338,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Base,Draft
+340,CWE-340,Generation of Predictable Numbers or Identifiers,Class,Incomplete
+345,CWE-345,Insufficient Verification of Data Authenticity,Class,Draft
+346,CWE-346,Origin Validation Error,Class,Draft
+347,CWE-347,Improper Verification of Cryptographic Signature,Base,Draft
+352,CWE-352,Cross-Site Request Forgery (CSRF),Compound,Stable
+353,CWE-353,Missing Support for Integrity Check,Base,Draft
+359,CWE-359,Exposure of Private Personal Information to an Unauthorized Actor,Base,Incomplete
+377,CWE-377,Insecure Temporary File,Class,Incomplete
+384,CWE-384,Session Fixation,Compound,Incomplete
+402,CWE-402,Transmission of Private Resources into a New Sphere ('Resource Leak'),Class,Draft
+419,CWE-419,Unprotected Primary Channel,Base,Draft
+425,CWE-425,Direct Request ('Forced Browsing'),Base,Incomplete
+426,CWE-426,Untrusted Search Path,Base,Stable
+430,CWE-430,Deployment of Wrong Handler,Base,Incomplete
+434,CWE-434,Unrestricted Upload of File with Dangerous Type,Base,Draft
+441,CWE-441,Unintended Proxy or Intermediary ('Confused Deputy'),Class,Draft
+444,CWE-444,Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling'),Base,Incomplete
+451,CWE-451,User Interface (UI) Misrepresentation of Critical Information,Class,Draft
+470,CWE-470,Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection'),Base,Draft
+471,CWE-471,Modification of Assumed-Immutable Data (MAID),Base,Draft
+472,CWE-472,External Control of Assumed-Immutable Web Parameter,Base,Draft
+494,CWE-494,Download of Code Without Integrity Check,Base,Draft
+497,CWE-497,Exposure of Sensitive System Information to an Unauthorized Control Sphere,Base,Incomplete
+501,CWE-501,Trust Boundary Violation,Base,Draft
+502,CWE-502,Deserialization of Untrusted Data,Base,Draft
+520,CWE-520,.NET Misconfiguration: Use of Impersonation,Variant,Incomplete
+521,CWE-521,Weak Password Requirements,Base,Draft
+522,CWE-522,Insufficiently Protected Credentials,Class,Incomplete
+523,CWE-523,Unprotected Transport of Credentials,Base,Incomplete
+525,CWE-525,Use of Web Browser Cache Containing Sensitive Information,Variant,Incomplete
+526,CWE-526,Cleartext Storage of Sensitive Information in an Environment Variable,Variant,Incomplete
+532,CWE-532,Insertion of Sensitive Information into Log File,Base,Incomplete
+537,CWE-537,Java Runtime Error Message Containing Sensitive Information,Variant,Incomplete
+538,CWE-538,Insertion of Sensitive Information into Externally-Accessible File or Directory,Base,Draft
+539,CWE-539,Use of Persistent Cookies Containing Sensitive Information,Variant,Incomplete
+540,CWE-540,Inclusion of Sensitive Information in Source Code,Base,Incomplete
+541,CWE-541,Inclusion of Sensitive Information in an Include File,Variant,Incomplete
+547,CWE-547,"Use of Hard-coded, Security-relevant Constants",Base,Draft
+548,CWE-548,Exposure of Information Through Directory Listing,Variant,Draft
+552,CWE-552,Files or Directories Accessible to External Parties,Base,Draft
+564,CWE-564,SQL Injection: Hibernate,Variant,Incomplete
+565,CWE-565,Reliance on Cookies without Validation and Integrity Checking,Base,Incomplete
+566,CWE-566,Authorization Bypass Through User-Controlled SQL Primary Key,Variant,Incomplete
+579,CWE-579,J2EE Bad Practices: Non-serializable Object Stored in Session,Variant,Draft
+598,CWE-598,Use of HTTP Request With Sensitive Query String,Variant,Draft
+601,CWE-601,URL Redirection to Untrusted Site ('Open Redirect'),Base,Draft
+602,CWE-602,Client-Side Enforcement of Server-Side Security,Class,Draft
+610,CWE-610,Externally Controlled Reference to a Resource in Another Sphere,Class,Draft
+611,CWE-611,Improper Restriction of XML External Entity Reference,Base,Draft
+613,CWE-613,Insufficient Session Expiration,Base,Incomplete
+614,CWE-614,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Variant,Draft
+620,CWE-620,Unverified Password Change,Base,Draft
+639,CWE-639,Authorization Bypass Through User-Controlled Key,Base,Incomplete
+640,CWE-640,Weak Password Recovery Mechanism for Forgotten Password,Base,Incomplete
+642,CWE-642,External Control of Critical State Data,Class,Draft
+643,CWE-643,Improper Neutralization of Data within XPath Expressions ('XPath Injection'),Base,Incomplete
+644,CWE-644,Improper Neutralization of HTTP Headers for Scripting Syntax,Variant,Incomplete
+646,CWE-646,Reliance on File Name or Extension of Externally-Supplied File,Variant,Incomplete
+650,CWE-650,Trusting HTTP Permission Methods on the Server Side,Variant,Incomplete
+651,CWE-651,Exposure of WSDL File Containing Sensitive Information,Variant,Incomplete
+652,CWE-652,Improper Neutralization of Data within XQuery Expressions ('XQuery Injection'),Base,Incomplete
+653,CWE-653,Improper Isolation or Compartmentalization,Class,Draft
+656,CWE-656,Reliance on Security Through Obscurity,Class,Draft
+657,CWE-657,Violation of Secure Design Principles,Class,Draft
+668,CWE-668,Exposure of Resource to Wrong Sphere,Class,Draft
+706,CWE-706,Use of Incorrectly-Resolved Name or Reference,Class,Incomplete
+756,CWE-756,Missing Custom Error Page,Base,Incomplete
+757,CWE-757,Selection of Less-Secure Algorithm During Negotiation ('Algorithm Downgrade'),Base,Incomplete
+759,CWE-759,Use of a One-Way Hash without a Salt,Variant,Incomplete
+760,CWE-760,Use of a One-Way Hash with a Predictable Salt,Variant,Incomplete
+776,CWE-776,Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion'),Base,Draft
+778,CWE-778,Insufficient Logging,Base,Draft
+780,CWE-780,Use of RSA Algorithm without OAEP,Variant,Incomplete
+784,CWE-784,Reliance on Cookies without Validation and Integrity Checking in a Security Decision,Variant,Draft
+798,CWE-798,Use of Hard-coded Credentials,Base,Draft
+799,CWE-799,Improper Control of Interaction Frequency,Class,Incomplete
+807,CWE-807,Reliance on Untrusted Inputs in a Security Decision,Base,Incomplete
+829,CWE-829,Inclusion of Functionality from Untrusted Control Sphere,Base,Incomplete
+830,CWE-830,Inclusion of Web Functionality from an Untrusted Source,Variant,Incomplete
+841,CWE-841,Improper Enforcement of Behavioral Workflow,Class,Incomplete
+862,CWE-862,Missing Authorization,Class,Incomplete
+863,CWE-863,Incorrect Authorization,Class,Incomplete
+913,CWE-913,Improper Control of Dynamically-Managed Code Resources,Class,Incomplete
+915,CWE-915,Improperly Controlled Modification of Dynamically-Determined Object Attributes,Base,Incomplete
+916,CWE-916,Use of Password Hash With Insufficient Computational Effort,Base,Incomplete
+917,CWE-917,Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection'),Base,Incomplete
+918,CWE-918,Server-Side Request Forgery (SSRF),Base,Incomplete
+922,CWE-922,Insecure Storage of Sensitive Information,Class,Incomplete
+927,CWE-927,Use of Implicit Intent for Sensitive Communication,Variant,Incomplete
+940,CWE-940,Improper Verification of Source of a Communication Channel,Base,Incomplete
+942,CWE-942,Permissive Cross-domain Security Policy with Untrusted Domains,Variant,Incomplete
+1004,CWE-1004,Sensitive Cookie Without 'HttpOnly' Flag,Variant,Incomplete
+1021,CWE-1021,Improper Restriction of Rendered UI Layers or Frames,Base,Incomplete
+1104,CWE-1104,Use of Unmaintained Third Party Components,Base,Incomplete
+1173,CWE-1173,Improper Use of Validation Framework,Base,Draft
+1174,CWE-1174,ASP.NET Misconfiguration: Improper Model Validation,Variant,Draft
+1275,CWE-1275,Sensitive Cookie with Improper SameSite Attribute,Variant,Incomplete

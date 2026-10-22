@@ -46,6 +46,9 @@ def load_sets(exclude_java: bool, with_local: bool) -> dict[str, set[int]]:
         ("매뉴얼 보안약점 44", lambda: cwe_ids_from_mapping(DATA_DIR / "mapping_manual44.csv")),
         ("행안부 49", lambda: cwe_ids_from_mapping(DATA_DIR / "mapping_mois49.csv")),
         ("CWE Top 25 (2025)", lambda: cwe_ids_from_list("cwe_top25_2025.csv")),
+        # 해외 비교군(MITRE 공식 뷰). CERT C와 C++는 한 집합으로 묶는다
+        ("SEI CERT C·C++", lambda: cwe_ids_from_list("cwe_cert_c.csv") | cwe_ids_from_list("cwe_cert_cpp.csv")),
+        ("CISQ 품질 측정", lambda: cwe_ids_from_list("cwe_cisq.csv")),
     ]
     if with_local:
         private = sorted(LOCAL_DIR.glob("mapping_*.csv"))

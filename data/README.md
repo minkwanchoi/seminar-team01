@@ -44,6 +44,10 @@ MITRE CWE에서 받은 기준 목록입니다. 기준 시점은 CWE List Version
 | `cwe_659.csv` | CWE-659 Weaknesses in Software Written in C++ | 97 |
 | `cwe_660.csv` | CWE-660 Weaknesses in Software Written in Java | 84 |
 | `cwe_top25_2025.csv` | 2025 CWE Top 25 (뷰 CWE-1435) | 25 |
+| `cwe_cert_c.csv` | 해외 비교군: CWE-1154 Weaknesses Addressed by the SEI CERT C Coding Standard | 78 |
+| `cwe_cert_cpp.csv` | 해외 비교군: CWE-868 Weaknesses Addressed by the SEI CERT C++ Coding Standard (2016 Version) | 95 |
+| `cwe_cisq.csv` | 해외 비교군: CWE-1305 CISQ Quality Measures (2020) | 138 |
+| `cwe_owasp2021.csv` | 참고용: CWE-1344 Weaknesses in OWASP Top Ten (2021). 비교 집합에는 넣지 않고 보고서에서 웹 편중을 보이는 데만 씀 | 182 |
 | `cwe_pillar.csv` | CWE별 이름과 최상위 범주(Pillar). 연구 관점 뷰 CWE-1000에서 기본(Primary) 부모를 따라 올라간 결과 | 뷰 CWE-1000 전체 |
 | `cwe_category.csv` | CWE별 성격별 범주. MITRE CWE-1400 뷰(Comprehensive Categorization)는 모든 약점을 22개 범주 중 정확히 하나에 넣음. 한글 범주명(`category_ko`)은 팀이 붙인 번역 | 944 |
 | `cwe_sources.csv` | 파일별 출처 URL, CWE 버전, 수집일 | — |
