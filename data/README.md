@@ -6,25 +6,11 @@
 
 ## 출처와 이용 조건
 
-이 폴더의 데이터는 아래 조건에 따라 씁니다. 새 자료를 넣을 때는 이 표에 이용 조건을 먼저 확인해 적습니다.
-
-| 자료 | 해당 파일 | 이용 조건 |
-|---|---|---|
-| MITRE CWE (The MITRE Corporation, 2023, 2025, 2026) | `cwe/` 아래 버전별 CSV, `cwe_top25_2025.csv`의 CWE 번호·이름·범주 | CWE Terms of Use. 연구·개발·상업 목적의 무상 이용을 허락하되, 사본에 MITRE의 저작권 표시와 이용약관을 함께 실어야 함(아래 고지) |
-| 「소프트웨어 개발보안 가이드」(행정안전부 & 한국인터넷진흥원, 2021a) | `mapping_mois49.csv`의 항목 분류·항목명·참고 CWE. `source_page`에 인쇄 쪽 번호 | 공공누리 제1유형(출처표시). 교차 확인: 「소프트웨어 보안약점 진단가이드」(행정안전부 & 한국인터넷진흥원, 2021b) |
-| 「무기체계 소프트웨어 개발 및 관리 매뉴얼」 보안약점 점검 목록 44개 (방위사업청, 2024, 부록 7, pp. 7-10–7-11) | `mapping_manual44.csv`의 CWE 번호와 중복여부 표시 | 방위사업청 홈페이지 업무게시판에 공개된 현행본(제2024-6호, 2024. 12. 26.) 원문과 대조. 게시판에 공공누리 표시가 없고 사이트에 "All Rights Reserved"가 적혀 있어 공공누리 이용 허락이 아닌 인용 규정에만 근거함. 본문·부록에는 별도 이용 조건 표시가 없고, "복제/복사 및 배포 금지"는 부록 1·2 제안요청서 양식에만 있음. 별책(방위사업청, 2020)의 발췌 승인 조항은 이 목록과 무관함. 학술 인용 기준(저작권법 제28조)에 따라 분석에 필요한 최소 범위만 출처를 밝혀 인용 |
-
-**MITRE CWE 고지**
-
-> CWE™ is free to use by any organization or individual for any research, development, and/or commercial purposes, per the CWE Terms of Use. The MITRE Corporation hereby grants you a non-exclusive, royalty-free license to use CWE for research, development, and commercial purposes. Any copy you make for such purposes is authorized on the condition that you reproduce MITRE's copyright designation and this license in any such copy.
->
-> Copyright © 2006–2026, The MITRE Corporation. CWE and the CWE logo are trademarks of The MITRE Corporation. https://cwe.mitre.org/about/termsofuse.html
+자료별 이용 조건, 매뉴얼 이용 근거, MITRE CWE 고지는 저장소 맨 위의 [NOTICE.md](../NOTICE.md)에 모아 두었습니다. 새 자료를 넣을 때는 NOTICE.md에 이용 조건을 먼저 적고, 연구도구 페이지의 "출처와 이용 조건" 절을 같은 커밋에서 맞춥니다.
 
 ### 참고문헌 (APA 7판)
 
-방위사업청. (2020). *무기체계 소프트웨어 개발 및 관리 매뉴얼 별책: 무기체계 소프트웨어 기술문서 작성가이드*. https://www.hansung.ac.kr/bbs/vvna/1669/2943/download.do
-
-행정안전부, & 한국인터넷진흥원. (2021a). *소프트웨어 개발보안 가이드*. https://www.kisa.or.kr/2060204/form?postSeq=5
+행정안전부, & 한국인터넷진흥원. (2021a). *소프트웨어 개발보안 가이드*. https://www.kisa.or.kr/2060204/form?postSeq=5 (한국인터넷진흥원 저작물, 공공누리 제1유형 출처표시)
 
 행정안전부, & 한국인터넷진흥원. (2021b). *소프트웨어 보안약점 진단가이드*. https://www.kisa.or.kr/2060204/form?postSeq=9
 
@@ -105,7 +91,7 @@ data/cwe/v4.10/  data/cwe/v4.20/   아래 표의 파일과 그 버전의 겹침 
   - 43번(역직렬화): 진단가이드는 CWE-918(SSRF)을 적었는데, 항목 내용과 맞지 않는 오기로 보고 개발보안 가이드의 502를 씀.
   - 48번(DNS lookup): 진단가이드는 247만 적음. 개발보안 가이드의 350;247을 씀. CWE-247은 CWE 4.20에서 폐기되어 350으로 통합된 번호라, 분석 결과에서는 범주가 "폐기"로 표시됩니다.
   - 초안에서 바뀐 항목: 2·9·22·36·44·48·49번의 CWE, 7·29번의 항목명. 22번은 초안에 있던 311이 원문에 없어 뺐습니다.
-- **매뉴얼 보안약점 44개는 학술 인용 기준으로 싣습니다.** 현행본(제2024-6호) 부록 7 "소프트웨어 신뢰성/보안성 시험 절차"의 보안약점 점검 목록(7-10~7-11쪽)과 대조했습니다. 분석에 필요한 최소 범위(CWE 번호와 중복여부 표시)만 출처를 밝혀 인용하며, 이 목록은 겹침 분석의 입력 데이터로 쓰기 위한 것이지 목록만 따로 배포하려는 것이 아닙니다. 매뉴얼 원문 PDF는 저장소에 올리지 않습니다.
+- **매뉴얼 보안약점 44개는 최소 범위만 씁니다.** 현행본(제2024-6호) 부록 7 "소프트웨어 신뢰성/보안성 시험 절차"의 보안약점 점검 목록(7-10~7-11쪽)과 대조했습니다. CWE 번호와 중복여부 표시만 겹침 분석의 입력 데이터로 쓰며, 목록만 따로 배포하려는 것이 아닙니다. 이용 근거(저작권법 제24조의2, 보충적으로 제28조, 제37조 출처 명시)는 [NOTICE.md](../NOTICE.md)에 있습니다. 매뉴얼 원문 PDF는 저장소에 올리지 않습니다.
   - 열: `cwe_ids`(CWE 번호), `name`(MITRE CWE 4.20 명칭, 매뉴얼 문장이 아님), `overlap_flag`(원 표의 "중복여부" 표시 O. 원문 주석: 코딩규칙 점검·취약점 점검 항목과 중복되는 규칙. 언어별 뷰만 가리키는 것이 아님, 3절 참고), `mapping_note`(우리 분석: CWE 4.20 뷰 포함 여부), `source`(출처와 쪽), `status`(`확인`). 원 표의 순서·모양은 옮기지 않고 CWE 번호 순으로 정렬했습니다.
   - 목록은 제2022-6호(2022. 12. 2.)에서 추가되었고, 현행본 제2024-6호(2024. 12. 26.)에도 같은 44개가 있습니다.
 
