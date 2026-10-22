@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CWE 겹침 분석</title>
+  <title>CWE 항목 겹침 분석 연구도구</title>
   <script>
     try { const t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -55,7 +55,8 @@
     .sidenav a[aria-current="true"] { background: var(--accent-wash); color: var(--ink); font-weight: 600; border-left-color: var(--s1); }
     .sidenav-ver { margin: 10px 0 0; padding-top: 8px; border-top: 1px solid var(--grid); font-size: .8rem; color: var(--ink-2); }
     header p { color: var(--ink-2); margin: 4px 0 0; }
-    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; }
+    .topbar .eyebrow { flex: 1 1 260px; }
     .topbar .eyebrow { margin: 0; }
     #themeBtn { flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; min-height: 36px;
                 border: 1px solid var(--axis); border-radius: 999px; background: var(--surface); color: var(--ink);
@@ -109,7 +110,7 @@
             color: var(--ink); background: var(--surface); text-decoration: none; }
     .chip:hover { border-color: var(--axis); }
     /* 그림 */
-    .figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
     figure { margin: 0; }
     figure img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--ring); background: #fcfcfb; }
     figcaption { font-size: .85rem; color: var(--ink-2); margin-top: 6px; }
@@ -253,7 +254,7 @@
   </aside>
   <header>
     <div class="topbar">
-      <p class="eyebrow">팀원 B 중간 산출물 · B1~B4 · CWE <span class="curVer">4.20</span> 기준 · 2026. 10. 22. 갱신</p>
+      <p class="eyebrow">CWE 항목 겹침 분석 연구도구 · 팀원 B 중간 산출물(B1~B4) · CWE <span class="curVer">4.20</span> 기준 · 2026. 10. 22. 갱신</p>
       <button id="themeBtn" type="button" aria-pressed="false"></button>
     </div>
     <h1 tabindex="-1">국방 SW 보안약점 기준, 얼마나 겹치나</h1>
