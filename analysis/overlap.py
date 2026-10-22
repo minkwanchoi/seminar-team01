@@ -1,7 +1,8 @@
-"""B3. 제도 간 CWE 겹침 분석.
+"""B3. 국내 시험 목록 간 CWE 겹침 분석.
 
-data/의 CWE 목록과 제도별 매핑을 읽어 CWE × 제도 매트릭스를 만들고,
-제도 쌍별 교집합·Jaccard 유사도, 제도별 고유 항목, 전 제도 공통 항목을 계산한다.
+data/의 CWE 목록과 매핑을 읽어 CWE × 목록 매트릭스를 만든다.
+겹침(쌍별 교집합·Jaccard 유사도, 고유 항목, 공통 항목)은 국내 목록끼리만 계산하고,
+해외 목록(Top 25, SEI CERT C·C++, CISQ)은 참고 사례로 두어 국내 목록이 얼마나 덮는지만 계산한다.
 
 실행: python analysis/overlap.py [--exclude-java] [--with-local]
 
@@ -33,8 +34,11 @@ def cwe_ids_from_mapping(path: Path) -> set[int]:
     return ids
 
 
+REFERENCE = ["CWE Top 25 (2025)", "SEI CERT C·C++", "CISQ 품질 측정"]  # 해외 참고 사례
+
+
 def load_sets(exclude_java: bool, with_local: bool) -> dict[str, set[int]]:
-    """비교할 제도(집합)를 순서대로 읽는다. local/의 비공개 집합은 with_local일 때만 넣는다."""
+    """비교할 목록(집합)을 순서대로 읽는다. local/의 비공개 집합은 with_local일 때만 넣는다."""
     candidates = [
         ("매뉴얼·C (CWE-658)", lambda: cwe_ids_from_list("cwe_658.csv")),
         ("매뉴얼·C++ (CWE-659)", lambda: cwe_ids_from_list("cwe_659.csv")),
@@ -45,10 +49,6 @@ def load_sets(exclude_java: bool, with_local: bool) -> dict[str, set[int]]:
         # 학술 인용 기준에 따라 CWE 번호만 출처와 함께 인용한 목록(data/README.md 참고)
         ("매뉴얼 보안약점 44", lambda: cwe_ids_from_mapping(DATA_DIR / "mapping_manual44.csv")),
         ("행안부 49", lambda: cwe_ids_from_mapping(DATA_DIR / "mapping_mois49.csv")),
-        ("CWE Top 25 (2025)", lambda: cwe_ids_from_list("cwe_top25_2025.csv")),
-        # 해외 비교군(MITRE 공식 뷰). CERT C와 C++는 한 집합으로 묶는다
-        ("SEI CERT C·C++", lambda: cwe_ids_from_list("cwe_cert_c.csv") | cwe_ids_from_list("cwe_cert_cpp.csv")),
-        ("CISQ 품질 측정", lambda: cwe_ids_from_list("cwe_cisq.csv")),
     ]
     if with_local:
         private = sorted(LOCAL_DIR.glob("mapping_*.csv"))
@@ -57,6 +57,12 @@ def load_sets(exclude_java: bool, with_local: bool) -> dict[str, set[int]]:
         for path in private:
             candidates.append((f"(비공개) {path.stem.removeprefix('mapping_')}",
                                lambda path=path: cwe_ids_from_mapping(path)))
+    # 해외 참고 사례(MITRE 공식 뷰). CERT C와 C++는 한 집합으로 묶는다
+    candidates += [
+        ("CWE Top 25 (2025)", lambda: cwe_ids_from_list("cwe_top25_2025.csv")),
+        ("SEI CERT C·C++", lambda: cwe_ids_from_list("cwe_cert_c.csv") | cwe_ids_from_list("cwe_cert_cpp.csv")),
+        ("CISQ 품질 측정", lambda: cwe_ids_from_list("cwe_cisq.csv")),
+    ]
     sets = {}
     for name, load in candidates:
         ids = load()
@@ -65,6 +71,12 @@ def load_sets(exclude_java: bool, with_local: bool) -> dict[str, set[int]]:
         else:
             print(f"[건너뜀] {name}: 매핑이 아직 비어 있음")
     return sets
+
+
+def split_sets(sets: dict[str, set[int]]) -> tuple[dict[str, set[int]], dict[str, set[int]]]:
+    domestic = {n: s for n, s in sets.items() if n not in REFERENCE}
+    reference = {n: s for n, s in sets.items() if n in REFERENCE}
+    return domestic, reference
 
 
 def build_matrix(sets: dict[str, set[int]]) -> pd.DataFrame:
@@ -82,7 +94,8 @@ def build_matrix(sets: dict[str, set[int]]) -> pd.DataFrame:
                   "category": "Deprecated", "category_ko": "폐기된 번호"})
     for name, ids in sets.items():
         m[name] = m["cwe_id"].isin(ids).astype(int)
-    m["n_sets"] = m[list(sets)].sum(axis=1)
+    domestic, _ = split_sets(sets)
+    m["n_sets"] = m[list(domestic)].sum(axis=1)  # 국내 목록 중 몇 개에 들어 있는지
     return m
 
 
@@ -114,6 +127,25 @@ def summary_table(sets: dict[str, set[int]]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def reference_table(sets: dict[str, set[int]]) -> pd.DataFrame:
+    """해외 참고 사례마다 국내 목록이 덮는 CWE 수와 비율."""
+    domestic, reference = split_sets(sets)
+    groups = {
+        "domestic": set().union(*domestic.values()),
+        "manual": set().union(*(s for n, s in domestic.items() if n.startswith("매뉴얼"))),
+        "mois": domestic.get("행안부 49", set()),
+    }
+    rows = []
+    for name, ids in reference.items():
+        row = {"reference": name, "size": len(ids)}
+        for key, g in groups.items():
+            row[f"covered_{key}"] = len(ids & g)
+            row[f"pct_{key}"] = round(100 * len(ids & g) / len(ids), 1)
+        row["missing_cwes"] = ";".join(str(i) for i in sorted(ids - groups["domestic"]))
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--exclude-java", action="store_true",
@@ -123,24 +155,31 @@ def main() -> None:
     args = parser.parse_args()
 
     sets = load_sets(args.exclude_java, args.with_local)
+    domestic, _ = split_sets(sets)
     out = LOCAL_DIR / "out" if args.with_local else DATA_DIR
     out.mkdir(parents=True, exist_ok=True)
     matrix = build_matrix(sets)
-    pairs = pair_table(sets)
-    summary = summary_table(sets)
-    common = matrix[matrix["n_sets"] == len(sets)]
+    pairs = pair_table(domestic)
+    summary = summary_table(domestic)
+    common = matrix[matrix["n_sets"] == len(domestic)]
+    reference = reference_table(sets)
 
     matrix.to_csv(out / "overlap_matrix.csv", index=False, encoding="utf-8")
     pairs.to_csv(out / "overlap_pairs.csv", index=False, encoding="utf-8")
     summary.to_csv(out / "overlap_summary.csv", index=False, encoding="utf-8")
     common.to_csv(out / "overlap_common.csv", index=False, encoding="utf-8")
+    reference.to_csv(out / "overlap_reference.csv", index=False, encoding="utf-8")
 
     pd.set_option("display.width", 200)
     print(f"[{'로컬(비공개 포함) → local/out/' if args.with_local else '공개 → data/'}]")
-    print(f"비교한 제도 {len(sets)}개, 전체 CWE {len(matrix)}개, 전 제도 공통 {len(common)}개\n")
+    n_domestic = int((matrix["n_sets"] > 0).sum())
+    print(f"국내 목록 {len(domestic)}개, 국내 CWE {n_domestic}개, 국내 공통 {len(common)}개"
+          f" (해외 참고 사례까지 합친 전체 {len(matrix)}개)\n")
     print(summary[["set", "size", "unique"]].to_string(index=False))
     print()
     print(pairs[["set_a", "set_b", "intersection", "union", "jaccard"]].to_string(index=False))
+    print()
+    print(reference.drop(columns="missing_cwes").to_string(index=False))
 
 
 if __name__ == "__main__":

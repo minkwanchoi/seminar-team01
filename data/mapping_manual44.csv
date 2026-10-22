@@ -1,45 +1,45 @@
 cwe_ids,name,overlap_flag,mapping_note,source,status
-22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-59,Improper Link Resolution Before File Access ('Link Following'),,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-78,Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-89,Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection'),,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-99,Improper Control of Resource Identifiers ('Resource Injection'),,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-119,Improper Restriction of Operations within the Bounds of a Memory Buffer,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-134,Use of Externally-Controlled Format String,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-170,Improper Null Termination,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-190,Integer Overflow or Wraparound,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-209,Generation of Error Message Containing Sensitive Information,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-259,Use of Hard-coded Password,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-285,Improper Authorization,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-306,Missing Authentication for Critical Function,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-307,Improper Restriction of Excessive Authentication Attempts,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-312,Cleartext Storage of Sensitive Information,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-319,Cleartext Transmission of Sensitive Information,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-321,Use of Hard-coded Cryptographic Key,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-327,Use of a Broken or Risky Cryptographic Algorithm,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-330,Use of Insufficiently Random Values,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-367,Time-of-check Time-of-use (TOCTOU) Race Condition,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-369,Divide By Zero,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-390,Detection of Error Condition Without Action,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-400,Uncontrolled Resource Consumption,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-404,Improper Resource Shutdown or Release,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-415,Double Free,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-416,Use After Free,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-457,Use of Uninitialized Variable,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-467,Use of sizeof() on a Pointer Type,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-469,Use of Pointer Subtraction to Determine Size,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-476,NULL Pointer Dereference,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-489,Active Debug Code,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-494,Download of Code Without Integrity Check,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-495,Private Data Structure Returned From A Public Method,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-496,Public Data Assigned to Private Array-Typed Field,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-497,Exposure of Sensitive System Information to an Unauthorized Control Sphere,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-521,Weak Password Requirements,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-562,Return of Stack Variable Address,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-587,Assignment of a Fixed Address to a Pointer,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-615,Inclusion of Sensitive Information in Source Code Comments,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-628,Function Call with Incorrectly Specified Arguments,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-676,Use of Potentially Dangerous Function,O,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-732,Incorrect Permission Assignment for Critical Resource,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-755,Improper Handling of Exceptional Conditions,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
-759,Use of a One-Way Hash without a Salt,,,"방위사업청(2022) 부록, MDS인텔리전스(2026)에서 재인용",2차 자료(재인용)
+22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+59,Improper Link Resolution Before File Access ('Link Following'),,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+78,Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+89,Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection'),,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+99,Improper Control of Resource Identifiers ('Resource Injection'),,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+119,Improper Restriction of Operations within the Bounds of a Memory Buffer,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+134,Use of Externally-Controlled Format String,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+170,Improper Null Termination,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+190,Integer Overflow or Wraparound,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+209,Generation of Error Message Containing Sensitive Information,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+259,Use of Hard-coded Password,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+285,Improper Authorization,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+306,Missing Authentication for Critical Function,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+307,Improper Restriction of Excessive Authentication Attempts,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+312,Cleartext Storage of Sensitive Information,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+319,Cleartext Transmission of Sensitive Information,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+321,Use of Hard-coded Cryptographic Key,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+327,Use of a Broken or Risky Cryptographic Algorithm,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+330,Use of Insufficiently Random Values,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+367,Time-of-check Time-of-use (TOCTOU) Race Condition,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+369,Divide By Zero,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+390,Detection of Error Condition Without Action,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+400,Uncontrolled Resource Consumption,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+404,Improper Resource Shutdown or Release,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+415,Double Free,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+416,Use After Free,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+457,Use of Uninitialized Variable,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+467,Use of sizeof() on a Pointer Type,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+469,Use of Pointer Subtraction to Determine Size,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+476,NULL Pointer Dereference,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+489,Active Debug Code,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+494,Download of Code Without Integrity Check,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+495,Private Data Structure Returned From A Public Method,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+496,Public Data Assigned to Private Array-Typed Field,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+497,Exposure of Sensitive System Information to an Unauthorized Control Sphere,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+521,Weak Password Requirements,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+562,Return of Stack Variable Address,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+587,Assignment of a Fixed Address to a Pointer,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+615,Inclusion of Sensitive Information in Source Code Comments,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+628,Function Call with Incorrectly Specified Arguments,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+676,Use of Potentially Dangerous Function,O,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+732,Incorrect Permission Assignment for Critical Resource,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+755,Improper Handling of Exceptional Conditions,O,CWE 4.20의 658·659·660 뷰에는 없음,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인
+759,Use of a One-Way Hash without a Salt,,,"방위사업청(2024) 부록 7, pp. 7-10–7-11",확인

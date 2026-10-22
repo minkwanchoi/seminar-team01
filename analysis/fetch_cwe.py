@@ -25,7 +25,7 @@ VIEWS = {
     658: "cwe_658.csv",  # Weaknesses in Software Written in C
     659: "cwe_659.csv",  # Weaknesses in Software Written in C++
     660: "cwe_660.csv",  # Weaknesses in Software Written in Java
-    # 해외 비교군
+    # 해외 참고 사례
     1154: "cwe_cert_c.csv",    # Weaknesses Addressed by the SEI CERT C Coding Standard
     868: "cwe_cert_cpp.csv",   # Weaknesses Addressed by the SEI CERT C++ Coding Standard (2016 Version)
     1305: "cwe_cisq.csv",      # CISQ Quality Measures (2020)
