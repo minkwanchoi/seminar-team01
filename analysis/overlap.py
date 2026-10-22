@@ -5,7 +5,7 @@ data/의 CWE 목록과 제도별 매핑을 읽어 CWE × 제도 매트릭스를 
 
 실행: python analysis/overlap.py [--exclude-java] [--with-local]
 
-공개할 수 없는 자료(예: 발췌 시 방위사업청장 승인이 필요한 매뉴얼 보안약점 44개)는 local/에 두고 커밋하지 않는다.
+공개할 수 없는 자료는 local/mapping_*.csv로 두고 커밋하지 않는다(.gitignore).
 --with-local을 주면 그 자료까지 넣어 비교하고, 결과는 공개 결과(data/)와 섞이지 않게 local/out/에 쓴다.
 """
 
@@ -34,22 +34,26 @@ def cwe_ids_from_mapping(path: Path) -> set[int]:
 
 
 def load_sets(exclude_java: bool, with_local: bool) -> dict[str, set[int]]:
-    """비교할 제도(집합)를 순서대로 읽는다. 공개할 수 없는 집합은 with_local일 때만 넣는다."""
+    """비교할 제도(집합)를 순서대로 읽는다. local/의 비공개 집합은 with_local일 때만 넣는다."""
     candidates = [
         ("매뉴얼·C (CWE-658)", lambda: cwe_ids_from_list("cwe_658.csv")),
         ("매뉴얼·C++ (CWE-659)", lambda: cwe_ids_from_list("cwe_659.csv")),
     ]
     if not exclude_java:
         candidates.append(("매뉴얼·Java (CWE-660)", lambda: cwe_ids_from_list("cwe_660.csv")))
-    manual44 = LOCAL_DIR / "mapping_manual44.csv"
-    if with_local:
-        if not manual44.exists():
-            raise SystemExit(f"{manual44}가 없습니다. 공개 자료만 비교하려면 --with-local 없이 실행하세요")
-        candidates.append(("매뉴얼 보안약점 44", lambda: cwe_ids_from_mapping(manual44)))
     candidates += [
+        # 학술 인용 기준에 따라 CWE 번호만 출처와 함께 인용한 목록(data/README.md 참고)
+        ("매뉴얼 보안약점 44", lambda: cwe_ids_from_mapping(DATA_DIR / "mapping_manual44.csv")),
         ("행안부 49", lambda: cwe_ids_from_mapping(DATA_DIR / "mapping_mois49.csv")),
         ("CWE Top 25 (2025)", lambda: cwe_ids_from_list("cwe_top25_2025.csv")),
     ]
+    if with_local:
+        private = sorted(LOCAL_DIR.glob("mapping_*.csv"))
+        if not private:
+            raise SystemExit(f"{LOCAL_DIR}에 mapping_*.csv가 없습니다. 공개 자료만 비교하려면 --with-local 없이 실행하세요")
+        for path in private:
+            candidates.append((f"(비공개) {path.stem.removeprefix('mapping_')}",
+                               lambda path=path: cwe_ids_from_mapping(path)))
     sets = {}
     for name, load in candidates:
         ids = load()
@@ -112,7 +116,7 @@ def main() -> None:
     parser.add_argument("--exclude-java", action="store_true",
                         help="CWE-660(Java)을 비교에서 뺀다. 매뉴얼 취약점 점검이 세 뷰를 모두 쓰므로 기본은 포함")
     parser.add_argument("--with-local", action="store_true",
-                        help="local/의 비공개 자료(매뉴얼 보안약점 44)까지 넣고, 결과를 local/out/에 쓴다")
+                        help="local/mapping_*.csv의 비공개 자료까지 넣고, 결과를 local/out/에 쓴다")
     args = parser.parse_args()
 
     sets = load_sets(args.exclude_java, args.with_local)
