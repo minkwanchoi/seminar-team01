@@ -203,6 +203,8 @@
     .btn:hover:not(:disabled), .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     #mineMsg { font-size: .92rem; color: var(--ink-2); min-height: 1.5em; margin-bottom: 8px; }
     #mineMsg b, #mineDetail b { color: var(--ink); }
+    .mine-notes { margin: 6px 0 0; padding-left: 1.2em; }
+    .mine-notes li { margin: 2px 0; }
     #mineDetail { margin-top: 14px; font-size: .92rem; color: var(--ink-2); }
     .mine-table th { white-space: nowrap; }
     .mine-table td:first-child { min-width: 9em; }
@@ -792,12 +794,19 @@
   });
 
   // 내 CWE 목록 비교: 입력은 브라우저 안에서만 계산하고 어디에도 보내거나 저장하지 않는다
-  let knownName = {}, mineRows = [];
+  let knownName = {}, catalogInfo = {}, mineRows = [];
   const MINE_EXAMPLE = "CWE-119, CWE-120, CWE-125, CWE-190, CWE-416, CWE-476, CWE-787";
 
   function parseCwe(text) {
-    const ids = [...text.matchAll(/(?:cwe\s*-?\s*)?(\d{1,4})/gi)].map(m => +m[1]).filter(n => n > 0);
-    return [...new Set(ids)].sort((a, b) => a - b);
+    const tokens = text.replace(/cwe\s*-?\s*(?=\d)/gi, "CWE-").split(/[\s,;，、]+/).filter(Boolean);
+    const seen = new Set(), dups = new Set(), bad = [];
+    tokens.forEach(t => {
+      const m = t.match(/^(?:CWE-)?0*(\d{1,5})\.?$/i);
+      if (!m || +m[1] === 0) { bad.push(t); return; }
+      const id = +m[1];
+      if (seen.has(id)) dups.add(id); else seen.add(id);
+    });
+    return { ids: [...seen].sort((a, b) => a - b), total: tokens.length, bad, dups: [...dups].sort((a, b) => a - b) };
   }
 
   function setsByName() {
@@ -807,16 +816,20 @@
   }
 
   function runMine() {
-    const ids = parseCwe(document.getElementById("mineInput").value);
+    const parsed = parseCwe(document.getElementById("mineInput").value), ids = parsed.ids;
     const msg = document.getElementById("mineMsg"), wrap = document.getElementById("mineWrap");
     const detail = document.getElementById("mineDetail"), csvBtn = document.getElementById("mineCsv");
     if (!ids.length) {
-      msg.innerHTML = "CWE 번호를 하나 이상 넣어 주세요.";
+      msg.innerHTML = parsed.bad.length
+        ? `CWE 번호를 하나도 읽지 못했습니다. 읽지 못한 항목: ${parsed.bad.map(esc).join(", ")}`
+        : "CWE 번호를 하나 이상 넣어 주세요.";
       wrap.hidden = true; detail.innerHTML = ""; csvBtn.disabled = true; mineRows = [];
       return;
     }
     const mine = new Set(ids), all = setsByName();
-    const unknown = ids.filter(id => !knownName[id]);
+    // 이 버전 목록에 약점으로 없는 번호(범주·뷰 번호이거나 없는 번호)와 폐기된 번호를 나눈다
+    const deprecated = ids.filter(id => catalogInfo[id] && catalogInfo[id].status === "Deprecated");
+    const unknown = ids.filter(id => !catalogInfo[id]);
     const domesticAll = new Set(names.flatMap(n => [...all[n]]));
     const outside = ids.filter(id => !domesticAll.has(id));
     mineRows = [...names, ...refNames].map(n => {
@@ -825,8 +838,15 @@
       return { name: n, ref: refNames.includes(n), size: set.size, common, onlyList: set.size - common.length,
                pct: common.length / ids.length, jaccard: common.length / union };
     });
-    msg.innerHTML = `입력한 CWE <b>${ids.length}</b>개를 CWE ${esc(shownVer(curVer))} 기준으로 비교했습니다.` +
-      (unknown.length ? ` 이 가운데 ${unknown.map(id => `CWE-${id}`).join(", ")}는 CWE ${esc(shownVer(curVer))} 연구 관점 뷰(CWE-1000)에 없는 번호입니다(폐기되었거나 범주·뷰 번호일 수 있음).` : "");
+    const ver = esc(shownVer(curVer)), cw = l => l.map(id => `CWE-${id}`).join(", ");
+    const notes = [];
+    if (parsed.bad.length) notes.push(`번호로 읽지 못한 항목: ${parsed.bad.map(esc).join(", ")}`);
+    if (parsed.dups.length) notes.push(`중복이라 한 번만 센 번호: ${cw(parsed.dups)}`);
+    if (deprecated.length) notes.push(`이 버전에서 폐기된 번호(적힌 번호 그대로 비교함): ${deprecated.map(id => catalogInfo[id].replaced_by
+      ? `CWE-${id}(옮겨 간 번호: CWE-${catalogInfo[id].replaced_by})` : `CWE-${id}`).join(", ")}`);
+    if (unknown.length) notes.push(`이 버전에 약점으로 없는 번호(범주·뷰 번호이거나 없는 번호): ${cw(unknown)}`);
+    msg.innerHTML = `입력 <b>${parsed.total}</b>개 가운데 CWE <b>${ids.length}</b>개를 인식해 CWE ${ver} 기준으로 비교했습니다.` +
+      (notes.length ? `<ul class="mine-notes">${notes.map(n => `<li>${n}</li>`).join("")}</ul>` : "");
     document.getElementById("mineBody").innerHTML = mineRows.map((r, i) => `
       <tr class="${r.ref ? "ref" : ""}">
         <td data-label="비교 목록">${esc(r.name)}${r.ref ? ' <span class="sub">참고</span>' : ""}</td>
@@ -1057,7 +1077,12 @@
       cert_covered: refRow("SEI CERT C·C++").covered_domestic, cert_size: refRow("SEI CERT C·C++").size,
       cisq_covered: refRow("CISQ 품질 측정").covered_domestic, cisq_size: refRow("CISQ 품질 측정").size,
     };
-    return { m, p, s, r, pil, summary, categorySource, missingViews };
+    const all = [...cat.weaknesses].map(([id, w]) => {
+      const status = w.getAttribute("Status") || "";
+      const d = kids(w, "Description")[0], mm = d ? d.textContent.match(/CWE-(\d+)/) : null;
+      return { cwe_id: String(id), status, replaced_by: status === "Deprecated" && mm ? mm[1] : "" };
+    });
+    return { m, p, s, r, pil, all, summary, categorySource, missingViews };
   }
 
   async function readCweFile(file) {
@@ -1238,8 +1263,9 @@
   async function loadVersion(ver) {
     curVer = ver;
     const u = userVersions[ver];
-    const [m, p, s, r, pil] = u ? [u.m, u.p, u.s, u.r, u.pil] : await Promise.all([load(vfile("overlap_matrix.csv")), load(vfile("overlap_pairs.csv")),
-      load(vfile("overlap_summary.csv")), load(vfile("overlap_reference.csv")), load(vfile("cwe_pillar.csv"))]);
+    const [m, p, s, r, pil, all] = u ? [u.m, u.p, u.s, u.r, u.pil, u.all] : await Promise.all([load(vfile("overlap_matrix.csv")), load(vfile("overlap_pairs.csv")),
+      load(vfile("overlap_summary.csv")), load(vfile("overlap_reference.csv")), load(vfile("cwe_pillar.csv")), load(vfile("cwe_all.csv"))]);
+    catalogInfo = Object.fromEntries(all.map(x => [+x.cwe_id, { status: x.status, replaced_by: x.replaced_by || "" }]));
     matrix = m; pairs = p; sets = s; refData = r;
     const cols = Object.keys(matrix[0]).filter(k => !FIXED.has(k));
     names = cols.filter(k => !REFERENCE.includes(k));

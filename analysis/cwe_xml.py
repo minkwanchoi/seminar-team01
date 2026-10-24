@@ -57,10 +57,18 @@ class Catalog:
     # ── 약점 정보 ──
     def weakness_table(self) -> pd.DataFrame:
         rows = [{"cwe_id": i, "name": w.get("Name"), "abstraction": w.get("Abstraction"),
-                 "status": w.get("Status")} for i, w in self.weaknesses.items()]
+                 "status": w.get("Status"), "replaced_by": self._replaced_by(w)} for i, w in self.weaknesses.items()]
         df = pd.DataFrame(rows).sort_values("cwe_id").reset_index(drop=True)
         df.insert(1, "cwe", "CWE-" + df["cwe_id"].astype(str))
         return df
+
+    def _replaced_by(self, w: ET.Element) -> str:
+        """폐기된 약점이면 설명에 적힌 옮겨 간 번호(예: 'duplicate of CWE-350' → '350')를 돌려준다."""
+        if w.get("Status") != "Deprecated":
+            return ""
+        desc = next((el for el in w.iter() if _local(el.tag) == "Description"), None)
+        m = re.search(r"CWE-(\d+)", "".join(desc.itertext()) if desc is not None else "")
+        return m.group(1) if m else ""
 
     def _languages(self, w: ET.Element) -> set[str]:
         # 스키마 7(4.x)은 Name, 옛 스키마(2.x)는 Language_Name 속성을 쓴다
@@ -105,7 +113,7 @@ class Catalog:
 
     def view_table(self, view_id: int) -> pd.DataFrame:
         ids = self.view_members(view_id)
-        return self.weakness_table().query("cwe_id in @ids").reset_index(drop=True)
+        return self.weakness_table().drop(columns="replaced_by").query("cwe_id in @ids").reset_index(drop=True)
 
     # ── 상위 범주(Pillar), 연구 관점 뷰 CWE-1000 기준 ──
     def pillar_table(self, research_view: int = 1000) -> pd.DataFrame:
