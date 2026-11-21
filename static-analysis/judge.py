@@ -47,6 +47,16 @@ sys.path.insert(0, str(HERE))
 from select_cases import latest_cwe_version, load_catalog, mapping_ids  # noqa: E402
 from cwe_xml import _local  # noqa: E402
 
+
+def read(path: Path, **kw) -> str:
+    """윈도의 경로 길이 제한(260자)을 피해 읽는다. 저장소를 깊은 폴더에 받으면 Juliet 경로가 이를 넘는다."""
+    p = str(Path(path).resolve())
+    prefix = "\\\\?\\"  # 윈도의 긴 경로 접두어 \\?\
+    if sys.platform == "win32" and not p.startswith(prefix):
+        p = prefix + p
+    with open(p, encoding=kw.get("encoding"), errors=kw.get("errors")) as f:
+        return f.read()
+
 # cppcheck가 도구 동작 정보로 내는 항목(코드 지적이 아님)
 CPPCHECK_SKIP = {"missingInclude", "missingIncludeSystem", "checkersReport", "toomanyconfigs",
                  "normalCheckLevelMaxBranches", "unmatchedSuppression", "syntaxError", "internalAstError",
@@ -88,7 +98,7 @@ class Relations:
 def regions(path: Path) -> dict[int, str]:
     """줄 번호 → 'bad' | 'good' | 'other'. 바깥쪽 OMITBAD/OMITGOOD 블록만 본다."""
     out, stack, inmain = {}, [], False
-    for n, line in enumerate(path.read_text(errors="replace").splitlines(), 1):
+    for n, line in enumerate(read(path, errors="replace").splitlines(), 1):
         s = line.strip()
         if s.startswith("#ifdef INCLUDEMAIN"):
             inmain = True
@@ -205,7 +215,7 @@ def main() -> None:
         if src not in region_cache:
             region_cache[src] = regions(src)
         reg = region_cache[src]
-        text = (ROOT / s["output"]).read_text(encoding="utf-8")
+        text = read(ROOT / s["output"], encoding="utf-8")
         parser = {"cppcheck": parse_cppcheck, "clang-tidy": lambda t: parse_clang_tidy(t, ct_map),
                   "flawfinder": parse_flawfinder}[tool]
         targets = ({int(case["cwe_id"])} | {int(x) for x in case["flaw_cwes"].split(";") if x}
@@ -354,8 +364,9 @@ def main() -> None:
 
     for r in cov_rows:
         if r["tool"] == UNION:
-            print(f"{r['regime']}: {r['unit']} {r['items']}, 시험 가능 {r['testable']}, "
-                  f"한 건이라도 탐지 {r['met_any']}, 같은 번호 절반 이상 {r['met_exact_half']}")
+            print(f"{r['regime']}: {r['unit']} {r['items']}, 같은 번호로 시험 가능 {r['testable_exact']}, "
+                  f"충족 {r['met_exact_any']}, 엄격 {r['met_exact_half']} | "
+                  f"(탐색) 하위 포함 시험 가능 {r['testable']}, 충족 {r['met_any']}")
     print(f"관련 CWE 오탐 {len(fp_rows)}건, CWE 대응이 없는 clang-tidy 검사 {len(unmapped)}종")
 
 

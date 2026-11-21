@@ -14,6 +14,8 @@ import random
 from collections import defaultdict
 from pathlib import Path
 
+from judge import read  # 윈도 경로 길이 제한을 피해 읽기
+
 HERE = Path(__file__).resolve().parent
 JULIET = HERE / "_juliet" / "C"
 OUT = HERE / "results" / "fp_sample.csv"
@@ -72,7 +74,7 @@ def main() -> None:
     if args.show:
         for r in rows:
             src = next(JULIET / p for p in files[r["case_id"]] if p.endswith("/" + r["file"]))
-            lines = src.read_text(errors="replace").splitlines()
+            lines = read(src, errors="replace").splitlines()
             ln = int(r["line"])
             print(f"\n== {r['no']}. {r['tool']} {r['rule']} CWE-{r['finding_cwes']} | {r['case_id']} {r['file']}:{ln}")
             print(f"   {r['message']}")
