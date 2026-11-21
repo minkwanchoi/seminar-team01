@@ -13,3 +13,13 @@ __pycache__/
 
 # 공개·재배포할 수 없는 자료(라이선스·이용 조건 제한). 이 폴더는 커밋하지 않음
 local/
+
+# 수업 강의자료(재배포 허락 없음). 각자 받아 이 폴더에 둔다
+Ref/
+
+# 원문 PDF(매뉴얼·가이드·선행연구). 출처는 NOTICE.md, data/README.md에 있고 파일은 올리지 않음
+/*.pdf
+
+# MITRE CWE 원본 XML. analysis/fetch_cwe.py로 받아 계산에만 쓴다
+cwec_v*.xml*
+*.xml.zip

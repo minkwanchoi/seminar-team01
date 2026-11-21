@@ -1,0 +1,4 @@
+set_a,set_b,size_a,size_b,intersection,union,jaccard,only_a,only_b,shared_cwes
+A,B,4,3,2,5,0.4,2,1,3;4
+A,C,4,2,1,5,0.2,3,1,4
+B,C,3,2,1,4,0.25,2,1,4

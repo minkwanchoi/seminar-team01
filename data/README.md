@@ -76,6 +76,17 @@ data/cwe/v4.10/  data/cwe/v4.20/   아래 표의 파일과 그 버전의 겹침 
 
 `no`(원문 순번), `category`(원문 분류), `item`(원문 항목명), `cwe_ids`(세미콜론으로 구분한 CWE 번호), `mapping_note`(매핑이 애매한 이유), `source_page`(근거 문서와 쪽), `status`(`확인` 또는 `2차 자료(원문 대조 필요)`).
 
+두 매핑 파일 모두 끝에 판정 열 네 개가 있습니다. `status`는 원문과 대조했는지를, 아래 열은 그 번호를 어떻게 정했는지를 적습니다.
+
+| 열 | 값 |
+|---|---|
+| `decision` | `채택`(원문 번호를 그대로 씀, 교차 자료와도 같음), `판단 후 채택`(자료끼리 달라 사람이 골랐음), `수정 후 채택`(원문 번호를 고쳐 씀), `보류`(합의 전이라 분석에서 뺄 후보), `미확인`(원문을 아직 못 봄) |
+| `decision_reason` | 그렇게 정한 이유 |
+| `checked_by` | 원문과 대조한 사람(팀 역할 A·B) |
+| `second_check` | 다른 사람의 독립 확인 결과. 같은 AI에게 다시 묻는 것은 독립 확인으로 치지 않습니다 |
+
+지금은 행안부 49 중 46개가 `채택`, 36·43·48번 3개가 `판단 후 채택`, 매뉴얼 44는 모두 `채택`입니다. 독립 확인은 아직 하지 않았습니다(`미실시`). 팀원 A가 매핑을 보지 않고 원문에서 번호를 다시 뽑아 비교할 계획입니다. 허용 값은 `analysis/check_inputs.py`가 검사합니다.
+
 ### 매핑 기준
 
 1. **원문이 적은 CWE를 그대로 씁니다.** 가이드나 매뉴얼이 항목마다 참조한 CWE 번호를 옮기고, 우리가 판단해 번호를 더하거나 빼지 않습니다.
@@ -128,11 +139,21 @@ python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt
 .venv/Scripts/python analysis/fetch_cwe.py 4.20
 .venv/Scripts/python analysis/fetch_cwe.py 4.10
+.venv/Scripts/python analysis/check_inputs.py
 .venv/Scripts/python analysis/overlap.py --all-versions
+.venv/Scripts/python analysis/verify_overlap.py
 .venv/Scripts/python analysis/compare_versions.py
 .venv/Scripts/python analysis/scan_versions.py
 .venv/Scripts/python analysis/plot_overlap.py
 ```
+
+### 점검과 검산
+
+`check_inputs.py`와 `verify_overlap.py`는 하나라도 어긋나면 멈춥니다(종료 코드 1). 멈추면 다음 단계로 넘어가지 말고 원인을 먼저 찾습니다.
+
+- **`check_inputs.py`(분석 전):** 매핑 CSV의 모양을 봅니다. 빈 번호, 숫자가 아닌 번호, 한 행 안의 중복, 순번 중복, 허용하지 않은 `status`·`decision` 값을 찾습니다. 행 수(44·49), 고유 CWE 수(44·61), 중복여부 O 표시 수(25), 버전별로 없거나 폐기된 번호(247)도 기준값과 맞춥니다.
+- **`verify_overlap.py`(분석 후):** 세 단계로 봅니다. ① [`examples/`](examples/README.md)의 손으로 센 예시가 맞는지, ② 원자료를 다른 경로(pandas 없이)로 다시 계산한 값이 저장된 `overlap_*.csv`와 같은지, ③ 보고서에 적은 수치(교집합 33, 합집합 142·169 등)와 같은지.
+- **기준값은 [`expected_counts.csv`](expected_counts.csv)에 있습니다.** 원문 대조로 정한 값이며 `basis` 열에 근거를 적었습니다. 매핑을 고쳐 기준이 바뀌면 같은 커밋에서 기준값과 근거를 함께 고칩니다. 결과에 맞추려고 기준값만 바꾸지 않습니다.
 
 **새 CWE 버전 추가:** 버전 번호나 MITRE 버전 파일 링크를 주고, 분석·비교·그림을 다시 실행합니다. 버전을 생략하면 MITRE 사이트의 최신 버전을 받습니다.
 

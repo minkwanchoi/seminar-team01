@@ -1,0 +1,24 @@
+stage,check,cwe_version,expected,basis
+입력,manual44.rows,,44,방위사업청(2024) 부록 7 보안약점 점검 목록 44개
+입력,manual44.unique_cwe,,44,한 행에 CWE 하나. 44개 모두 다른 번호
+입력,manual44.overlap_flag_O,,25,원 표의 중복여부 O 표시 25개(기술노트와 대조해 같음)
+입력,mois49.rows,,49,행안부·KISA(2021a) 구현단계 보안약점 49개
+입력,mois49.unique_cwe,,61,49개 항목이 참조한 CWE 번호(1:N)를 펼친 수
+입력,manual44.not_in_catalog,4.10,,그 버전 CWE 목록에 없는 번호(세미콜론 구분). 비어 있어야 함
+입력,manual44.not_in_catalog,4.20,,
+입력,manual44.deprecated,4.10,,그 버전에서 폐기된 번호(세미콜론 구분)
+입력,manual44.deprecated,4.20,,
+입력,mois49.not_in_catalog,4.10,,
+입력,mois49.not_in_catalog,4.20,,
+입력,mois49.deprecated,4.10,247,48번 DNS lookup이 참조한 CWE-247(350으로 통합). data/README.md 2절
+입력,mois49.deprecated,4.20,247,
+결과,domestic.unique_cwe,4.10,193,국내 목록 다섯 개의 합집합
+결과,domestic.unique_cwe,4.20,219,
+결과,domestic.common,4.10,3,국내 목록 모두에 공통인 CWE(476·495·496)
+결과,domestic.common,4.20,3,
+결과,lang_views.union,4.10,142,언어별 뷰 658∪659∪660. data/README.md 3절
+결과,lang_views.union,4.20,169,
+결과,lang_views.and_mois49,4.10,15,언어별 뷰 ∩ 행안부 49
+결과,lang_views.and_mois49,4.20,16,
+결과,manual44.and_mois49,4.10,33,매뉴얼 보안약점 44 ∩ 행안부 49
+결과,manual44.and_mois49,4.20,33,
