@@ -249,6 +249,7 @@
       <li><a href="#t-load">CWE 파일 불러오기</a></li>
       <li><a href="#t-fig">그림</a></li>
       <li><a href="#t-tbl">CWE 찾아보기</a></li>
+      <li><a href="#t-sa">정적 분석 실증</a></li>
       <li><a href="#limits">범위와 한계</a></li>
       <li><a href="#t-license">출처와 이용 조건</a></li>
     </ol>
@@ -256,7 +257,7 @@
   </aside>
   <header>
     <div class="topbar">
-      <p class="eyebrow">CWE 항목 겹침 분석 연구도구 · 팀원 B 중간 산출물(B1~B4) · CWE <span class="curVer">4.20</span> 기준 · 2026. 10. 22. 갱신</p>
+      <p class="eyebrow">CWE 항목 겹침 분석 연구도구 · 팀원 B 산출물(B1~B6) · CWE <span class="curVer">4.20</span> 기준 · 2026. 11. 21. 갱신</p>
       <button id="themeBtn" type="button" aria-pressed="false"></button>
     </div>
     <h1 tabindex="-1">국방 SW 보안약점 기준, 얼마나 겹치나</h1>
@@ -269,7 +270,7 @@
       <a href="#limits">분석 범위와 한계</a>를 먼저 확인해 주세요.
     </div>
     <nav class="toc" aria-label="목차">
-      <a href="#t-key">한눈에 보기</a><a href="#t-scope">무엇을 비교했나</a><a href="#t-size">목록별 CWE 수</a><a href="#t-hm">얼마나 겹치나</a><a href="#t-grp">어떤 성격인가</a><a href="#t-ref">해외 참고 사례</a><a href="#t-ver">버전 간 비교</a><a href="#t-mine">내 목록 비교</a><a href="#t-load">CWE 파일 불러오기</a><a href="#t-fig">그림</a><a href="#t-tbl">CWE 찾아보기</a><a href="#limits">범위와 한계</a><a href="#t-license">출처와 이용 조건</a>
+      <a href="#t-key">한눈에 보기</a><a href="#t-scope">무엇을 비교했나</a><a href="#t-size">목록별 CWE 수</a><a href="#t-hm">얼마나 겹치나</a><a href="#t-grp">어떤 성격인가</a><a href="#t-ref">해외 참고 사례</a><a href="#t-ver">버전 간 비교</a><a href="#t-mine">내 목록 비교</a><a href="#t-load">CWE 파일 불러오기</a><a href="#t-fig">그림</a><a href="#t-tbl">CWE 찾아보기</a><a href="#t-sa">정적 분석 실증</a><a href="#limits">범위와 한계</a><a href="#t-license">출처와 이용 조건</a>
     </nav>
     <div class="verbar">
       <label for="verSel">CWE 버전</label>
@@ -453,6 +454,24 @@
     </div>
   </section>
 
+  <section aria-labelledby="t-sa">
+    <h2 id="t-sa">정적 분석 실증: 한 번의 분석이 두 제도를 얼마나 채우나</h2>
+    <p class="lead">NIST SARD의 시험 코드 Juliet C/C++ 1.3에서 국내 두 목록(매뉴얼 보안약점 44, 행안부 49)의 CWE에 해당하는 기본형 케이스 1,285개를 골라 공개 정적 분석 도구 세 개(cppcheck, clang-tidy, flawfinder)를 한 번 돌렸습니다.
+      그 결과가 각 제도의 항목을 몇 개 채우는지 셉니다. 이 절의 수치는 <strong>CWE 4.20</strong> 기준으로 고정되어 있어 위의 버전 선택을 따르지 않습니다.</p>
+    <div class="note" role="note"><strong>읽기 전에:</strong> 이 결과는 도구 성능 평가가 아니라 '복수 제도 충족도 예시'입니다. 인공 시험 코드의 가장 단순한 형태와 공개 도구 세 개만 썼으므로, 상용 도구나 실제 무기체계 코드의 결과를 대신하지 않습니다.</div>
+    <h3 class="sub-h">1회 분석 → 제도별 충족 항목 수 (세 도구 합집합)</h3>
+    <p class="lead">대표 수치는 목록에 적힌 CWE와 <strong>같은 번호</strong>의 Juliet 케이스로만 셉니다. 회색 열은 하위 CWE 케이스(예: 119 아래의 121·122)까지 넣은 탐색 결과입니다.</p>
+    <div class="table-wrap scope"><table class="stack" id="saCov"></table></div>
+    <h3 class="sub-h">도구 하나씩 돌렸을 때 (충족, 같은 번호 기준)</h3>
+    <div class="table-wrap scope"><table class="stack" id="saTool"></table></div>
+    <details class="scan">
+      <summary>CWE별 탐지 (같은 번호 케이스, 탐지 ÷ 분석한 케이스)</summary>
+      <div class="table-wrap"><table id="saCwe"></table></div>
+    </details>
+    <p class="lead" id="saMsg" style="margin-top:12px">판정 규칙, 하위 CWE 결과, 오탐 표본 분석은 <a href="https://github.com/minkwanchoi/seminar-team01/blob/main/docs/정적분석_결과.md">정적 분석 결과 문서</a>에 있습니다.
+      결과 파일: <a href="static-analysis/results/regime_coverage.csv">제도별 충족</a> · <a href="static-analysis/results/detection_by_cwe.csv">CWE별 탐지</a> · <a href="static-analysis/results/fp_by_rule.csv">검사별 오탐</a></p>
+  </section>
+
   <!-- 링크 주의: 문서 링크는 지금 포크(minkwanchoi) 주소입니다. 팀 저장소에 병합할 때 suyoungi 주소로 바꿉니다. -->
   <section id="limits" aria-labelledby="t-lim">
     <h2 id="t-lim">분석 범위와 한계</h2>
@@ -483,8 +502,8 @@
           <tr><td data-label="자료">「소프트웨어 보안약점 진단가이드」(한국인터넷진흥원, 2021)</td><td data-label="원 출처의 이용 조건">게시물에서 공공누리 표시를 확인하지 못함</td><td data-label="이 페이지에서 쓰는 범위">교차 확인에만 씀. 내용은 싣지 않음</td><td data-label="지키는 방법">출처 표시</td></tr>
           <tr><td data-label="자료">「무기체계 소프트웨어 개발 및 관리 매뉴얼」(방위사업청 매뉴얼 제2024-6호)</td><td data-label="원 출처의 이용 조건">방위사업청 업무게시판 공개. 공공누리 표시 없음, 사이트에 "All Rights Reserved"</td><td data-label="이 페이지에서 쓰는 범위">부록 7 보안약점 점검 목록의 CWE 번호와 중복여부 표시만. 이름은 MITRE 명칭, 원 표의 순서·모양은 옮기지 않음</td><td data-label="지키는 방법">아래 "매뉴얼 이용 근거". 원문 파일은 올리지 않고, 목록 내려받기 링크도 두지 않음</td></tr>
           <tr><td data-label="자료">논문·기사·보고서</td><td data-label="원 출처의 이용 조건">일반 저작물</td><td data-label="이 페이지에서 쓰는 범위">짧은 인용과 요약</td><td data-label="지키는 방법">참고문헌(APA 7판)</td></tr>
-          <tr><td data-label="자료">NIST SARD Juliet C/C++ 1.3</td><td data-label="원 출처의 이용 조건">미국에서 저작권 보호 대상이 아님(퍼블릭 도메인, 17 USC 105). 미국 밖에서는 CC0 1.0</td><td data-label="이 페이지에서 쓰는 범위">이 페이지에는 아직 쓰지 않음. 저장소 <code>static-analysis/</code>에 케이스 이름·CWE·결함 줄 번호만 실음(B5)</td><td data-label="지키는 방법">출처와 SHA-256 표시. 원본은 저장소에 넣지 않음</td></tr>
-          <tr><td data-label="자료">정적 분석 도구 cppcheck, clang-tidy, flawfinder</td><td data-label="원 출처의 이용 조건">GPL-3.0, Apache-2.0 WITH LLVM-exception, GPL-2.0-or-later</td><td data-label="이 페이지에서 쓰는 범위">이 페이지에는 쓰지 않음. B5·B6에서 실행만 함</td><td data-label="지키는 방법">포함하거나 재배포하지 않음</td></tr>
+          <tr><td data-label="자료">NIST SARD Juliet C/C++ 1.3</td><td data-label="원 출처의 이용 조건">미국에서 저작권 보호 대상이 아님(퍼블릭 도메인, 17 USC 105). 미국 밖에서는 CC0 1.0</td><td data-label="이 페이지에서 쓰는 범위">"정적 분석 실증" 절에 CWE별·제도별 탐지 집계만 실음. 저장소 <code>static-analysis/</code>에는 케이스 이름·CWE·결함 줄 번호와 판정 결과(B5·B6)</td><td data-label="지키는 방법">출처와 SHA-256 표시. 원본은 저장소에 넣지 않음</td></tr>
+          <tr><td data-label="자료">정적 분석 도구 cppcheck, clang-tidy, flawfinder</td><td data-label="원 출처의 이용 조건">GPL-3.0, Apache-2.0 WITH LLVM-exception, GPL-2.0-or-later</td><td data-label="이 페이지에서 쓰는 범위">"정적 분석 실증" 절에 도구 이름과 탐지 집계만 실음. 도구는 B5·B6에서 실행만 함</td><td data-label="지키는 방법">포함하거나 재배포하지 않음</td></tr>
           <tr><td data-label="자료">JSZip 3.10.1</td><td data-label="원 출처의 이용 조건">MIT 라이선스</td><td data-label="이 페이지에서 쓰는 범위">.zip 파일을 열 때만 cdnjs에서 불러옴</td><td data-label="지키는 방법">재배포하지 않음</td></tr>
         </tbody>
       </table>
@@ -1318,6 +1337,35 @@
       showError(e);
     }
   })();
+
+  // ── 정적 분석 실증(B6). static-analysis/results/의 CSV를 읽어 표를 그린다. CWE 4.20 고정 ──
+  async function renderStatic() {
+    const get = async n => { const r = await fetch(`static-analysis/results/${n}`); if (!r.ok) throw new Error(n); return parseCSV(await r.text()); };
+    const UNION = "세 도구 합집합", TOOLS = ["cppcheck", "clang-tidy", "flawfinder"];
+    try {
+      const [cov, cwe] = await Promise.all([get("regime_coverage.csv"), get("detection_by_cwe.csv")]);
+      const row = (reg, tool) => cov.find(r => r.regime === reg && r.tool === tool);
+      const regs = [...new Set(cov.map(r => r.regime))];
+      const H = ["제도", "단위·전체", "시험 가능(같은 번호)", "충족", "충족(엄격: 절반 이상)", "(탐색) 시험 가능(하위 포함)", "(탐색) 충족(하위 포함)"];
+      document.getElementById("saCov").innerHTML = `<thead><tr>${H.map((h, i) => `<th${i >= 5 ? ' class="ref"' : ""}>${h}</th>`).join("")}</tr></thead><tbody>` +
+        regs.map(g => { const r = row(g, UNION); const v = [g, `${r.unit} ${r.items}`, r.testable_exact, `<b>${r.met_exact_any}</b>`, r.met_exact_half, r.testable, r.met_any];
+          return `<tr>${v.map((x, i) => `<td data-label="${H[i]}"${i >= 5 ? ' class="ref"' : ""}>${i === 0 ? esc(x) : x}</td>`).join("")}</tr>`; }).join("") + `</tbody>`;
+      const H2 = ["제도", ...TOOLS, UNION];
+      document.getElementById("saTool").innerHTML = `<thead><tr>${H2.map(h => `<th>${h}</th>`).join("")}</tr></thead><tbody>` +
+        regs.filter(g => g !== "두 제도 합집합").map(g => `<tr><td data-label="제도">${esc(g)} (${row(g, UNION).unit} ${row(g, UNION).items})</td>` +
+          [...TOOLS, UNION].map(t => `<td data-label="${t}">${row(g, t).met_exact_any}</td>`).join("") + `</tr>`).join("") + `</tbody>`;
+      const ex = cwe.filter(r => r.match === "정확");
+      const ids = [...new Set(ex.map(r => +r.cwe_id))].sort((a, b) => a - b);
+      const cell = (id, t) => { const r = ex.find(x => +x.cwe_id === id && x.tool === t); return +r.analyzable ? `${r.detected}/${r.analyzable}` : "분석 불가"; };
+      document.getElementById("saCwe").innerHTML = `<thead><tr><th>CWE</th><th>케이스</th>${[...TOOLS, UNION].map(t => `<th>${t}</th>`).join("")}</tr></thead><tbody>` +
+        ids.map(id => `<tr><td><a href="${cweLink(id)}">CWE-${id}</a></td><td>${ex.find(x => +x.cwe_id === id).cases}</td>` +
+          [...TOOLS, UNION].map(t => `<td>${cell(id, t)}</td>`).join("") + `</tr>`).join("") + `</tbody>`;
+    } catch (e) {
+      document.getElementById("saMsg").insertAdjacentHTML("afterbegin", "<strong>정적 분석 결과 파일을 읽지 못했습니다.</strong> ");
+      console.error(e);
+    }
+  }
+  renderStatic();
   function showError(e) {
     document.getElementById("error").style.display = "block";
     console.error(e);

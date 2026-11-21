@@ -19,8 +19,8 @@
 | 같은 매뉴얼의 이전 판(2020)과 별책(기술문서 작성가이드) | 위와 같음 | 한계 설명에서 서지 정보만 인용 | 방위사업청 업무게시판 주소로 출처 표시 |
 | 논문·기사·보고서(참고문헌 목록) | 일반 저작물 | 짧은 인용과 요약 | 본문 인용 표시와 APA 7판 참고문헌 |
 | JSZip 3.10.1 | MIT 라이선스 | 페이지에서 .zip 파일을 열 때만 cdnjs에서 실행 중에 불러옴 | 저장소에 포함하거나 재배포하지 않음 |
-| NIST SARD Juliet C/C++ 1.3 (Test suite #112) | 17 USC 105에 따라 미국에서 저작권 보호 대상이 아님(퍼블릭 도메인). 미국 밖에서는 CC0 1.0 | B5 실증의 시험 코드. 저장소에는 케이스 이름·CWE·파일 경로·결함 줄 번호만 실음(`static-analysis/juliet_cases.csv`, `juliet_summary.csv`) | 출처와 SHA-256을 `static-analysis/README.md`에 표시. 원본(6만여 파일)은 용량 때문에 저장소에 넣지 않음 |
-| 정적 분석 도구 cppcheck, clang-tidy(LLVM), flawfinder | 각각 GPL-3.0, Apache-2.0 WITH LLVM-exception, GPL-2.0-or-later | B5·B6에서 설치해 실행만 함. 실행 기록과 출력에 도구 이름·버전·지적 메시지가 남음 | 저장소에 포함하거나 재배포하지 않음. `requirements.txt`에 넣지 않음 |
+| NIST SARD Juliet C/C++ 1.3 (Test suite #112) | 17 USC 105에 따라 미국에서 저작권 보호 대상이 아님(퍼블릭 도메인). 미국 밖에서는 CC0 1.0 | B5·B6 실증의 시험 코드. 저장소에는 케이스 이름·CWE·파일 경로·결함 줄 번호와 판정 결과만 실음(`static-analysis/juliet_cases.csv`, `juliet_summary.csv`, `results/`). 연구도구 페이지에는 CWE별·제도별 탐지 집계만 | 출처와 SHA-256을 `static-analysis/README.md`에 표시. 원본(6만여 파일)은 용량 때문에 저장소에 넣지 않음 |
+| 정적 분석 도구 cppcheck, clang-tidy(LLVM), flawfinder | 각각 GPL-3.0, Apache-2.0 WITH LLVM-exception, GPL-2.0-or-later | B5·B6에서 설치해 실행만 함. 실행 기록과 결과표에 도구 이름·버전·검사 이름·지적 메시지가 남고, 연구도구 페이지에는 도구 이름과 탐지 집계만 실음 | 저장소에 포함하거나 재배포하지 않음. `requirements.txt`에 넣지 않음 |
 | MITRE 원본 XML, 매뉴얼·가이드 원문 PDF | 위 각 조건 | 분석 계산에만 쓰고 저장소에 넣지 않음 | `.gitignore`·`.git/info/exclude`로 제외 |
 
 ## 매뉴얼 이용 근거
