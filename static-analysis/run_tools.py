@@ -9,7 +9,7 @@ WSL 우분투(또는 리눅스)에서 실행한다. 표준 라이브러리만 �
   옵션: --tools cppcheck,flawfinder  --platform any  --match 정확  --name 실행이름  --jobs 4
 
 결과는 static-analysis/_runs/<실행이름>/ 에 쓴다(git 제외).
-- <도구>/<케이스>__<파일>.{xml,txt,csv} : 도구 원래 출력
+- <도구>/<파일>.{xml,txt,csv} : 도구 원래 출력
 - status.csv : 케이스·도구·파일마다 종료 코드, 걸린 시간, 지적 수(대략), 컴파일 오류 여부
 - run_log.txt : 도구 버전, 실행 명령, 요약. 경로는 프로젝트 기준 상대 경로로 적는다
 탐지 여부 판정(결함 줄과 지적 줄 맞추기)은 B6에서 한다.
@@ -94,7 +94,7 @@ def run_one(tool: str, case: dict, src: Path, outdir: Path) -> dict:
     secs = time.perf_counter() - t0
     # cppcheck는 결과 XML을 stderr에, 나머지는 stdout에 낸다. clang-tidy의 컴파일 오류 줄도 stdout에 섞인다
     text = p.stderr if tool == "cppcheck" else p.stdout + (p.stderr if tool == "clang-tidy" else "")
-    out = outdir / tool / f"{case['case_id']}__{src.name}.{EXT[tool]}"
+    out = outdir / tool / f"{src.name}.{EXT[tool]}"  # Juliet 파일 이름에 케이스 이름이 들어 있다
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(text.replace(str(JULIET) + "/", ""), encoding="utf-8")
     n, compile_err = count_findings(tool, text)

@@ -1,0 +1,58 @@
+check,message_regex,cwe_ids,basis
+clang-analyzer-core.NullDereference,,476,검사 설명(널 포인터 역참조)
+clang-analyzer-core.NonNullParamChecker,,476,검사 설명(널 인자 전달)
+clang-analyzer-unix.cstring.NullArg,,476,검사 설명(문자열 함수에 널 인자)
+clang-analyzer-core.DivideZero,,369,검사 설명(0으로 나누기)
+clang-analyzer-core.StackAddressEscape,,562,검사 설명(지역 변수 주소 반환)
+clang-analyzer-core.uninitialized.Assign,,457,검사 설명(초기화하지 않은 값 사용)
+clang-analyzer-core.uninitialized.Branch,,457,검사 설명(초기화하지 않은 값 사용)
+clang-analyzer-core.uninitialized.UndefReturn,,457,검사 설명(초기화하지 않은 값 사용)
+clang-analyzer-core.uninitialized.ArraySubscript,,457,검사 설명(초기화하지 않은 값 사용)
+clang-analyzer-core.UndefinedBinaryOperatorResult,,457,검사 설명(초기화하지 않은 값 사용)
+clang-analyzer-core.CallAndMessage,uninitialized|garbage|undefined,457,메시지가 초기화하지 않은 인자를 가리킬 때
+clang-analyzer-core.CallAndMessage,null,476,메시지가 널 포인터 호출을 가리킬 때
+clang-analyzer-unix.Malloc,released memory,415,메시지(이미 해제한 메모리 해제)
+clang-analyzer-unix.Malloc,after it is freed,416,메시지(해제 뒤 사용)
+clang-analyzer-unix.Malloc,[Pp]otential leak|[Pp]otential memory leak,401,메시지(메모리 누수)
+clang-analyzer-unix.Malloc,offset by,761,메시지(가운데 주소 해제)
+clang-analyzer-unix.Malloc,not memory allocated|local variable|address of|constant address|non-heap|alloca,590,메시지(힙이 아닌 메모리 해제)
+clang-analyzer-unix.Malloc,zero-allocated|allocated with size 0,131,메시지(크기 0 할당 사용)
+clang-analyzer-cplusplus.NewDelete,released memory,415,메시지(이미 해제한 메모리 해제)
+clang-analyzer-cplusplus.NewDelete,after it is freed,416,메시지(해제 뒤 사용)
+clang-analyzer-cplusplus.NewDelete,not memory allocated|local variable|address of|non-heap,590,메시지(힙이 아닌 메모리 해제)
+clang-analyzer-cplusplus.NewDeleteLeaks,,401,검사 설명(메모리 누수)
+clang-analyzer-unix.MismatchedDeallocator,,762,검사 설명(할당·해제 함수 짝 불일치)
+clang-analyzer-unix.MallocSizeof,,131,검사 설명(sizeof 대상과 포인터 형 불일치)
+clang-analyzer-cplusplus.PlacementNew,,119,검사 설명(placement new 저장 공간 부족)
+clang-analyzer-security.insecureAPI.strcpy,,120;676,검사 설명(길이 검사 없는 strcpy·strcat)
+clang-analyzer-security.insecureAPI.gets,,242,검사 설명(gets 사용)
+clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,,120;676,검사 설명(길이 검사 없는 버퍼 함수)
+clang-analyzer-security.insecureAPI.rand,,338,검사 설명(약한 난수)
+clang-analyzer-deadcode.DeadStores,,563,검사 설명(쓰지 않는 대입)
+clang-analyzer-core.BitwiseShift,,1335,검사 설명(잘못된 비트 이동)
+cert-err33-c,,252,CERT ERR33-C(반환값 검사) → CWE-252
+cert-err34-c,,676,CERT ERR34-C(atoi 등 오류를 알 수 없는 변환) → CWE-676
+cert-msc30-c,,338,CERT MSC30-C(rand 사용) → CWE-338
+cert-msc50-cpp,,338,CERT MSC50-CPP(rand 사용) → CWE-338
+cert-msc32-c,,337,CERT MSC32-C(예측 가능한 시드) → CWE-337
+cert-msc51-cpp,,337,CERT MSC51-CPP(예측 가능한 시드) → CWE-337
+cert-msc24-c,,676,CERT MSC24-C(더 쓰지 않는 함수) → CWE-676
+cert-env33-c,,78,CERT ENV33-C(system 호출) → CWE-78
+bugprone-unsafe-functions,,242;676,검사 설명(gets 등 위험 함수)
+bugprone-sizeof-expression,,467,검사 설명(포인터에 sizeof)
+bugprone-narrowing-conversions,,197,검사 설명(값이 잘리는 형 변환)
+bugprone-suspicious-realloc-usage,,401,검사 설명(realloc 실패 시 원래 메모리 잃음)
+bugprone-infinite-loop,,835,검사 설명(끝나지 않는 반복)
+bugprone-not-null-terminated-result,,170,검사 설명(널 종료가 없는 결과)
+bugprone-implicit-widening-of-multiplication-result,,190,검사 설명(곱셈 결과 넘침 뒤 확장)
+bugprone-misplaced-widening-cast,,190,검사 설명(넘친 뒤 확장하는 형 변환)
+bugprone-signed-char-misuse,,,CWE 대응을 정하지 않음
+bugprone-reserved-identifier,,,이름 규칙(Juliet 함수 이름이 CWE로 시작해 늘 나옴). CWE 없음
+cert-dcl37-c,,,이름 규칙. CWE 없음
+cert-dcl51-cpp,,,이름 규칙. CWE 없음
+bugprone-macro-parentheses,,,매크로 괄호 규칙. CWE 없음
+cert-msc33-c,,,CWE 대응을 정하지 않음
+clang-analyzer-security.insecureAPI.mktemp,,377,검사 설명(안전하지 않은 임시 파일 이름)
+bugprone-empty-catch,,1069,검사 설명(빈 예외 처리 블록)
+bugprone-unhandled-self-assignment,,,CWE 대응을 정하지 않음
+cert-oop54-cpp,,,CWE 대응을 정하지 않음
