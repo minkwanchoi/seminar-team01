@@ -1,0 +1,62 @@
+cwe_id,name,match,b2_cwe,in_manual44,in_mois49,all_cases,windows_cases,v01_cases,cwe_version
+23,Relative Path Traversal,하위,22,1,1,2400,480,50,4.20
+36,Absolute Path Traversal,하위,22,1,1,2400,480,50,4.20
+78,Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),정확,78,1,1,4800,2880,100,4.20
+90,Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection'),정확,90,0,1,480,480,10,4.20
+121,Stack-based Buffer Overflow,하위,119,1,1,4968,0,118,4.20
+122,Heap-based Buffer Overflow,하위,119,1,1,5922,0,126,4.20
+123,Write-what-where Condition,하위,119,1,1,144,0,3,4.20
+124,Buffer Underwrite ('Buffer Underflow'),하위,119,1,1,2048,0,46,4.20
+126,Buffer Over-read,하위,119,1,1,1452,0,36,4.20
+127,Buffer Under-read,하위,119,1,1,2048,0,46,4.20
+134,Use of Externally-Controlled Format String,정확,134,1,1,2880,480,60,4.20
+190,Integer Overflow or Wraparound,정확,190,1,1,3960,0,90,4.20
+226,Sensitive Information in Resource Not Removed Before Reuse,하위,404,1,1,72,72,4,4.20
+242,Use of Inherently Dangerous Function,정확,242,0,1,18,0,1,4.20
+244,Improper Clearing of Heap Memory Before Release ('Heap Inspection'),하위,404,1,1,72,72,4,4.20
+247,DEPRECATED: Reliance on DNS Lookups in a Security Decision,정확,247,0,1,18,18,1,4.20
+252,Unchecked Return Value,하위,754,0,1,630,90,35,4.20
+253,Incorrect Check of Function Return Value,하위,754,0,1,684,144,38,4.20
+259,Use of Hard-coded Password,정확,259,1,1,96,96,2,4.20
+273,Improper Check for Dropped Privileges,하위,754,0,1,36,36,2,4.20
+319,Cleartext Transmission of Sensitive Information,정확,319,1,1,192,192,4,4.20
+321,Use of Hard-coded Cryptographic Key,정확,321,1,1,96,96,2,4.20
+325,Missing Cryptographic Step,하위,327,1,1,72,72,4,4.20
+327,Use of a Broken or Risky Cryptographic Algorithm,정확,327,1,1,54,54,3,4.20
+328,Use of Weak Hash,하위,326;327,1,1,54,54,3,4.20
+338,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),하위,330,1,1,18,18,1,4.20
+367,Time-of-check Time-of-use (TOCTOU) Race Condition,정확,367,1,1,36,0,2,4.20
+369,Divide By Zero,정확,369,1,0,864,0,18,4.20
+390,Detection of Error Condition Without Action,정확,390,1,1,90,0,5,4.20
+391,Unchecked Error Condition,하위,754,0,1,54,0,3,4.20
+396,Declaration of Catch for Generic Exception,하위,755,1,0,54,0,3,4.20
+400,Uncontrolled Resource Consumption,정확,400,1,0,720,0,15,4.20
+401,Missing Release of Memory after Effective Lifetime,하위,404,1,1,1658,0,42,4.20
+404,Improper Resource Shutdown or Release,정확,404,1,1,384,336,8,4.20
+415,Double Free,정확,415,1,0,962,0,22,4.20
+416,Use After Free,정확,416,1,1,459,0,22,4.20
+457,Use of Uninitialized Variable,정확,457,1,1,948,0,45,4.20
+459,Incomplete Cleanup,하위,404,1,1,36,0,2,4.20
+467,Use of sizeof() on a Pointer Type,정확,467,1,0,54,0,3,4.20
+469,Use of Pointer Subtraction to Determine Size,정확,469,1,0,36,0,2,4.20
+476,NULL Pointer Dereference,정확,476,1,1,348,0,10,4.20
+526,Cleartext Storage of Sensitive Information in an Environment Variable,하위,312,1,1,18,0,1,4.20
+535,Exposure of Information Through Shell Error Message,하위,209;755,1,1,36,36,2,4.20
+562,Return of Stack Variable Address,정확,562,1,0,3,0,3,4.20
+587,Assignment of a Fixed Address to a Pointer,정확,587,1,0,18,0,1,4.20
+590,Free of Memory not on the Heap,하위,404,1,1,2680,0,67,4.20
+615,Inclusion of Sensitive Information in Source Code Comments,정확,615,1,1,18,18,1,4.20
+674,Uncontrolled Recursion,정확,674,0,1,2,0,2,4.20
+676,Use of Potentially Dangerous Function,정확,676,1,1,18,0,1,4.20
+680,Integer Overflow to Buffer Overflow,하위,190,1,1,576,0,12,4.20
+685,Function Call With Incorrect Number of Arguments,하위,628,1,0,18,0,1,4.20
+688,Function Call With Incorrect Variable or Reference as Argument,하위,628,1,0,18,0,1,4.20
+690,Unchecked Return Value to NULL Pointer Dereference,하위,754,0,1,960,48,20,4.20
+761,Free of Pointer not at Start of Buffer,하위,404,1,1,576,0,12,4.20
+762,Mismatched Memory Management Routines,하위,404,1,1,3564,0,86,4.20
+773,Missing Reference to Active File Descriptor or Handle,하위,400,1,0,144,48,3,4.20
+775,Missing Release of File Descriptor or Handle after Effective Lifetime,하위,404,1,1,144,48,3,4.20
+780,Use of RSA Algorithm without OAEP,하위,327,1,1,18,18,1,4.20
+785,Use of Path Manipulation Function without Maximum-sized Buffer,하위,119;676,1,1,18,18,1,4.20
+789,Memory Allocation with Excessive Size Value,하위,400,1,0,960,0,20,4.20
+835,Loop with Unreachable Exit Condition ('Infinite Loop'),정확,835,0,1,6,0,6,4.20

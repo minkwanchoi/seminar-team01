@@ -1,0 +1,33 @@
+# B5 정적 분석 실행 기록
+실행 이름: smoke-20261121
+시작: 2026-11-21T09:43:30+09:00
+환경: Linux 6.6.87.2-microsoft-standard-WSL2 / Python 3.12.3
+Juliet: C/C++ 1.3 (static-analysis/_juliet/C)
+도구 버전:
+  - cppcheck: Cppcheck 2.13.0
+  - clang-tidy: Ubuntu LLVM version 18.1.3
+  - flawfinder: 2.0.19
+clang-tidy 검사: -*,clang-analyzer-*,bugprone-*,cert-*
+케이스 3개, 실행 9건
+
+케이스 | 파일 | 도구 | 종료 코드 | 지적 수 | 컴파일 오류 | 초
+CWE416_Use_After_Free__new_delete_array_char_01 | CWE416_Use_After_Free__new_delete_array_char_01.cpp | cppcheck | 0 | 0 | 아니오 | 0.23
+CWE416_Use_After_Free__new_delete_array_char_01 | CWE416_Use_After_Free__new_delete_array_char_01.cpp | clang-tidy | 0 | 2 | 아니오 | 0.82
+CWE416_Use_After_Free__new_delete_array_char_01 | CWE416_Use_After_Free__new_delete_array_char_01.cpp | flawfinder | 0 | 1 | 아니오 | 0.19
+CWE476_NULL_Pointer_Dereference__int_01 | CWE476_NULL_Pointer_Dereference__int_01.c | cppcheck | 0 | 5 | 아니오 | 0.13
+CWE476_NULL_Pointer_Dereference__int_01 | CWE476_NULL_Pointer_Dereference__int_01.c | clang-tidy | 0 | 1 | 아니오 | 0.60
+CWE476_NULL_Pointer_Dereference__int_01 | CWE476_NULL_Pointer_Dereference__int_01.c | flawfinder | 0 | 1 | 아니오 | 0.18
+CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01 | CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01.c | cppcheck | 0 | 0 | 아니오 | 0.29
+CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01 | CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01.c | clang-tidy | 1 | 3 | 예 | 0.81
+CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01 | CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01.c | flawfinder | 0 | 6 | 아니오 | 0.20
+
+실행 명령:
+  [cppcheck] cppcheck --enable=warning,style,performance,portability --inconclusive --xml --xml-version=2 --suppress=missingIncludeSystem --language=c++ -Istatic-analysis/_juliet/C/testcasesupport static-analysis/_juliet/C/testcases/CWE416_Use_After_Free/CWE416_Use_After_Free__new_delete_array_char_01.cpp
+  [clang-tidy] clang-tidy --quiet '--checks=-*,clang-analyzer-*,bugprone-*,cert-*' static-analysis/_juliet/C/testcases/CWE416_Use_After_Free/CWE416_Use_After_Free__new_delete_array_char_01.cpp -- -x c++ -std=c++11 -Istatic-analysis/_juliet/C/testcasesupport
+  [flawfinder] flawfinder --csv --minlevel=0 --dataonly static-analysis/_juliet/C/testcases/CWE416_Use_After_Free/CWE416_Use_After_Free__new_delete_array_char_01.cpp
+  [cppcheck] cppcheck --enable=warning,style,performance,portability --inconclusive --xml --xml-version=2 --suppress=missingIncludeSystem --language=c -Istatic-analysis/_juliet/C/testcasesupport static-analysis/_juliet/C/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__int_01.c
+  [clang-tidy] clang-tidy --quiet '--checks=-*,clang-analyzer-*,bugprone-*,cert-*' static-analysis/_juliet/C/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__int_01.c -- -x c -std=gnu99 -Istatic-analysis/_juliet/C/testcasesupport
+  [flawfinder] flawfinder --csv --minlevel=0 --dataonly static-analysis/_juliet/C/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__int_01.c
+  [cppcheck] cppcheck --enable=warning,style,performance,portability --inconclusive --xml --xml-version=2 --suppress=missingIncludeSystem --language=c -Istatic-analysis/_juliet/C/testcasesupport static-analysis/_juliet/C/testcases/CWE78_OS_Command_Injection/s01/CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01.c
+  [clang-tidy] clang-tidy --quiet '--checks=-*,clang-analyzer-*,bugprone-*,cert-*' static-analysis/_juliet/C/testcases/CWE78_OS_Command_Injection/s01/CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01.c -- -x c -std=gnu99 -Istatic-analysis/_juliet/C/testcasesupport
+  [flawfinder] flawfinder --csv --minlevel=0 --dataonly static-analysis/_juliet/C/testcases/CWE78_OS_Command_Injection/s01/CWE78_OS_Command_Injection__char_connect_socket_w32_execv_01.c
