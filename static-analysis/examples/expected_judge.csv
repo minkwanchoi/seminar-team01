@@ -1,0 +1,37 @@
+test,input,expected,basis
+region,4,bad,J7: OMITBAD 블록(3~9행) 안의 결함 함수 머리
+region,7,bad,J7: 결함 줄
+region,3,other,J7: 전처리 줄 자체는 판정에 쓰지 않음
+region,9,other,J7: #endif 줄
+region,13,good,J7: OMITGOOD 블록(10~17행) 안
+region,14,good,J7: OMITGOOD 블록 안
+region,22,other,J7: INCLUDEMAIN 안의 OMITBAD는 결함 구역이 아님
+region,1,other,J7: 블록 밖 주석
+parse,cppcheck:7,476,J10: cppcheck가 붙인 cwe 그대로
+parse,cppcheck:13,563,J10: cppcheck가 붙인 cwe 그대로
+parse,cppcheck:count,2,"information 등급(missingIncludeSystem, checkersReport)은 지적으로 세지 않음"
+parse,flawfinder:14,120,J10: CWEs 열의 번호
+parse,flawfinder:13,119;120,"J10: 'CWE-119!/CWE-120'에서 숫자만"
+parse,clang-tidy:7,476,J10: 대응표 core.NullDereference → 476
+parse,clang-tidy:14,120;676,J10: 대응표 insecureAPI.strcpy → 120·676
+parse,clang-tidy:4,,J10: 이름 규칙 검사 세 개는 CWE 없음
+parse,clang-tidy:count,5,"warning 줄의 검사마다 하나(4행은 검사 3개). error 줄은 세지 않음"
+ct_map,clang-analyzer-unix.Malloc|Attempt to free released memory,415,대응표 메시지 조건
+ct_map,clang-analyzer-unix.Malloc|Use of memory after it is freed,416,대응표 메시지 조건
+ct_map,clang-analyzer-unix.Malloc|Argument to free() is offset by 8 bytes from the start of memory allocated by malloc(),761,대응표 메시지 조건
+ct_map,clang-analyzer-unix.Malloc|Memory allocated by alloca() should not be deallocated,590,대응표 메시지 조건
+ct_map,clang-analyzer-unix.Malloc|Potential leak of memory pointed to by 'data',401,대응표 메시지 조건
+ct_map,clang-analyzer-cplusplus.NewDelete|Attempt to delete released memory,415,대응표: 415 줄이 416 줄보다 앞
+ct_map,clang-analyzer-cplusplus.NewDelete|Use of memory after it is freed,416,대응표 메시지 조건
+ct_map,bugprone-reserved-identifier|declaration uses identifier,,대응표: CWE 없음
+related,476|476,True,J9: 같은 번호
+related,120|121;119,True,"J9: 120은 B2 번호 119의 하위(CWE 4.20)"
+related,119|121,True,J9: 119는 121의 상위
+related,563|476,False,J9: 상하위 관계 없음
+related,664|121,False,J9: Pillar는 관련으로 보지 않음
+classify,cppcheck:7|476,TP,"J8: 결함 구역 + 관련 CWE"
+classify,cppcheck:13|476,무관,"J11: 관련 CWE가 아니면 세지 않음"
+classify,flawfinder:14|121;119,FP,"J11: 정상 구역 + 관련 CWE(120은 119의 하위)"
+classify,flawfinder:13|476,무관,J11: 119·120은 476과 관련 없음
+classify,clang-tidy:7|476,TP,J8
+classify,clang-tidy:14|121;119,FP,J11

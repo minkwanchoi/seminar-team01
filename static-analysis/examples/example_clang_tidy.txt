@@ -1,0 +1,5 @@
+example_case.c:7:18: warning: Dereference of null pointer (loaded from variable 'data') [clang-analyzer-core.NullDereference]
+    7 |     printIntLine(*data);
+example_case.c:14:5: warning: Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. [clang-analyzer-security.insecureAPI.strcpy]
+example_case.c:4:6: warning: declaration uses identifier 'EX476_example_01_bad', which is a reserved identifier [bugprone-reserved-identifier,cert-dcl37-c,cert-dcl51-cpp]
+example_case.c:22:5: error: 'process.h' file not found [clang-diagnostic-error]

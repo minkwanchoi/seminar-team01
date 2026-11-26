@@ -1,0 +1,25 @@
+check,expected,basis
+cases.total,1285,"B5 select_cases.py 결과(CWE 4.20). 보고서·재현 절차에 쓴 값. 회귀 방지용(원문 근거 아님)"
+cases.exact,439,같음
+cases.child,846,같음
+union.exact.detected,164,"2026-11-21 본 실행(all-20261121) 결과. 정적분석_결과.md 3.1·수치 추적표에 쓴 값. 회귀 방지용"
+union.exact.analyzable,439,같음
+union.child.detected,563,같음
+union.child.analyzable,846,같음
+clang-tidy.unanalyzable_cases,169,"같음. 분석하지 못한 파일 169개(정적분석_결과.md 1절)는 모두 파일 하나짜리 케이스라 케이스 수와 같음"
+매뉴얼 보안약점 44.testable_exact,22,"같음. 정적분석_결과.md 4절 대표 수치"
+매뉴얼 보안약점 44.met_exact_any,10,같음
+매뉴얼 보안약점 44.met_exact_half,7,같음
+매뉴얼 보안약점 44.met_any,14,"같음. (탐색) 하위 포함"
+행안부 49.testable_exact,17,같음
+행안부 49.met_exact_any,7,같음
+행안부 49.met_exact_half,5,같음
+행안부 49.met_any,10,"같음. (탐색)"
+두 제도 공통.testable_exact,15,같음
+두 제도 공통.met_exact_any,6,같음
+두 제도 공통.met_exact_half,4,같음
+두 제도 공통.met_any,9,"같음. (탐색)"
+fp.total,889,"같음. 정적분석_결과.md 5.1"
+fp.cppcheck,5,같음
+fp.clang-tidy,74,같음
+fp.flawfinder,810,같음

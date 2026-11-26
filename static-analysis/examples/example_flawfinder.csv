@@ -1,0 +1,3 @@
+File,Line,Column,DefaultLevel,Level,Category,Name,Warning,Suggestion,Note,CWEs,Context,Fingerprint,ToolVersion,RuleId,HelpUri
+example_case.c,14,5,4,4,buffer,strcpy,Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).,Consider using snprintf,,CWE-120,"    strcpy(dest, ""ok"");",0,2.0.19,FF1001,
+example_case.c,13,5,2,2,buffer,char,Statically-sized arrays can be improperly restricted (CWE-119!/CWE-120).,Perform bounds checking,,"CWE-119!/CWE-120",    char dest[10];,0,2.0.19,FF1013,

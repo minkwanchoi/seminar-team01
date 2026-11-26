@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.13.0"/>
+    <errors>
+        <error id="nullPointer" severity="error" msg="Null pointer dereference: data" verbose="Null pointer dereference: data" cwe="476" file0="example_case.c">
+            <location file="example_case.c" line="7" column="19"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable 'dest' is assigned a value that is never used." verbose="x" cwe="563" file0="example_case.c">
+            <location file="example_case.c" line="13" column="10"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file not found." verbose="x"/>
+        <error id="checkersReport" severity="information" msg="Active checkers" verbose="x"/>
+    </errors>
+</results>

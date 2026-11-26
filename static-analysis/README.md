@@ -15,7 +15,9 @@ RQ3 "하나의 정적 분석 결과가 여러 제도의 요구를 함께 채울 
 | `logs/` | 실행 확인 기록(케이스 하나로 세 도구가 도는 것을 확인한 로그) |
 | `judge.py` | (B6) 도구 출력으로 탐지·오탐을 판정하고 제도별 충족도를 집계 |
 | `clang_tidy_cwe.csv` | (B6) clang-tidy 검사 이름(과 메시지) → CWE 대응표. 연구팀이 정함 |
-| `sample_fp.py` | (B6) 오탐 후보에서 유형 분류용 표본을 뽑음 |
+| `sample_fp.py` | (B6) 오탐 후보에서 유형 분류용 표본(연습·검증)을 뽑음 |
+| `fp_codebook.md` | (B6) 오탐 유형 코드북 v1 |
+| `verify_judge.py`, `expected_b6.csv`, `examples/` | (B6) 판정 검산: 규칙 예시 → 다른 경로 재집계 → 보고 수치. 어긋나면 종료 코드 1 |
 | `results/` | (B6) 판정·집계 결과. 해석은 [docs/정적분석_결과.md](../docs/정적분석_결과.md) |
 | `_juliet/`, `_runs/` | Juliet 원본과 도구 원래 출력. **git에 넣지 않음** |
 
